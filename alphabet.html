@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="so" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Xarfaha – BaroKids</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .page-header { background: linear-gradient(135deg, #1E90FF 0%, #0a5ca8 100%); }
+    .letter-showcase {
+      font-size: 7rem;
+      font-weight: 900;
+      color: #1E90FF;
+      line-height: 1;
+      margin-bottom: 6px;
+      display: block;
+      animation: popIn 0.3s cubic-bezier(.36,.07,.19,.97);
+    }
+    .word-example {
+      font-size: 1.05rem;
+      color: #555;
+      font-weight: 600;
+      margin-top: 4px;
+    }
+    .word-example em {
+      font-style: normal;
+      color: #1E90FF;
+      font-weight: 800;
+    }
+    .progress-dots {
+      display: flex;
+      gap: 8px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-bottom: 20px;
+    }
+    .dot {
+      width: 14px; height: 14px;
+      border-radius: 50%;
+      background: #ddd;
+      transition: background 0.3s;
+    }
+    .dot.done { background: #1E90FF; }
+    .dot.active { background: #6C63FF; transform: scale(1.3); }
+    @keyframes popIn {
+      0%   { transform: scale(0.5) rotate(-10deg); opacity: 0; }
+      70%  { transform: scale(1.1) rotate(3deg); }
+      100% { transform: scale(1) rotate(0); opacity: 1; }
+    }
+  </style>
+</head>
+<body>
+
+<script src="rewards.js"></script>
+
+<div class="page-header">
+  <h1>🔤 Xarfaha Soomaaliga</h1>
+  <p>Baro xarfaha oo jawaab su'aalaha</p>
+</div>
+
+<div class="game-area">
+  <!-- Score Bar -->
+  <div class="score-bar">
+    <div><div class="label">Dhibcaha</div><div class="value" id="score-display">0</div></div>
+    <div><div class="label">Su'aal</div><div class="value" id="q-counter">1 / 10</div></div>
+    <div><div class="label">Saxda</div><div class="value" id="correct-display">0</div></div>
+  </div>
+
+  <!-- Progress Dots -->
+  <div class="progress-dots" id="progress-dots"></div>
+
+  <!-- Question Card -->
+  <div class="question-card" id="question-card">
+    <span class="letter-showcase" id="letter-big">A</span>
+    <div class="question-text" id="question-text">Maxay la dhahaa xarfahan?</div>
+    <div class="hint-text word-example" id="word-example"></div>
+  </div>
+
+  <!-- Answer Grid -->
+  <div class="answer-grid" id="answer-grid"></div>
+
+  <!-- Next Button -->
+  <button class="next-btn" id="next-btn" onclick="nextQuestion()">Xiga ➜</button>
+
+  <!-- Completion Card -->
+  <div class="completion-card" id="completion-card">
+    <div class="big-star">🌟</div>
+    <h2>Aad baad u fiicantahay!</h2>
+    <p>Waad dhamaysay ciyaarta Xarfaha!</p>
+    <div class="earned" id="stars-earned">+0 ⭐</div>
+    <br>
+    <button class="completion-btn btn-retry" onclick="restartGame()">🔄 Dib u ciyaar</button>
+    <a class="completion-btn btn-home" href="index.html">🏠 Guriga</a>
+  </div>
+</div>
+
+<script src="rewards.js"></script>
+<script>
+buildNav('alphabet');
+
+const LETTERS = [
+  { letter: 'A',  sound: 'A',  word: 'Af',      emoji: '👄' },
+  { letter: 'B',  sound: 'B',  word: 'Bahal',    emoji: '🐾' },
+  { letter: 'C',  sound: 'C',  word: 'Caano',    emoji: '🥛' },
+  { letter: 'D',  sound: 'D',  word: 'Dab',      emoji: '🔥' },
+  { letter: 'E',  sound: 'E',  word: 'Eel',      emoji: '🐍' },
+  { letter: 'F',  sound: 'F',  word: 'Fool',     emoji: '👻' },
+  { letter: 'G',  sound: 'G',  word: 'Guri',     emoji: '🏠' },
+  { letter: 'H',  sound: 'H',  word: 'Hilibka',  emoji: '🥩' },
+  { letter: 'I',  sound: 'I',  word: 'Ilmo',     emoji: '👧' },
+  { letter: 'J',  sound: 'J',  word: 'Jilaal',   emoji: '❄️' },
+  { letter: 'K',  sound: 'K',  word: 'Kaluun',   emoji: '🐟' },
+  { letter: 'L',  sound: 'L',  word: 'Libaax',   emoji: '🦁' },
+  { letter: 'M',  sound: 'M',  word: 'Malab',    emoji: '🍯' },
+  { letter: 'N',  sound: 'N',  word: 'Naag',     emoji: '👩' },
+  { letter: 'O',  sound: 'O',  word: 'Ood',      emoji: '🌿' },
+  { letter: 'Q',  sound: 'Q',  word: 'Qoriga',   emoji: '🐑' },
+  { letter: 'R',  sound: 'R',  word: 'Roob',     emoji: '🌧️' },
+  { letter: 'S',  sound: 'S',  word: 'Suuq',     emoji: '🏪' },
+  { letter: 'T',  sound: 'T',  word: 'Timir',    emoji: '🌴' },
+  { letter: 'U',  sound: 'U',  word: 'Ukun',     emoji: '🥚' },
+  { letter: 'W',  sound: 'W',  word: 'Waxbarasho', emoji: '📚' },
+  { letter: 'X',  sound: 'X',  word: 'Xiddig',   emoji: '⭐' },
+  { letter: 'Y',  sound: 'Y',  word: 'Yar',      emoji: '🐣' },
+  { letter: 'Z',  sound: 'Z',  word: 'Zool',     emoji: '🦒' },
+];
+
+let questions = [];
+let current = 0;
+let score = 0;
+let correct = 0;
+let answered = false;
+
+function shuffle(arr) {
+  const a = [...arr];
+  for (let i = a.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [a[i], a[j]] = [a[j], a[i]];
+  }
+  return a;
+}
+
+function generateQuestions() {
+  const pool = shuffle(LETTERS).slice(0, 10);
+  questions = pool.map(item => {
+    const wrongs = shuffle(LETTERS.filter(l => l.letter !== item.letter)).slice(0, 3);
+    const options = shuffle([item, ...wrongs]);
+    return { item, options };
+  });
+}
+
+function buildDots() {
+  const container = document.getElementById('progress-dots');
+  container.innerHTML = '';
+  questions.forEach((_, i) => {
+    const dot = document.createElement('div');
+    dot.className = 'dot' + (i === 0 ? ' active' : '');
+    dot.id = 'dot-' + i;
+    container.appendChild(dot);
+  });
+}
+
+function renderQuestion() {
+  const { item, options } = questions[current];
+  answered = false;
+
+  document.getElementById('letter-big').textContent = item.letter;
+  document.getElementById('letter-big').style.animation = 'none';
+  setTimeout(() => document.getElementById('letter-big').style.animation = '', 10);
+
+  document.getElementById('question-text').textContent = 'Maxay la dhahaa xarfahan?';
+  document.getElementById('word-example').innerHTML =
+    `${item.emoji} Tusaale: <em>${item.word}</em>`;
+
+  document.getElementById('q-counter').textContent = `${current + 1} / 10`;
+  document.getElementById('score-display').textContent = score;
+  document.getElementById('correct-display').textContent = correct;
+
+  // Dots
+  for (let i = 0; i < questions.length; i++) {
+    const d = document.getElementById('dot-' + i);
+    d.className = 'dot' + (i < current ? ' done' : i === current ? ' active' : '');
+  }
+
+  // Answer buttons
+  const grid = document.getElementById('answer-grid');
+  grid.innerHTML = '';
+  options.forEach(opt => {
+    const btn = document.createElement('button');
+    btn.className = 'answer-btn';
+    btn.innerHTML = `<span style="font-size:2rem;">${opt.letter}</span><br><span style="font-size:0.8rem;color:#777;">${opt.word}</span>`;
+    btn.onclick = () => handleAnswer(btn, opt.letter === item.letter, item);
+    grid.appendChild(btn);
+  });
+
+  document.getElementById('next-btn').classList.remove('visible');
+  document.getElementById('question-card').style.display = '';
+  document.getElementById('completion-card').classList.remove('show');
+}
+
+function handleAnswer(btn, isCorrect, item) {
+  if (answered) return;
+  answered = true;
+
+  document.querySelectorAll('.answer-btn').forEach(b => b.disabled = true);
+
+  if (isCorrect) {
+    btn.classList.add('correct');
+    score += 10;
+    correct++;
+    showToast('✅ Saxsax! ' + item.letter + ' = ' + item.word, 'correct');
+  } else {
+    btn.classList.add('wrong');
+    // Highlight correct
+    document.querySelectorAll('.answer-btn').forEach(b => {
+      if (b.textContent.trim().startsWith(item.letter)) b.classList.add('correct');
+    });
+    showToast('❌ Isku day! ' + item.letter + ' = ' + item.word, 'wrong');
+  }
+
+  document.getElementById('score-display').textContent = score;
+  document.getElementById('correct-display').textContent = correct;
+  document.getElementById('next-btn').classList.add('visible');
+}
+
+function nextQuestion() {
+  current++;
+  if (current >= questions.length) {
+    showCompletion();
+  } else {
+    renderQuestion();
+  }
+}
+
+function showCompletion() {
+  const starsEarned = Math.round((correct / 10) * 5);
+  addStars(starsEarned);
+  localStorage.setItem('alpha_done', correct);
+
+  document.getElementById('question-card').style.display = 'none';
+  document.getElementById('answer-grid').innerHTML = '';
+  document.getElementById('next-btn').classList.remove('visible');
+
+  const card = document.getElementById('completion-card');
+  card.classList.add('show');
+  document.getElementById('stars-earned').textContent = `+${starsEarned} ⭐`;
+
+  if (correct >= 7) launchConfetti(80);
+}
+
+function restartGame() {
+  score = 0; correct = 0; current = 0;
+  generateQuestions();
+  buildDots();
+  renderQuestion();
+}
+
+generateQuestions();
+buildDots();
+renderQuestion();
+</script>
+</body>
+</html>

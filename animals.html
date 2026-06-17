@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="so" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Xayawaanka – BaroKids</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .page-header { background: linear-gradient(135deg, #FF6B6B 0%, #c0392b 100%); }
+    .animal-emoji {
+      font-size: 6rem;
+      display: block;
+      animation: animalBounce 0.5s cubic-bezier(.36,.07,.19,.97);
+    }
+    .animal-fact {
+      background: #fff7f7;
+      border-left: 4px solid #FF6B6B;
+      border-radius: 10px;
+      padding: 10px 14px;
+      margin-top: 10px;
+      font-size: 0.88rem;
+      color: #555;
+      text-align: left;
+    }
+    .progress-dots {
+      display: flex; gap: 8px; justify-content: center; flex-wrap: wrap; margin-bottom: 20px;
+    }
+    .dot { width: 14px; height: 14px; border-radius: 50%; background: #ddd; transition: background 0.3s; }
+    .dot.done   { background: #FF6B6B; }
+    .dot.active { background: #6C63FF; transform: scale(1.3); }
+    @keyframes animalBounce {
+      0%   { transform: scale(0.3) translateY(30px); opacity: 0; }
+      60%  { transform: scale(1.15) translateY(-6px); opacity: 1; }
+      100% { transform: scale(1) translateY(0); opacity: 1; }
+    }
+  </style>
+</head>
+<body>
+
+<script src="rewards.js"></script>
+
+<div class="page-header">
+  <h1>🦁 Xayawaanka</h1>
+  <p>Baro magacyada xayawaanka Soomaaliga</p>
+</div>
+
+<div class="game-area">
+  <div class="score-bar">
+    <div><div class="label">Dhibcaha</div><div class="value" id="score-display">0</div></div>
+    <div><div class="label">Su'aal</div><div class="value" id="q-counter">1 / 10</div></div>
+    <div><div class="label">Saxda</div><div class="value" id="correct-display">0</div></div>
+  </div>
+
+  <div class="progress-dots" id="progress-dots"></div>
+
+  <div class="question-card" id="question-card">
+    <span class="animal-emoji" id="animal-emoji">🦁</span>
+    <div class="question-text" id="question-text">Xayawaankan magaciisu waa?</div>
+    <div class="hint-text" id="hint-text"></div>
+    <div class="animal-fact" id="animal-fact" style="display:none;"></div>
+  </div>
+
+  <div class="answer-grid" id="answer-grid"></div>
+  <button class="next-btn" id="next-btn" onclick="nextQuestion()">Xiga ➜</button>
+
+  <div class="completion-card" id="completion-card">
+    <div class="big-star">🦁</div>
+    <h2>Libaax baad u dheer tahay!</h2>
+    <p>Waad dhamaysay ciyaarta Xayawaanka!</p>
+    <div class="earned" id="stars-earned">+0 ⭐</div>
+    <br>
+    <button class="completion-btn btn-retry" onclick="restartGame()">🔄 Dib u ciyaar</button>
+    <a class="completion-btn btn-home" href="index.html">🏠 Guriga</a>
+  </div>
+</div>
+
+<script>
+buildNav('animals');
+
+const ANIMALS = [
+  { emoji: '🦁', so: 'Libaax',   en: 'Lion',     fact: 'Libaaxu waa boqorka xayawaanka.' },
+  { emoji: '🐘', so: 'Maroodi',  en: 'Elephant', fact: 'Maroodigu waa kan ugu weyn dhulka.' },
+  { emoji: '🦒', so: 'Giraaf',   en: 'Giraffe',  fact: 'Giraafku waa ugu dheer ugaadha.' },
+  { emoji: '🐊', so: 'Yaxaas',   en: 'Crocodile',fact: 'Yaxaastu waxay nool tahay biyaha iyo dhulka.' },
+  { emoji: '🦓', so: 'Dameer doog',en:'Zebra',   fact: 'Dameer doogu leeyahay jawi cas oo cad.' },
+  { emoji: '🐆', so: 'Haramcad', en: 'Cheetah',  fact: 'Haramcadku waa tan ugu degdegta.' },
+  { emoji: '🐒', so: 'Daayeer',  en: 'Monkey',   fact: 'Daayeertu waxay jeclahay miro.' },
+  { emoji: '🦅', so: 'Gorgor',   en: 'Eagle',    fact: 'Gorgorku wuu duulaa aad u sare.' },
+  { emoji: '🐢', so: 'Diinka',   en: 'Tortoise', fact: 'Diinku waa kan ugu gaabista xayawaanka.' },
+  { emoji: '🐍', so: 'Mas',      en: 'Snake',    fact: 'Maska ma laha lugaha laakiin wuu socda.' },
+  { emoji: '🦜', so: 'Dool',     en: 'Parrot',   fact: 'Doolu wuxuu ku hadlaa codka dadka.' },
+  { emoji: '🐬', so: 'Doofin',   en: 'Dolphin',  fact: 'Doofinku waa xayawaan aad u caqli badan.' },
+  { emoji: '🦔', so: 'Qardoon',  en: 'Hedgehog', fact: 'Qardoonku leeyahay qaro daran.' },
+  { emoji: '🐓', so: 'Digaag',   en: 'Chicken',  fact: 'Digaagu wuxuu bixiyaa ukunta.' },
+  { emoji: '🐄', so: 'Lo\'',     en: 'Cow',      fact: 'Lo\'du waxay bixisaa caano.' },
+  { emoji: '🐐', so: 'Ri',       en: 'Goat',     fact: 'Rigu wuu cunaa caws.' },
+  { emoji: '🐪', so: 'Geel',     en: 'Camel',    fact: 'Geelu wuxuu noolaan karaa cidlada.' },
+  { emoji: '🐟', so: 'Kalluun',  en: 'Fish',     fact: 'Kalluunku wuxuu ku nool yahay biyaha.' },
+  { emoji: '🦊', so: 'Dawaco',   en: 'Fox',      fact: 'Dawacadu aad bay u xariir badan tahay.' },
+  { emoji: '🐝', so: 'Shinni',   en: 'Bee',      fact: 'Shinnidu waxay samaysaa malab macaan.' },
+];
+
+let questions = [], current = 0, score = 0, correct = 0, answered = false;
+
+function shuffle(arr) {
+  const a = [...arr];
+  for (let i = a.length-1; i > 0; i--) {
+    const j = Math.floor(Math.random()*(i+1)); [a[i],a[j]]=[a[j],a[i]];
+  }
+  return a;
+}
+
+function generateQuestions() {
+  const pool = shuffle(ANIMALS).slice(0, 10);
+  questions = pool.map((item, idx) => {
+    const type = idx % 3;
+    // type 0: show emoji → pick Somali name
+    // type 1: show Somali name → pick emoji
+    // type 2: show emoji → pick emoji from options (recognition)
+    const wrongs = shuffle(ANIMALS.filter(a => a.so !== item.so)).slice(0, 3);
+    const options = shuffle([item, ...wrongs]);
+    return { item, type: type === 2 ? 0 : type, options };
+  });
+}
+
+function buildDots() {
+  const c = document.getElementById('progress-dots');
+  c.innerHTML = '';
+  questions.forEach((_, i) => {
+    const d = document.createElement('div');
+    d.className = 'dot'+(i===0?' active':'');
+    d.id = 'dot-'+i;
+    c.appendChild(d);
+  });
+}
+
+function renderQuestion() {
+  const { item, type, options } = questions[current];
+  answered = false;
+
+  document.getElementById('animal-fact').style.display = 'none';
+
+  if (type === 0) {
+    // Show emoji, ask for name
+    document.getElementById('animal-emoji').textContent = item.emoji;
+    document.getElementById('question-text').textContent = 'Xayawaankan magaciisu waa?';
+    document.getElementById('hint-text').textContent = '';
+    const grid = document.getElementById('answer-grid');
+    grid.innerHTML = '';
+    options.forEach(opt => {
+      const btn = document.createElement('button');
+      btn.className = 'answer-btn';
+      btn.innerHTML = `<span style="font-size:1.8rem;">${opt.emoji}</span><br><span style="font-size:0.95rem;">${opt.so}</span>`;
+      btn.onclick = () => handleAnswer(btn, opt.so === item.so, item);
+      grid.appendChild(btn);
+    });
+  } else {
+    // Show name, ask for emoji
+    document.getElementById('animal-emoji').textContent = '❓';
+    document.getElementById('question-text').textContent = `"${item.so}" xayawaankan sawirkiisu xuu yahay?`;
+    document.getElementById('hint-text').textContent = '';
+    const grid = document.getElementById('answer-grid');
+    grid.innerHTML = '';
+    options.forEach(opt => {
+      const btn = document.createElement('button');
+      btn.className = 'answer-btn';
+      btn.innerHTML = `<span style="font-size:3.5rem;">${opt.emoji}</span>`;
+      btn.onclick = () => handleAnswer(btn, opt.so === item.so, item);
+      grid.appendChild(btn);
+    });
+  }
+
+  document.getElementById('q-counter').textContent = `${current+1} / 10`;
+  document.getElementById('score-display').textContent = score;
+  document.getElementById('correct-display').textContent = correct;
+
+  for (let i = 0; i < questions.length; i++) {
+    const d = document.getElementById('dot-'+i);
+    d.className = 'dot'+(i<current?' done':i===current?' active':'');
+  }
+  document.getElementById('next-btn').classList.remove('visible');
+  document.getElementById('question-card').style.display = '';
+  document.getElementById('completion-card').classList.remove('show');
+}
+
+function handleAnswer(btn, isCorrect, item) {
+  if (answered) return;
+  answered = true;
+  document.querySelectorAll('.answer-btn').forEach(b => b.disabled = true);
+
+  // Show correct animal emoji
+  document.getElementById('animal-emoji').textContent = item.emoji;
+
+  // Show fact
+  const factEl = document.getElementById('animal-fact');
+  factEl.textContent = item.fact;
+  factEl.style.display = '';
+
+  if (isCorrect) {
+    btn.classList.add('correct');
+    score += 10; correct++;
+    showToast(`✅ Saxsax! ${item.emoji} = ${item.so}`, 'correct');
+  } else {
+    btn.classList.add('wrong');
+    document.querySelectorAll('.answer-btn').forEach(b => {
+      const txt = b.textContent;
+      if (txt.includes(item.so) || txt.includes(item.emoji)) b.classList.add('correct');
+    });
+    showToast(`❌ Isku day! ${item.emoji} = ${item.so}`, 'wrong');
+  }
+
+  document.getElementById('score-display').textContent = score;
+  document.getElementById('correct-display').textContent = correct;
+  document.getElementById('next-btn').classList.add('visible');
+}
+
+function nextQuestion() {
+  current++;
+  if (current >= questions.length) showCompletion();
+  else renderQuestion();
+}
+
+function showCompletion() {
+  const starsEarned = Math.round((correct/10)*5);
+  addStars(starsEarned);
+  localStorage.setItem('anim_done', correct);
+  document.getElementById('question-card').style.display = 'none';
+  document.getElementById('answer-grid').innerHTML = '';
+  document.getElementById('next-btn').classList.remove('visible');
+  document.getElementById('completion-card').classList.add('show');
+  document.getElementById('stars-earned').textContent = `+${starsEarned} ⭐`;
+  if (correct >= 7) launchConfetti(80);
+}
+
+function restartGame() {
+  score = 0; correct = 0; current = 0;
+  generateQuestions(); buildDots(); renderQuestion();
+}
+
+generateQuestions();
+buildDots();
+renderQuestion();
+</script>
+</body>
+</html>

@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="so" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tirooyin – BaroKids</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .page-header { background: linear-gradient(135deg, #2ECC71 0%, #0a9a51 100%); }
+    .num-showcase {
+      font-size: 6rem;
+      font-weight: 900;
+      color: #2ECC71;
+      line-height: 1;
+      display: block;
+      animation: popIn 0.35s cubic-bezier(.36,.07,.19,.97);
+    }
+    .dots-visual {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 8px;
+      margin: 12px 0 6px;
+      min-height: 40px;
+    }
+    .dot-ball {
+      width: 28px; height: 28px;
+      border-radius: 50%;
+      background: #2ECC71;
+      display: inline-block;
+      animation: popIn 0.25s ease;
+    }
+    .num-word {
+      font-size: 1.3rem;
+      font-weight: 800;
+      color: #2ECC71;
+      margin-top: 6px;
+    }
+    .progress-dots {
+      display: flex; gap: 8px; justify-content: center; flex-wrap: wrap; margin-bottom: 20px;
+    }
+    .dot { width: 14px; height: 14px; border-radius: 50%; background: #ddd; transition: background 0.3s; }
+    .dot.done   { background: #2ECC71; }
+    .dot.active { background: #1E90FF; transform: scale(1.3); }
+    @keyframes popIn {
+      0%   { transform: scale(0.5); opacity: 0; }
+      70%  { transform: scale(1.1); }
+      100% { transform: scale(1);   opacity: 1; }
+    }
+    /* Count mode – show dots and ask number */
+    .count-dots {
+      display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; margin: 10px 0;
+    }
+    .count-dot {
+      font-size: 2.2rem;
+      animation: popIn 0.2s ease;
+    }
+  </style>
+</head>
+<body>
+
+<script src="rewards.js"></script>
+
+<div class="page-header">
+  <h1>🔢 Tirooyin</h1>
+  <p>Baro tirooyin 1 ilaa 20</p>
+</div>
+
+<div class="game-area">
+  <div class="score-bar">
+    <div><div class="label">Dhibcaha</div><div class="value" id="score-display">0</div></div>
+    <div><div class="label">Su'aal</div><div class="value" id="q-counter">1 / 10</div></div>
+    <div><div class="label">Saxda</div><div class="value" id="correct-display">0</div></div>
+  </div>
+
+  <div class="progress-dots" id="progress-dots"></div>
+
+  <div class="question-card" id="question-card">
+    <span class="num-showcase" id="num-big">1</span>
+    <div class="dots-visual" id="dots-visual"></div>
+    <div class="question-text" id="question-text">Tiradaan Soomaali meesha waa?</div>
+    <div class="hint-text num-word" id="num-word"></div>
+  </div>
+
+  <div class="answer-grid" id="answer-grid"></div>
+  <button class="next-btn" id="next-btn" onclick="nextQuestion()">Xiga ➜</button>
+
+  <div class="completion-card" id="completion-card">
+    <div class="big-star">🌟</div>
+    <h2>Aad baad u fiicantahay!</h2>
+    <p>Waad dhamaysay ciyaarta Tirooyin!</p>
+    <div class="earned" id="stars-earned">+0 ⭐</div>
+    <br>
+    <button class="completion-btn btn-retry" onclick="restartGame()">🔄 Dib u ciyaar</button>
+    <a class="completion-btn btn-home" href="index.html">🏠 Guriga</a>
+  </div>
+</div>
+
+<script>
+buildNav('numbers');
+
+const NUMBERS = [
+  { num: 1,  so: 'Kow',        emoji: '1️⃣' },
+  { num: 2,  so: 'Laba',       emoji: '2️⃣' },
+  { num: 3,  so: 'Saddex',     emoji: '3️⃣' },
+  { num: 4,  so: 'Afar',       emoji: '4️⃣' },
+  { num: 5,  so: 'Shan',       emoji: '5️⃣' },
+  { num: 6,  so: 'Lix',        emoji: '6️⃣' },
+  { num: 7,  so: 'Toddoba',    emoji: '7️⃣' },
+  { num: 8,  so: 'Siddeed',    emoji: '8️⃣' },
+  { num: 9,  so: 'Sagaal',     emoji: '9️⃣' },
+  { num: 10, so: 'Toban',      emoji: '🔟' },
+  { num: 11, so: 'Kow iyo toban',   emoji: '1️⃣1️⃣' },
+  { num: 12, so: 'Laba iyo toban',  emoji: '1️⃣2️⃣' },
+  { num: 13, so: 'Saddex iyo toban',emoji: '1️⃣3️⃣' },
+  { num: 14, so: 'Afar iyo toban',  emoji: '1️⃣4️⃣' },
+  { num: 15, so: 'Shan iyo toban',  emoji: '1️⃣5️⃣' },
+  { num: 16, so: 'Lix iyo toban',   emoji: '1️⃣6️⃣' },
+  { num: 17, so: 'Toddoba iyo toban',emoji:'1️⃣7️⃣' },
+  { num: 18, so: 'Siddeed iyo toban',emoji:'1️⃣8️⃣' },
+  { num: 19, so: 'Sagaal iyo toban', emoji:'1️⃣9️⃣' },
+  { num: 20, so: 'Labaatan',   emoji: '2️⃣0️⃣' },
+];
+
+// Question types
+const DOTS_EMOJI = ['🍎','🌟','🐾','🎈','🌸','🦋','⚽','🎯','🍭','💎'];
+
+let questions = [], current = 0, score = 0, correct = 0, answered = false;
+
+function shuffle(arr) {
+  const a = [...arr];
+  for (let i = a.length-1; i > 0; i--) {
+    const j = Math.floor(Math.random()*(i+1)); [a[i],a[j]]=[a[j],a[i]];
+  }
+  return a;
+}
+
+function generateQuestions() {
+  const pool = shuffle(NUMBERS).slice(0, 10);
+  questions = pool.map((item, idx) => {
+    const type = idx % 2 === 0 ? 'name' : 'count'; // alternate question type
+    const wrongPool = NUMBERS.filter(n => n.num !== item.num);
+    const wrongs = shuffle(wrongPool).slice(0, 3);
+    const options = shuffle([item, ...wrongs]);
+    return { item, type, options };
+  });
+}
+
+function buildDots() {
+  const c = document.getElementById('progress-dots');
+  c.innerHTML = '';
+  questions.forEach((_, i) => {
+    const d = document.createElement('div');
+    d.className = 'dot' + (i===0?' active':'');
+    d.id = 'dot-'+i;
+    c.appendChild(d);
+  });
+}
+
+function renderQuestion() {
+  const { item, type, options } = questions[current];
+  answered = false;
+
+  const dotIcon = DOTS_EMOJI[current % DOTS_EMOJI.length];
+
+  if (type === 'name') {
+    // Show digit, ask for Somali word
+    document.getElementById('num-big').textContent = item.num;
+    document.getElementById('num-word').textContent = '';
+    document.getElementById('question-text').textContent = 'Tiradaan Soomaali meesha waa?';
+    // Show dot balls
+    const visual = document.getElementById('dots-visual');
+    visual.innerHTML = '';
+    const count = Math.min(item.num, 20);
+    for (let i = 0; i < count; i++) {
+      const span = document.createElement('span');
+      span.className = 'count-dot';
+      span.textContent = dotIcon;
+      span.style.animationDelay = (i * 0.04) + 's';
+      visual.appendChild(span);
+    }
+    // Buttons show Somali words
+    const grid = document.getElementById('answer-grid');
+    grid.innerHTML = '';
+    options.forEach(opt => {
+      const btn = document.createElement('button');
+      btn.className = 'answer-btn';
+      btn.innerHTML = `<span style="font-size:1.1rem;">${opt.so}</span>`;
+      btn.onclick = () => handleAnswer(btn, opt.num === item.num, item);
+      grid.appendChild(btn);
+    });
+
+  } else {
+    // Show Somali word, ask for digit
+    document.getElementById('num-big').textContent = item.so;
+    document.getElementById('num-big').style.fontSize = '3.2rem';
+    document.getElementById('dots-visual').innerHTML = '';
+    document.getElementById('question-text').textContent = 'Tirooyinta lambarka saxda ah waa?';
+    document.getElementById('num-word').textContent = '';
+    // Buttons show digits
+    const grid = document.getElementById('answer-grid');
+    grid.innerHTML = '';
+    options.forEach(opt => {
+      const btn = document.createElement('button');
+      btn.className = 'answer-btn';
+      btn.innerHTML = `<span style="font-size:2.4rem;font-weight:900;">${opt.num}</span>`;
+      btn.onclick = () => handleAnswer(btn, opt.num === item.num, item);
+      grid.appendChild(btn);
+    });
+  }
+
+  document.getElementById('num-big').style.fontSize = type === 'name' ? '6rem' : '3rem';
+  document.getElementById('q-counter').textContent = `${current+1} / 10`;
+  document.getElementById('score-display').textContent = score;
+  document.getElementById('correct-display').textContent = correct;
+
+  for (let i = 0; i < questions.length; i++) {
+    const d = document.getElementById('dot-'+i);
+    d.className = 'dot' + (i<current?' done':i===current?' active':'');
+  }
+
+  document.getElementById('next-btn').classList.remove('visible');
+  document.getElementById('question-card').style.display = '';
+  document.getElementById('completion-card').classList.remove('show');
+}
+
+function handleAnswer(btn, isCorrect, item) {
+  if (answered) return;
+  answered = true;
+  document.querySelectorAll('.answer-btn').forEach(b => b.disabled = true);
+  if (isCorrect) {
+    btn.classList.add('correct');
+    score += 10; correct++;
+    showToast(`✅ Saxsax! ${item.num} = ${item.so}`, 'correct');
+  } else {
+    btn.classList.add('wrong');
+    document.querySelectorAll('.answer-btn').forEach(b => {
+      const txt = b.querySelector('span').textContent.trim();
+      if (txt === String(item.num) || txt === item.so) b.classList.add('correct');
+    });
+    showToast(`❌ Isku day! ${item.num} = ${item.so}`, 'wrong');
+  }
+  document.getElementById('score-display').textContent = score;
+  document.getElementById('correct-display').textContent = correct;
+  document.getElementById('next-btn').classList.add('visible');
+}
+
+function nextQuestion() {
+  current++;
+  if (current >= questions.length) showCompletion();
+  else renderQuestion();
+}
+
+function showCompletion() {
+  const starsEarned = Math.round((correct/10)*5);
+  addStars(starsEarned);
+  localStorage.setItem('num_done', correct);
+  document.getElementById('question-card').style.display = 'none';
+  document.getElementById('answer-grid').innerHTML = '';
+  document.getElementById('next-btn').classList.remove('visible');
+  const card = document.getElementById('completion-card');
+  card.classList.add('show');
+  document.getElementById('stars-earned').textContent = `+${starsEarned} ⭐`;
+  if (correct >= 7) launchConfetti(80);
+}
+
+function restartGame() {
+  score = 0; correct = 0; current = 0;
+  generateQuestions(); buildDots(); renderQuestion();
+}
+
+generateQuestions();
+buildDots();
+renderQuestion();
+</script>
+</body>
+</html>

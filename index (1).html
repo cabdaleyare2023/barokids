@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="so" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BaroKids – Barashada Carruurta</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    /* HOME PAGE SPECIFIC */
+    .hero {
+      background: linear-gradient(135deg, #1E90FF 0%, #6C63FF 100%);
+      color: #fff;
+      text-align: center;
+      padding: 60px 20px 80px;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      bottom: -2px; left: 0; right: 0;
+      height: 60px;
+      background: #FFFEF7;
+      clip-path: ellipse(55% 100% at 50% 100%);
+    }
+    .hero-logo {
+      font-size: 3.6rem;
+      font-weight: 900;
+      letter-spacing: -1px;
+      text-shadow: 0 4px 20px rgba(0,0,0,0.18);
+      animation: bounceIn 0.8s cubic-bezier(.36,.07,.19,.97);
+    }
+    .hero-logo span { color: #FFD700; }
+    .hero-tagline {
+      font-size: 1.25rem;
+      margin-top: 10px;
+      opacity: 0.92;
+      font-weight: 600;
+    }
+    .stars-display {
+      margin-top: 20px;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: rgba(255,255,255,0.18);
+      border-radius: 50px;
+      padding: 10px 22px;
+      font-size: 1.1rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    .stars-display:hover { background: rgba(255,255,255,0.28); }
+    .stars-display .star-icon { font-size: 1.4rem; }
+    .games-section {
+      padding: 50px 20px 40px;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    .games-section h2 {
+      text-align: center;
+      font-size: 1.6rem;
+      color: #333;
+      margin-bottom: 28px;
+      font-weight: 800;
+    }
+    .games-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+    }
+    .game-card {
+      background: #fff;
+      border-radius: 24px;
+      padding: 28px 16px 22px;
+      text-align: center;
+      text-decoration: none;
+      color: #222;
+      box-shadow: 0 6px 24px rgba(0,0,0,0.10);
+      transition: transform 0.18s, box-shadow 0.18s;
+      border: 3px solid transparent;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+      cursor: pointer;
+    }
+    .game-card:hover {
+      transform: translateY(-6px) scale(1.03);
+      box-shadow: 0 14px 36px rgba(0,0,0,0.16);
+    }
+    .game-card .card-icon { font-size: 3.2rem; line-height: 1; }
+    .game-card .card-title { font-size: 1.05rem; font-weight: 800; }
+    .game-card .card-sub { font-size: 0.82rem; color: #777; font-weight: 500; }
+    .card-alphabet { border-color: #1E90FF; background: linear-gradient(145deg,#e8f4ff,#fff); }
+    .card-numbers  { border-color: #2ECC71; background: linear-gradient(145deg,#e6faf0,#fff); }
+    .card-animals  { border-color: #FF6B6B; background: linear-gradient(145deg,#fff0f0,#fff); }
+    .card-colors   { border-color: #FFD700; background: linear-gradient(145deg,#fffbe6,#fff); }
+    .progress-section {
+      background: #fff;
+      border-radius: 24px;
+      box-shadow: 0 4px 18px rgba(0,0,0,0.08);
+      padding: 26px 22px;
+      max-width: 560px;
+      margin: 0 auto 40px;
+    }
+    .progress-section h3 { font-size: 1.1rem; font-weight: 800; margin-bottom: 16px; color: #333; }
+    .progress-row {
+      display: flex; align-items: center; gap: 12px; margin-bottom: 12px;
+    }
+    .progress-label { width: 100px; font-size: 0.88rem; font-weight: 600; color: #555; }
+    .progress-bar-wrap { flex: 1; background: #eee; border-radius: 20px; height: 12px; overflow: hidden; }
+    .progress-bar-fill { height: 100%; border-radius: 20px; transition: width 0.8s ease; }
+    .pb-blue  { background: #1E90FF; }
+    .pb-green { background: #2ECC71; }
+    .pb-red   { background: #FF6B6B; }
+    .pb-gold  { background: #FFD700; }
+    .progress-pct { font-size: 0.82rem; font-weight: 700; color: #999; width: 36px; text-align: right; }
+    .footer {
+      text-align: center;
+      padding: 30px 20px;
+      font-size: 0.85rem;
+      color: #aaa;
+    }
+    @keyframes bounceIn {
+      0% { transform: scale(0.7); opacity: 0; }
+      60% { transform: scale(1.08); opacity: 1; }
+      100% { transform: scale(1); }
+    }
+  </style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="hero-logo">Baro<span>Kids</span> 🌟</div>
+  <div class="hero-tagline">Barashada Carruurta – Waxbarashada Somali</div>
+  <div class="stars-display" onclick="location.href='rewards.html'">
+    <span class="star-icon">⭐</span>
+    <span id="total-stars">0</span> Xiddig
+  </div>
+</header>
+
+<main>
+  <section class="games-section">
+    <h2>🎮 Ciyaaraha</h2>
+    <div class="games-grid">
+      <a class="game-card card-alphabet" href="alphabet.html">
+        <div class="card-icon">🔤</div>
+        <div class="card-title">Xarfaha</div>
+        <div class="card-sub">Baro xarfaha Soomaaliga</div>
+      </a>
+      <a class="game-card card-numbers" href="numbers.html">
+        <div class="card-icon">🔢</div>
+        <div class="card-title">Tirooyin</div>
+        <div class="card-sub">Baro tirooyin 1–20</div>
+      </a>
+      <a class="game-card card-animals" href="animals.html">
+        <div class="card-icon">🦁</div>
+        <div class="card-title">Xayawaanka</div>
+        <div class="card-sub">Baro magacyada xayawaanka</div>
+      </a>
+      <a class="game-card card-colors" href="colors.html">
+        <div class="card-icon">🎨</div>
+        <div class="card-title">Midabada</div>
+        <div class="card-sub">Baro midabada kala duwan</div>
+      </a>
+    </div>
+  </section>
+
+  <section style="padding: 0 20px 20px; max-width: 600px; margin: 0 auto;">
+    <div class="progress-section">
+      <h3>📊 Horumarkaaga</h3>
+      <div class="progress-row">
+        <span class="progress-label">🔤 Xarfaha</span>
+        <div class="progress-bar-wrap"><div class="progress-bar-fill pb-blue" id="prog-alpha" style="width:0%"></div></div>
+        <span class="progress-pct" id="pct-alpha">0%</span>
+      </div>
+      <div class="progress-row">
+        <span class="progress-label">🔢 Tirooyin</span>
+        <div class="progress-bar-wrap"><div class="progress-bar-fill pb-green" id="prog-num" style="width:0%"></div></div>
+        <span class="progress-pct" id="pct-num">0%</span>
+      </div>
+      <div class="progress-row">
+        <span class="progress-label">🦁 Xayawaan</span>
+        <div class="progress-bar-wrap"><div class="progress-bar-fill pb-red" id="prog-anim" style="width:0%"></div></div>
+        <span class="progress-pct" id="pct-anim">0%</span>
+      </div>
+      <div class="progress-row">
+        <span class="progress-label">🎨 Midabada</span>
+        <div class="progress-bar-wrap"><div class="progress-bar-fill pb-gold" id="prog-col" style="width:0%"></div></div>
+        <span class="progress-pct" id="pct-col">0%</span>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <p>🌟 BaroKids – Waxbarasho fun ah carruurta Soomaalida 🌟</p>
+</footer>
+
+<script src="rewards.js"></script>
+<script>
+  // Load stars
+  document.getElementById('total-stars').textContent = getStars();
+
+  // Load progress
+  function loadProgress(key, fillId, pctId, total) {
+    const done = parseInt(localStorage.getItem(key) || '0');
+    const pct = Math.round((done / total) * 100);
+    document.getElementById(fillId).style.width = pct + '%';
+    document.getElementById(pctId).textContent = pct + '%';
+  }
+  loadProgress('alpha_done', 'prog-alpha', 'pct-alpha', 10);
+  loadProgress('num_done',   'prog-num',   'pct-num',   10);
+  loadProgress('anim_done',  'prog-anim',  'pct-anim',  10);
+  loadProgress('col_done',   'prog-col',   'pct-col',   10);
+</script>
+</body>
+</html>

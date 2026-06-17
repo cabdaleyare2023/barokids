@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="so" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Midabada – BaroKids</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .page-header { background: linear-gradient(135deg, #FFD700 0%, #e67e22 100%); }
+    .color-blob {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      margin: 0 auto 14px;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.18);
+      animation: blobIn 0.4s cubic-bezier(.36,.07,.19,.97);
+      border: 6px solid rgba(255,255,255,0.6);
+    }
+    .color-word-display {
+      font-size: 2.6rem;
+      font-weight: 900;
+      margin-bottom: 6px;
+    }
+    .progress-dots {
+      display: flex; gap: 8px; justify-content: center; flex-wrap: wrap; margin-bottom: 20px;
+    }
+    .dot { width: 14px; height: 14px; border-radius: 50%; background: #ddd; transition: background 0.3s; }
+    .dot.done   { background: #FFD700; }
+    .dot.active { background: #6C63FF; transform: scale(1.3); }
+    /* Color answer buttons with colored borders */
+    .answer-btn.color-opt {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+    }
+    .color-swatch {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      border: 3px solid rgba(0,0,0,0.1);
+      flex-shrink: 0;
+    }
+    @keyframes blobIn {
+      0%   { transform: scale(0.3); opacity: 0; }
+      60%  { transform: scale(1.12); opacity: 1; }
+      100% { transform: scale(1); opacity: 1; }
+    }
+  </style>
+</head>
+<body>
+
+<script src="rewards.js"></script>
+
+<div class="page-header">
+  <h1>🎨 Midabada</h1>
+  <p>Baro midabada kala duwan Soomaaliga</p>
+</div>
+
+<div class="game-area">
+  <div class="score-bar">
+    <div><div class="label">Dhibcaha</div><div class="value" id="score-display">0</div></div>
+    <div><div class="label">Su'aal</div><div class="value" id="q-counter">1 / 10</div></div>
+    <div><div class="label">Saxda</div><div class="value" id="correct-display">0</div></div>
+  </div>
+
+  <div class="progress-dots" id="progress-dots"></div>
+
+  <div class="question-card" id="question-card">
+    <div class="color-blob" id="color-blob"></div>
+    <div class="question-text" id="question-text">Midabkan magaciisu waa?</div>
+    <div class="color-word-display" id="color-word-display" style="display:none;"></div>
+    <div class="hint-text" id="hint-text"></div>
+  </div>
+
+  <div class="answer-grid" id="answer-grid"></div>
+  <button class="next-btn" id="next-btn" onclick="nextQuestion()">Xiga ➜</button>
+
+  <div class="completion-card" id="completion-card">
+    <div class="big-star">🎨</div>
+    <h2>Midabadaad baad garatay!</h2>
+    <p>Waad dhamaysay ciyaarta Midabada!</p>
+    <div class="earned" id="stars-earned">+0 ⭐</div>
+    <br>
+    <button class="completion-btn btn-retry" onclick="restartGame()">🔄 Dib u ciyaar</button>
+    <a class="completion-btn btn-home" href="index.html">🏠 Guriga</a>
+  </div>
+</div>
+
+<script>
+buildNav('colors');
+
+const COLORS = [
+  { so: 'Cas',      hex: '#E74C3C', things: 'Tamarta, tumaatada' },
+  { so: 'Cagaar',   hex: '#27AE60', things: 'Geedka, cawska' },
+  { so: 'Buluug',   hex: '#2980B9', things: 'Samadu, badda' },
+  { so: 'Huruud',   hex: '#F1C40F', things: 'Qorraxda, moosada' },
+  { so: 'Oranjo',   hex: '#E67E22', things: 'Liin macaan, karooto' },
+  { so: 'Guduud',   hex: '#8E44AD', things: 'Ubaxyo qaaliga ah' },
+  { so: 'Cad',      hex: '#ECF0F1', things: 'Barafka, daruuraha' },
+  { so: 'Madow',    hex: '#2C3E50', things: 'Habeenka, dhuxusha' },
+  { so: 'Bunni',    hex: '#795548', things: 'Dhulka, qaaranka' },
+  { so: 'Warqad',   hex: '#FF69B4', things: 'Ubaxa wardada' },
+  { so: 'Cagaaran', hex: '#1ABC9C', things: 'Badweynta, qoryaha' },
+  { so: 'Dhadeer',  hex: '#607D8B', things: 'Dhagaxyada, daruuraha' },
+];
+
+let questions = [], current = 0, score = 0, correct = 0, answered = false;
+
+function shuffle(arr) {
+  const a = [...arr];
+  for (let i = a.length-1; i > 0; i--) {
+    const j = Math.floor(Math.random()*(i+1)); [a[i],a[j]]=[a[j],a[i]];
+  }
+  return a;
+}
+
+function generateQuestions() {
+  const pool = shuffle(COLORS).slice(0, 10);
+  questions = pool.map((item, idx) => {
+    const type = idx % 2 === 0 ? 'blob' : 'word';
+    const wrongs = shuffle(COLORS.filter(c => c.so !== item.so)).slice(0, 3);
+    const options = shuffle([item, ...wrongs]);
+    return { item, type, options };
+  });
+}
+
+function buildDots() {
+  const c = document.getElementById('progress-dots');
+  c.innerHTML = '';
+  questions.forEach((_, i) => {
+    const d = document.createElement('div');
+    d.className = 'dot'+(i===0?' active':'');
+    d.id = 'dot-'+i;
+    c.appendChild(d);
+  });
+}
+
+function renderQuestion() {
+  const { item, type, options } = questions[current];
+  answered = false;
+
+  const blob = document.getElementById('color-blob');
+  const wordDisplay = document.getElementById('color-word-display');
+  const questionText = document.getElementById('question-text');
+  const hintText = document.getElementById('hint-text');
+
+  if (type === 'blob') {
+    // Show color blob, ask Somali name
+    blob.style.background = item.hex;
+    blob.style.display = '';
+    wordDisplay.style.display = 'none';
+    questionText.textContent = 'Midabkan magaciisu waa?';
+    hintText.textContent = '';
+
+    const grid = document.getElementById('answer-grid');
+    grid.innerHTML = '';
+    options.forEach(opt => {
+      const btn = document.createElement('button');
+      btn.className = 'answer-btn';
+      btn.innerHTML = `
+        <span class="color-swatch" style="background:${opt.hex};"></span>
+        <span style="font-size:1rem;font-weight:800;">${opt.so}</span>
+      `;
+      btn.onclick = () => handleAnswer(btn, opt.so === item.so, item);
+      grid.appendChild(btn);
+    });
+
+  } else {
+    // Show Somali word, ask for matching color blob
+    blob.style.display = 'none';
+    wordDisplay.style.display = '';
+    wordDisplay.textContent = item.so;
+    wordDisplay.style.color = item.hex;
+    questionText.textContent = 'Midabkan sawirkiisu xuu yahay?';
+    hintText.textContent = '';
+
+    const grid = document.getElementById('answer-grid');
+    grid.innerHTML = '';
+    options.forEach(opt => {
+      const btn = document.createElement('button');
+      btn.className = 'answer-btn';
+      btn.innerHTML = `
+        <span class="color-swatch" style="background:${opt.hex};width:68px;height:68px;display:block;"></span>
+      `;
+      btn.onclick = () => handleAnswer(btn, opt.so === item.so, item);
+      grid.appendChild(btn);
+    });
+  }
+
+  document.getElementById('q-counter').textContent = `${current+1} / 10`;
+  document.getElementById('score-display').textContent = score;
+  document.getElementById('correct-display').textContent = correct;
+
+  for (let i = 0; i < questions.length; i++) {
+    const d = document.getElementById('dot-'+i);
+    d.className = 'dot'+(i<current?' done':i===current?' active':'');
+  }
+  document.getElementById('next-btn').classList.remove('visible');
+  document.getElementById('question-card').style.display = '';
+  document.getElementById('completion-card').classList.remove('show');
+}
+
+function handleAnswer(btn, isCorrect, item) {
+  if (answered) return;
+  answered = true;
+  document.querySelectorAll('.answer-btn').forEach(b => b.disabled = true);
+
+  // Reveal blob always after answer
+  const blob = document.getElementById('color-blob');
+  blob.style.background = item.hex;
+  blob.style.display = '';
+
+  document.getElementById('hint-text').textContent = `💡 Tusaale: ${item.things}`;
+
+  if (isCorrect) {
+    btn.classList.add('correct');
+    score += 10; correct++;
+    showToast(`✅ Saxsax! ${item.so}`, 'correct');
+  } else {
+    btn.classList.add('wrong');
+    document.querySelectorAll('.answer-btn').forEach(b => {
+      if (b.textContent.includes(item.so) || b.innerHTML.includes(item.hex)) b.classList.add('correct');
+    });
+    showToast(`❌ Isku day! Midabkan waa "${item.so}"`, 'wrong');
+  }
+
+  document.getElementById('score-display').textContent = score;
+  document.getElementById('correct-display').textContent = correct;
+  document.getElementById('next-btn').classList.add('visible');
+}
+
+function nextQuestion() {
+  current++;
+  if (current >= questions.length) showCompletion();
+  else renderQuestion();
+}
+
+function showCompletion() {
+  const starsEarned = Math.round((correct/10)*5);
+  addStars(starsEarned);
+  localStorage.setItem('col_done', correct);
+  document.getElementById('question-card').style.display = 'none';
+  document.getElementById('answer-grid').innerHTML = '';
+  document.getElementById('next-btn').classList.remove('visible');
+  document.getElementById('completion-card').classList.add('show');
+  document.getElementById('stars-earned').textContent = `+${starsEarned} ⭐`;
+  if (correct >= 7) launchConfetti(80);
+}
+
+function restartGame() {
+  score = 0; correct = 0; current = 0;
+  generateQuestions(); buildDots(); renderQuestion();
+}
+
+generateQuestions();
+buildDots();
+renderQuestion();
+</script>
+</body>
+</html>

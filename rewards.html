@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="so" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Abaalmarinta – BaroKids</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .page-header { background: linear-gradient(135deg, #FFD700 0%, #6C63FF 100%); }
+    .page-header h1 { color: #fff; text-shadow: 0 2px 10px rgba(0,0,0,0.2); }
+
+    /* Stars Hero */
+    .stars-hero {
+      text-align: center;
+      background: linear-gradient(135deg, #1a1a2e, #16213e);
+      border-radius: 28px;
+      padding: 36px 20px;
+      margin-bottom: 26px;
+      color: #fff;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.18);
+      position: relative;
+      overflow: hidden;
+    }
+    .stars-hero::before {
+      content: '✨';
+      position: absolute;
+      font-size: 8rem;
+      opacity: 0.06;
+      top: -10px;
+      right: -10px;
+      pointer-events: none;
+    }
+    .stars-big {
+      font-size: 5rem;
+      font-weight: 900;
+      color: #FFD700;
+      line-height: 1;
+      text-shadow: 0 0 30px rgba(255,215,0,0.5);
+      animation: glow 2s ease-in-out infinite alternate;
+    }
+    .stars-label {
+      font-size: 1rem;
+      opacity: 0.7;
+      margin-top: 6px;
+    }
+    @keyframes glow {
+      from { text-shadow: 0 0 20px rgba(255,215,0,0.4); }
+      to   { text-shadow: 0 0 40px rgba(255,215,0,0.9); }
+    }
+
+    /* Badge Grid */
+    .badge-section h3 {
+      font-size: 1.1rem;
+      font-weight: 800;
+      color: #333;
+      margin-bottom: 16px;
+    }
+    .badge-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+      margin-bottom: 28px;
+    }
+    .badge-card {
+      background: #fff;
+      border-radius: 20px;
+      padding: 18px 10px;
+      text-align: center;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+      border: 3px solid #eee;
+      transition: transform 0.2s;
+    }
+    .badge-card.earned {
+      border-color: #FFD700;
+      background: linear-gradient(145deg, #fffbe6, #fff);
+      animation: popIn 0.5s ease;
+    }
+    .badge-card:hover { transform: scale(1.04); }
+    .badge-icon { font-size: 2.6rem; margin-bottom: 6px; filter: grayscale(1); opacity: 0.35; }
+    .badge-card.earned .badge-icon { filter: none; opacity: 1; }
+    .badge-name { font-size: 0.78rem; font-weight: 800; color: #555; }
+    .badge-card.earned .badge-name { color: #1a1a2e; }
+    .badge-req { font-size: 0.7rem; color: #aaa; margin-top: 2px; }
+
+    /* Level bar */
+    .level-section {
+      background: #fff;
+      border-radius: 24px;
+      padding: 22px;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+      margin-bottom: 26px;
+    }
+    .level-section h3 { font-size: 1.1rem; font-weight: 800; color: #333; margin-bottom: 14px; }
+    .level-row { display: flex; align-items: center; gap: 14px; }
+    .level-num { font-size: 2.2rem; font-weight: 900; color: #6C63FF; width: 50px; }
+    .level-info { flex: 1; }
+    .level-name { font-size: 0.95rem; font-weight: 700; color: #333; margin-bottom: 6px; }
+    .level-bar-wrap { background: #eee; border-radius: 20px; height: 12px; overflow: hidden; }
+    .level-bar-fill { height: 100%; border-radius: 20px; background: linear-gradient(90deg, #6C63FF, #1E90FF); transition: width 1s ease; }
+    .level-next { font-size: 0.78rem; color: #aaa; margin-top: 4px; }
+
+    /* Reset button */
+    .reset-section { text-align: center; margin-top: 10px; padding-bottom: 20px; }
+    .reset-btn {
+      background: none;
+      border: 2px solid #ddd;
+      border-radius: 50px;
+      padding: 10px 24px;
+      font-size: 0.88rem;
+      color: #aaa;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .reset-btn:hover { border-color: #FF6B6B; color: #FF6B6B; }
+
+    /* Activity log */
+    .activity-section {
+      background: #fff;
+      border-radius: 24px;
+      padding: 22px;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+      margin-bottom: 26px;
+    }
+    .activity-section h3 { font-size: 1.1rem; font-weight: 800; color: #333; margin-bottom: 14px; }
+    .activity-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 0;
+      border-bottom: 1px solid #f5f5f5;
+      font-size: 0.9rem;
+    }
+    .activity-row:last-child { border-bottom: none; }
+    .activity-game { font-weight: 700; display: flex; align-items: center; gap: 8px; }
+    .activity-score { font-weight: 800; color: #2ECC71; }
+    .activity-max { color: #aaa; font-size: 0.8rem; }
+
+    @keyframes popIn {
+      0%   { transform: scale(0.7); opacity: 0; }
+      60%  { transform: scale(1.08); }
+      100% { transform: scale(1); opacity: 1; }
+    }
+  </style>
+</head>
+<body>
+
+<script src="rewards.js"></script>
+
+<div class="page-header">
+  <h1>⭐ Abaalmarinta</h1>
+  <p>Xiddigahaaga iyo nasiibahaaga</p>
+</div>
+
+<div class="game-area" style="padding-top: 30px;">
+
+  <!-- Stars Hero -->
+  <div class="stars-hero">
+    <div class="stars-big" id="hero-stars">0</div>
+    <div class="stars-label">Wadarta Xiddigaha ⭐</div>
+  </div>
+
+  <!-- Level -->
+  <div class="level-section">
+    <h3>🏆 Heerkaaga</h3>
+    <div class="level-row">
+      <div class="level-num" id="level-num">1</div>
+      <div class="level-info">
+        <div class="level-name" id="level-name">Bilow</div>
+        <div class="level-bar-wrap">
+          <div class="level-bar-fill" id="level-bar" style="width:0%"></div>
+        </div>
+        <div class="level-next" id="level-next"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scores per game -->
+  <div class="activity-section">
+    <h3>📊 Natiijadaada</h3>
+    <div class="activity-row">
+      <span class="activity-game">🔤 Xarfaha</span>
+      <span><span class="activity-score" id="score-alpha">0</span><span class="activity-max"> / 10</span></span>
+    </div>
+    <div class="activity-row">
+      <span class="activity-game">🔢 Tirooyin</span>
+      <span><span class="activity-score" id="score-num">0</span><span class="activity-max"> / 10</span></span>
+    </div>
+    <div class="activity-row">
+      <span class="activity-game">🦁 Xayawaanka</span>
+      <span><span class="activity-score" id="score-anim">0</span><span class="activity-max"> / 10</span></span>
+    </div>
+    <div class="activity-row">
+      <span class="activity-game">🎨 Midabada</span>
+      <span><span class="activity-score" id="score-col">0</span><span class="activity-max"> / 10</span></span>
+    </div>
+  </div>
+
+  <!-- Badges -->
+  <div class="badge-section">
+    <h3>🎖️ Biliyaasha</h3>
+    <div class="badge-grid" id="badge-grid"></div>
+  </div>
+
+  <!-- Play button -->
+  <div style="text-align:center; margin-bottom: 24px;">
+    <a href="index.html" style="
+      display:inline-block;
+      padding:16px 36px;
+      background:linear-gradient(135deg,#1E90FF,#6C63FF);
+      color:#fff;
+      border-radius:50px;
+      font-size:1.1rem;
+      font-weight:800;
+      text-decoration:none;
+      box-shadow: 0 6px 20px rgba(30,144,255,0.35);
+    ">🎮 Ciyaaro Hadda</a>
+  </div>
+
+  <div class="reset-section">
+    <button class="reset-btn" onclick="confirmReset()">🗑️ Tirtir dhammaan xogta</button>
+  </div>
+</div>
+
+<script>
+buildNav('rewards');
+
+const BADGES = [
+  { id: 'first_star',    icon: '⭐', name: 'Xiddigda 1aad', req: 'Helid 1 xiddig',      check: s => s >= 1 },
+  { id: 'ten_stars',     icon: '🌟', name: '10 Xiddig',     req: 'Helid 10 xiddig',     check: s => s >= 10 },
+  { id: 'twenty_stars',  icon: '💫', name: '20 Xiddig',     req: 'Helid 20 xiddig',     check: s => s >= 20 },
+  { id: 'fifty_stars',   icon: '🏆', name: '50 Xiddig',     req: 'Helid 50 xiddig',     check: s => s >= 50 },
+  { id: 'alpha_5',       icon: '🔤', name: 'Xarfaha I',     req: '5+ saxda xarfaha',    check: (s,d) => d.alpha >= 5 },
+  { id: 'alpha_10',      icon: '🅰️', name: 'Xarfaha II',    req: '10 saxda xarfaha',    check: (s,d) => d.alpha >= 10 },
+  { id: 'num_5',         icon: '🔢', name: 'Tirooyin I',    req: '5+ saxda tirooyin',   check: (s,d) => d.num >= 5 },
+  { id: 'num_10',        icon: '🔟', name: 'Tirooyin II',   req: '10 saxda tirooyin',   check: (s,d) => d.num >= 10 },
+  { id: 'anim_5',        icon: '🦁', name: 'Xayawaan I',    req: '5+ saxda xayawaan',   check: (s,d) => d.anim >= 5 },
+  { id: 'anim_10',       icon: '🐘', name: 'Xayawaan II',   req: '10 saxda xayawaan',   check: (s,d) => d.anim >= 10 },
+  { id: 'col_5',         icon: '🎨', name: 'Midab I',       req: '5+ saxda midabada',   check: (s,d) => d.col >= 5 },
+  { id: 'all_games',     icon: '🌈', name: 'Ciyaar Dhamaan',req: 'Ciyaar dhammaan 4',   check: (s,d) => d.alpha>0 && d.num>0 && d.anim>0 && d.col>0 },
+];
+
+const LEVELS = [
+  { min: 0,  name: 'Bilow',       next: 5 },
+  { min: 5,  name: 'Ardayga',     next: 15 },
+  { min: 15, name: 'Xariifka',    next: 30 },
+  { min: 30, name: 'Garaadka',    next: 50 },
+  { min: 50, name: 'Boqorka',     next: 100 },
+  { min: 100,name: 'Xiddigaha 🌟',next: null },
+];
+
+function getLevel(stars) {
+  let lvl = LEVELS[0];
+  let idx = 0;
+  LEVELS.forEach((l, i) => { if (stars >= l.min) { lvl = l; idx = i; } });
+  return { ...lvl, idx: idx + 1 };
+}
+
+function renderPage() {
+  const stars = getStars();
+  const scores = {
+    alpha: parseInt(localStorage.getItem('alpha_done') || '0'),
+    num:   parseInt(localStorage.getItem('num_done')   || '0'),
+    anim:  parseInt(localStorage.getItem('anim_done')  || '0'),
+    col:   parseInt(localStorage.getItem('col_done')   || '0'),
+  };
+
+  document.getElementById('hero-stars').textContent = stars;
+  document.getElementById('score-alpha').textContent = scores.alpha;
+  document.getElementById('score-num').textContent   = scores.num;
+  document.getElementById('score-anim').textContent  = scores.anim;
+  document.getElementById('score-col').textContent   = scores.col;
+
+  // Level
+  const lv = getLevel(stars);
+  const nextLv = LEVELS[lv.idx] || null;
+  document.getElementById('level-num').textContent  = lv.idx;
+  document.getElementById('level-name').textContent = lv.name;
+  if (nextLv) {
+    const pct = Math.min(100, Math.round(((stars - lv.min) / (nextLv.min - lv.min)) * 100));
+    document.getElementById('level-bar').style.width = pct + '%';
+    document.getElementById('level-next').textContent = `${stars - lv.min} / ${nextLv.min - lv.min} xiddig ➜ ${nextLv.name}`;
+  } else {
+    document.getElementById('level-bar').style.width = '100%';
+    document.getElementById('level-next').textContent = 'Heerkii ugu sarreeya! 🎉';
+  }
+
+  // Badges
+  const grid = document.getElementById('badge-grid');
+  grid.innerHTML = '';
+  BADGES.forEach(b => {
+    const earned = b.check(stars, scores);
+    const card = document.createElement('div');
+    card.className = 'badge-card' + (earned ? ' earned' : '');
+    card.innerHTML = `
+      <div class="badge-icon">${b.icon}</div>
+      <div class="badge-name">${b.name}</div>
+      <div class="badge-req">${b.req}</div>
+    `;
+    grid.appendChild(card);
+  });
+}
+
+function confirmReset() {
+  if (confirm('Ma hubtaa inaad tirtirto dhammaan xogta? Tani waxay tirtiri doontaa xiddigaha iyo natiijadaada.')) {
+    localStorage.removeItem('barokids_stars');
+    localStorage.removeItem('alpha_done');
+    localStorage.removeItem('num_done');
+    localStorage.removeItem('anim_done');
+    localStorage.removeItem('col_done');
+    location.reload();
+  }
+}
+
+renderPage();
+if (getStars() > 0) launchConfetti(20);
+</script>
+</body>
+</html>
