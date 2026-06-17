@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="so" dir="ltr">
+<head>
+<meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Casharrada – BaroKids</title>
+<meta name="description" content="Baro xarfaha, tirooyin, midabada, xayawaanka iyo waxbarashada Islaamka si xiiso leh."/>
+<link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+<nav class="navbar">
+  <a href="index.html" class="nav-logo"><div class="logo-icon">🌟</div>Baro<span>Kids</span></a>
+  <div class="nav-links">
+    <a href="index.html">Guriga</a><a href="curriculum.html">Manhajka</a>
+    <a href="lessons.html" class="active">Casharrada</a><a href="quiz.html">Imtixaan</a>
+    <a href="rewards.html">Abaalmarinta</a><a href="parents.html">Waalidka</a>
+    <a href="about.html">Naga</a><a href="contact.html">Xiriir</a>
+  </div>
+  <div class="nav-actions">
+    <div class="nav-stars-badge" data-auth="logged-in" style="display:none;" onclick="location.href='rewards.html'">⭐ <span data-stars>0</span></div>
+    <button class="btn-nav-login" onclick="Modal.open('modal-auth')" data-auth="logged-out">Gal</button>
+    <span data-auth="logged-in" style="display:none;font-size:0.85rem;font-weight:700;color:var(--blue);">👋 <span data-user-name></span></span>
+    <button class="btn-nav-login" onclick="Auth.logout()" data-auth="logged-in" style="display:none;">Ka Bax</button>
+  </div>
+  <button class="nav-hamburger" id="nav-hamburger"><span></span><span></span><span></span></button>
+</nav>
+<div class="nav-mobile" id="nav-mobile">
+  <a href="index.html">🏠 Guriga</a><a href="curriculum.html">📚 Manhajka</a>
+  <a href="lessons.html">🎓 Casharrada</a><a href="quiz.html">📝 Imtixaan</a>
+  <a href="rewards.html">🏆 Abaalmarinta</a><a href="parents.html">👨‍👩‍👧 Waalidka</a>
+</div>
+
+<!-- Page header or lesson content -->
+<div id="lessons-main"></div>
+
+<!-- MODALS -->
+<div class="modal-overlay" id="modal-auth">
+  <div class="modal">
+    <button class="modal-close" onclick="Modal.close('modal-auth')">✕</button>
+    <h2>👋 Ku soo dhawow!</h2>
+    <p class="modal-sub">Gal xisaabkaaga ama abuur mid cusub.</p>
+    <div class="auth-tabs">
+      <button class="auth-tab active" onclick="switchTab('login')">Gal</button>
+      <button class="auth-tab" onclick="switchTab('register')">Abuur</button>
+    </div>
+    <form id="login-form">
+      <div class="form-group"><label class="form-label">Email</label><input type="email" id="login-email" class="form-control" placeholder="email@tusaale.com" required/></div>
+      <div class="form-group"><label class="form-label">Furaha Sirta</label><input type="password" id="login-password" class="form-control" placeholder="••••••••" required/></div>
+      <button type="submit" class="btn btn-blue btn-full">Gal →</button>
+    </form>
+    <form id="register-form" style="display:none;">
+      <div class="form-group"><label class="form-label">Magacaaga</label><input type="text" id="reg-name" class="form-control" placeholder="Magacaaga" required/></div>
+      <div class="form-group"><label class="form-label">Email</label><input type="email" id="reg-email" class="form-control" placeholder="email@tusaale.com" required/></div>
+      <div class="form-group"><label class="form-label">Furaha Sirta</label><input type="password" id="reg-password" class="form-control" placeholder="Min 6 xaraf" required/></div>
+      <div class="form-group"><label class="form-label">Xaqiiji</label><input type="password" id="reg-confirm" class="form-control" placeholder="Ku celi" required/></div>
+      <button type="submit" class="btn btn-blue btn-full">Abuur Xisaab 🎉</button>
+    </form>
+  </div>
+</div>
+
+<footer class="footer" style="padding:32px 24px;">
+  <div style="max-width:1200px;margin:0 auto;text-align:center;color:#64748B;font-size:0.85rem;">
+    © 2025 BaroKids – Made with ❤️ for Somali children
+  </div>
+</footer>
+
+<script src="script.js"></script>
+<script>
+function switchTab(t){
+  document.querySelectorAll('.auth-tab').forEach((b,i)=>b.classList.toggle('active',i===(t==='login'?0:1)));
+  document.getElementById('login-form').style.display=t==='login'?'':'none';
+  document.getElementById('register-form').style.display=t==='register'?'':'none';
+}
+
+// Decide: show single lesson or lesson list
+const lessonId = new URLSearchParams(window.location.search).get('lesson');
+const main = document.getElementById('lessons-main');
+
+if (lessonId) {
+  // Single lesson view
+  main.innerHTML = `
+    <div class="page-hero">
+      <div class="page-hero-icon" id="lesson-hero-icon">📖</div>
+      <h1 id="lesson-hero-title">Casharka</h1>
+      <p id="lesson-hero-sub">Baro waxaad u baahan tahay si xiiso leh</p>
+    </div>
+    <div class="section">
+      <div class="container-sm">
+        <div style="display:flex;gap:12px;margin-bottom:28px;flex-wrap:wrap;">
+          <a href="lessons.html" class="btn btn-outline btn-sm">← Casharrada</a>
+          <button class="audio-btn" onclick="Toast.show('Codka dhowaan ayaa la darin doonaa!','info')">
+            🔊 Dhageyso
+            <span class="audio-wave"><span></span><span></span><span></span><span></span><span></span></span>
+          </button>
+        </div>
+        <div id="lesson-content"></div>
+        <div style="margin-top:40px;display:flex;gap:14px;flex-wrap:wrap;justify-content:center;">
+          <button id="lesson-quiz-btn" class="btn btn-blue btn-lg">📝 Bilaw Imtixaan →</button>
+          <a href="lessons.html" class="btn btn-outline">← Ku noqo Casharrada</a>
+        </div>
+      </div>
+    </div>
+  `;
+  // Set hero info
+  const lessonMap = {
+    alphabet:{title:'Xarfaha Soomaaliga',icon:'🔤',sub:'Baro 21 xarfaha Soomaaliga'},
+    numbers:{title:'Tirooyin 1–20',icon:'🔢',sub:'Baro timaaddada Soomaaliga'},
+    colors:{title:'Midabada',icon:'🎨',sub:'Baro midabada kala duwan'},
+    animals:{title:'Xayawaanka',icon:'🦁',sub:'Baro magacyada xayawaanka'},
+    islamic:{title:'Waxbarashada Islaamka',icon:'🌙',sub:'Baro ducada iyo Islaamka'}
+  };
+  const info = lessonMap[lessonId];
+  if (info) {
+    document.getElementById('lesson-hero-icon').textContent = info.icon;
+    document.getElementById('lesson-hero-title').textContent = info.title;
+    document.getElementById('lesson-hero-sub').textContent = info.sub;
+    document.title = info.title + ' – BaroKids';
+  }
+} else {
+  // Lesson list view
+  main.innerHTML = `
+    <div class="page-hero">
+      <div class="page-hero-icon">🎓</div>
+      <h1>Casharrada</h1>
+      <p>Dooro casharka aad rabto inaad barato maanta</p>
+    </div>
+    <section class="section">
+      <div class="container">
+        <div id="lessons-grid" class="grid-auto"></div>
+      </div>
+    </section>
+  `;
+}
+</script>
+</body>
+</html>

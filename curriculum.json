@@ -1,0 +1,1490 @@
+{
+  "curriculum": {
+    "title": "BaroKids – Manhajka Waxbarashada Soomaalida",
+    "subtitle": "Somali Children's Learning Curriculum",
+    "version": "1.0",
+    "targetAges": "2–8",
+    "language": "Somali (so) + English (en)",
+    "author": "BaroKids Curriculum Team",
+    "description": "A complete play-based curriculum for Somali children covering the Alphabet, Numbers, Colors, Animals, and Islamic foundations. Each lesson is structured for short attention spans, with voice scripts, vocabulary, interactive quizzes, and motivational reward messages.",
+    "pedagogyNotes": "Lessons are ordered from concrete to abstract. Each unit builds on the previous. Voice scripts are written in warm, encouraging Somali suitable for a narrator or text-to-speech. Quiz questions progress from recognition → recall → application.",
+
+    "units": [
+
+      {
+        "unitId": "U1",
+        "unitTitle": "Xarfaha Soomaaliga",
+        "unitTitleEn": "The Somali Alphabet",
+        "unitIcon": "🔤",
+        "unitColor": "#1E90FF",
+        "unitDescription": "Children learn all 21 letters of the Somali alphabet through songs, pictures, and words. Each letter is paired with a familiar Somali word.",
+        "targetAges": "3–8",
+        "totalLessons": 7,
+        "lessons": [
+          {
+            "lessonId": "U1-L1",
+            "title": "Xarfaha A ilaa D",
+            "titleEn": "Letters A to D",
+            "objective": "Child can recognise and name the letters A, B, C, and D and say a Somali word beginning with each letter.",
+            "ageGroup": "3–6",
+            "durationMinutes": 10,
+            "vocabulary": [
+              { "letter": "A", "somali": "Af",      "english": "Mouth",    "emoji": "👄", "exampleSentence": "Afkayga waa weyn yahay." },
+              { "letter": "B", "somali": "Bahal",   "english": "Animal",   "emoji": "🐾", "exampleSentence": "Bahalku wuu cararaa." },
+              { "letter": "C", "somali": "Caano",   "english": "Milk",     "emoji": "🥛", "exampleSentence": "Caanaha waa cad yihiin." },
+              { "letter": "D", "somali": "Dab",     "english": "Fire",     "emoji": "🔥", "exampleSentence": "Dabka kulul yahay, ha taabin." }
+            ],
+            "voiceScript": {
+              "intro": "Assalamu Calaykum, oo ku soo dhawow BaroKids! Maanta waxaan baranaynaa xarfaha Soomaaliga. Diyaar ma tahay? Aan bilownno!",
+              "letterByLetter": [
+                { "letter": "A", "script": "Xarfaha kowaad waa A. Akhri: A! A waxay u taagan tahay 'Af'. Af waa halka aad ku hadasha. Soo noqo oo ku dheh: A!" },
+                { "letter": "B", "script": "Xarfaha labaad waa B. Akhri: B! B waxay u taagan tahay 'Bahal'. Bahalku waa xayawaanka. Ku dheh: B!" },
+                { "letter": "C", "script": "Xarfaha sadexaad waa C. Akhri: C! C waxay u taagan tahay 'Caano'. Caanaha waa cad yihiin oo macaan. Ku dheh: C!" },
+                { "letter": "D", "script": "Xarfaha afraad waa D. Akhri: D! D waxay u taagan tahay 'Dab'. Dabka kulul yahay, ha taabin. Ku dheh: D!" }
+              ],
+              "song": "Heesta xarfaha: A waa Af, B waa Bahal, C waa Caano, D waa Dab! Ku noqo mar kale: A-B-C-D! Aad baad u fiicantahay!",
+              "closing": "Barakallahu feekum! Waad bartay xarfaha A, B, C, iyo D. Xiddig ayaad xaqiisay. Ilaa baraha xiga!"
+            },
+            "quiz": {
+              "instructions": "Jawaab su'aalaha hoose. Dooro jawaabta saxda ah.",
+              "questions": [
+                {
+                  "qId": "U1-L1-Q1",
+                  "type": "multipleChoice",
+                  "question": "Xarfaha 'A' magaca waa?",
+                  "questionEn": "The letter A stands for which Somali word?",
+                  "options": ["Af", "Dab", "Caano", "Bahal"],
+                  "correctAnswer": "Af",
+                  "explanation": "A waxay u taagan tahay 'Af' – halka aad ku hadasha!",
+                  "difficulty": "easy"
+                },
+                {
+                  "qId": "U1-L1-Q2",
+                  "type": "multipleChoice",
+                  "question": "Xarfaha kee ayaa bilaabaya erayga 'Caano'?",
+                  "questionEn": "Which letter begins the word 'Caano' (Milk)?",
+                  "options": ["A", "B", "C", "D"],
+                  "correctAnswer": "C",
+                  "explanation": "Caano waxay bilaabataa xarfaha C!",
+                  "difficulty": "easy"
+                },
+                {
+                  "qId": "U1-L1-Q3",
+                  "type": "matching",
+                  "question": "Ku habboon xarfaha erayga saxda ah",
+                  "questionEn": "Match the letter to the correct word",
+                  "pairs": [
+                    { "letter": "A", "word": "Af" },
+                    { "letter": "B", "word": "Bahal" },
+                    { "letter": "C", "word": "Caano" },
+                    { "letter": "D", "word": "Dab" }
+                  ],
+                  "difficulty": "medium"
+                },
+                {
+                  "qId": "U1-L1-Q4",
+                  "type": "multipleChoice",
+                  "question": "'Dab' macneheedu waa?",
+                  "questionEn": "What does 'Dab' mean in English?",
+                  "options": ["Water", "Fire", "Milk", "Mouth"],
+                  "correctAnswer": "Fire",
+                  "explanation": "Dab macneheedu waa Fire – kulul yahay!",
+                  "difficulty": "medium"
+                }
+              ]
+            },
+            "rewardMessage": {
+              "somali": "Mashallah! Aad baad u fiicantahay! Waad bartay xarfaha A, B, C, iyo D. Xiddig ⭐ ayaad xaqiisay!",
+              "english": "Mashallah! You did amazing! You learned letters A, B, C, and D. You earned a star! ⭐",
+              "starsEarned": 2,
+              "badgeUnlocked": null
+            }
+          },
+
+          {
+            "lessonId": "U1-L2",
+            "title": "Xarfaha E ilaa H",
+            "titleEn": "Letters E to H",
+            "objective": "Child can recognise and say the letters E, F, G, and H with matching Somali vocabulary words.",
+            "ageGroup": "3–6",
+            "durationMinutes": 10,
+            "vocabulary": [
+              { "letter": "E", "somali": "Eel",     "english": "Eel / Snake-like fish", "emoji": "🐍", "exampleSentence": "Eelku wuxuu ku noolaa biyaha." },
+              { "letter": "F", "somali": "Fool",    "english": "Face",    "emoji": "😊", "exampleSentence": "Foolkaagu waa qurux badan yahay." },
+              { "letter": "G", "somali": "Guri",    "english": "House",   "emoji": "🏠", "exampleSentence": "Gurigayagu waa weyn yahay." },
+              { "letter": "H", "somali": "Hilib",   "english": "Meat",    "emoji": "🥩", "exampleSentence": "Hilibka waa macaan yahay." }
+            ],
+            "voiceScript": {
+              "intro": "Assalamu Calaykum oo ku soo dhawow! Waxaad horeba bartay A, B, C, D. Aad baad u fiicantahay! Maanta waxaan baranaynaa E, F, G, iyo H.",
+              "letterByLetter": [
+                { "letter": "E", "script": "E waxay u taagan tahay 'Eel'. Eelku waa kalluun dheer oo biyaha ku nool. Ku dheh: E!" },
+                { "letter": "F", "script": "F waxay u taagan tahay 'Fool'. Foolkaagu waa qurux badan yahay! Ku dheh: F!" },
+                { "letter": "G", "script": "G waxay u taagan tahay 'Guri'. Gurigu waa halka aad ku seexato. Ku dheh: G!" },
+                { "letter": "H", "script": "H waxay u taagan tahay 'Hilib'. Hilibku waa cunto macaan. Ku dheh: H!" }
+              ],
+              "song": "E waa Eel, F waa Fool, G waa Guri, H waa Hilib! Ku noqo: E-F-G-H! Waa aad u fiicantahay!",
+              "closing": "Subhanallah! Waad bartay E, F, G, iyo H. Xiddig ⭐ ayaad xaqiisay. Si fiican u joogso!"
+            },
+            "quiz": {
+              "instructions": "Dooro jawaabta saxda ah.",
+              "questions": [
+                {
+                  "qId": "U1-L2-Q1",
+                  "type": "multipleChoice",
+                  "question": "G xarfahu waxay u taagan tahay erayga?",
+                  "questionEn": "The letter G stands for which word?",
+                  "options": ["Hilib", "Fool", "Guri", "Eel"],
+                  "correctAnswer": "Guri",
+                  "explanation": "Guri waa house – halka aad ku seexato!",
+                  "difficulty": "easy"
+                },
+                {
+                  "qId": "U1-L2-Q2",
+                  "type": "multipleChoice",
+                  "question": "'Hilib' Ingiriisi ahaan waa?",
+                  "questionEn": "What is 'Hilib' in English?",
+                  "options": ["Fish", "Meat", "House", "Face"],
+                  "correctAnswer": "Meat",
+                  "difficulty": "easy"
+                },
+                {
+                  "qId": "U1-L2-Q3",
+                  "type": "trueFalse",
+                  "question": "'Fool' macneheedu waa House.",
+                  "questionEn": "'Fool' means House.",
+                  "correctAnswer": false,
+                  "explanation": "Maya! Fool macneheedu waa Face (Wejiga). Guri ayaa la yidhaa House.",
+                  "difficulty": "medium"
+                },
+                {
+                  "qId": "U1-L2-Q4",
+                  "type": "fillBlank",
+                  "question": "E waxay u taagan tahay '___'",
+                  "questionEn": "E stands for '___'",
+                  "correctAnswer": "Eel",
+                  "options": ["Eel", "Hilib", "Fool", "Guri"],
+                  "difficulty": "medium"
+                }
+              ]
+            },
+            "rewardMessage": {
+              "somali": "Subhanallah! Waad xariirtay! E, F, G, H – dhammaan baad bartay. Xiddigyo ⭐⭐ ayaad xaqiisay!",
+              "english": "Subhanallah! You are so smart! You learned E, F, G, H. You earned 2 stars! ⭐⭐",
+              "starsEarned": 2,
+              "badgeUnlocked": null
+            }
+          },
+
+          {
+            "lessonId": "U1-L3",
+            "title": "Xarfaha I ilaa L",
+            "titleEn": "Letters I to L",
+            "objective": "Child recognises I, J, K, L and matches each to a familiar Somali word.",
+            "ageGroup": "3–7",
+            "durationMinutes": 10,
+            "vocabulary": [
+              { "letter": "I", "somali": "Ilmo",    "english": "Child / Tear", "emoji": "👧", "exampleSentence": "Ilmaha waa naxariis badan yahay." },
+              { "letter": "J", "somali": "Jilaal",  "english": "Winter / Dry Season", "emoji": "🌵", "exampleSentence": "Jilaalku waa kulul yahay." },
+              { "letter": "K", "somali": "Kaluun",  "english": "Fish",   "emoji": "🐟", "exampleSentence": "Kaluunku wuxuu ku noolaa badda." },
+              { "letter": "L", "somali": "Libaax",  "english": "Lion",   "emoji": "🦁", "exampleSentence": "Libaaxu waa boqorka xayawaanka." }
+            ],
+            "voiceScript": {
+              "intro": "Bismillah! Aad baad u fiicantahay waxa aad horay u baratay. Maanta waxaan baranaynaa I, J, K, iyo L. Diyaar?",
+              "letterByLetter": [
+                { "letter": "I", "script": "I waxay u taagan tahay 'Ilmo'. Ilmo macneheedu waa child. Adiga adigaa ilmo yar oo garaad badan! Ku dheh: I!" },
+                { "letter": "J", "script": "J waxay u taagan tahay 'Jilaal'. Jilaalku waa xilli xagaaga Soomaaliya. Ku dheh: J!" },
+                { "letter": "K", "script": "K waxay u taagan tahay 'Kaluun'. Kaluunka waxaad arkaa badda. Ku dheh: K!" },
+                { "letter": "L", "script": "L waxay u taagan tahay 'Libaax'. Libaaxu waa boqorka xayawaanka – aad u xoogan! Ku dheh: L!" }
+              ],
+              "song": "I waa Ilmo, J waa Jilaal, K waa Kaluun, L waa Libaax! Ku noqo: I-J-K-L! Waa aad u fiicantahay!",
+              "closing": "Alxamdulillah! Waad bartay I, J, K, iyo L. Aad baad u xariirtay. Xiddigyo ⭐⭐ ayaad xaqiisay!"
+            },
+            "quiz": {
+              "instructions": "Su'aalahan jawaab.",
+              "questions": [
+                {
+                  "qId": "U1-L3-Q1",
+                  "type": "multipleChoice",
+                  "question": "Libaaxu waa maxay Ingiriisi?",
+                  "questionEn": "What is 'Libaax' in English?",
+                  "options": ["Fish", "Child", "Lion", "Winter"],
+                  "correctAnswer": "Lion",
+                  "difficulty": "easy"
+                },
+                {
+                  "qId": "U1-L3-Q2",
+                  "type": "multipleChoice",
+                  "question": "Xarfaha K waxay u taagan tahay?",
+                  "questionEn": "Letter K stands for?",
+                  "options": ["Kaluun", "Libaax", "Ilmo", "Jilaal"],
+                  "correctAnswer": "Kaluun",
+                  "difficulty": "easy"
+                },
+                {
+                  "qId": "U1-L3-Q3",
+                  "type": "imageMatch",
+                  "question": "Calaamadda 🦁 xarfaha kee ayay ku bilaabataa?",
+                  "questionEn": "The 🦁 emoji – which letter does it start with?",
+                  "options": ["I", "J", "K", "L"],
+                  "correctAnswer": "L",
+                  "explanation": "Libaax waxay ku bilaabataa L!",
+                  "difficulty": "medium"
+                },
+                {
+                  "qId": "U1-L3-Q4",
+                  "type": "trueFalse",
+                  "question": "Kaluunka wuxuu ku noolaa dhulka.",
+                  "questionEn": "The fish lives on land.",
+                  "correctAnswer": false,
+                  "explanation": "Maya! Kaluunku wuxuu ku noolaa badda.",
+                  "difficulty": "medium"
+                }
+              ]
+            },
+            "rewardMessage": {
+              "somali": "Waw! Aad baad u xariirtay! I, J, K, L – dhammaan baad u bartay. Libaax baad u dheer tahay! ⭐⭐",
+              "english": "Wow! You're so clever! You learned I, J, K, L. You're as brave as a lion! ⭐⭐",
+              "starsEarned": 2,
+              "badgeUnlocked": null
+            }
+          },
+
+          {
+            "lessonId": "U1-L4",
+            "title": "Xarfaha M ilaa Q",
+            "titleEn": "Letters M to Q",
+            "objective": "Child learns M, N, O, Q with Somali keywords and can repeat each letter-word pair.",
+            "ageGroup": "4–7",
+            "durationMinutes": 10,
+            "vocabulary": [
+              { "letter": "M", "somali": "Malab",   "english": "Honey",   "emoji": "🍯", "exampleSentence": "Malabka waa macaan yahay." },
+              { "letter": "N", "somali": "Naag",    "english": "Woman",   "emoji": "👩", "exampleSentence": "Naagtu waa hooyo." },
+              { "letter": "O", "somali": "Ood",     "english": "Fence/Thorn branch", "emoji": "🌿", "exampleSentence": "Ooddu waxay ilaaliso guriga." },
+              { "letter": "Q", "somali": "Qori",    "english": "Stick / Wood", "emoji": "🪵", "exampleSentence": "Qoriga waa adeg." }
+            ],
+            "voiceScript": {
+              "intro": "Bismillah! Maanta waxaan baranaynaa M, N, O, iyo Q. Keen dhegahaaga oo diyaar u noqo!",
+              "letterByLetter": [
+                { "letter": "M", "script": "M waxay u taagan tahay 'Malab'. Malabku waa xaawo macaan oo shinnidu samaysaa. Ku dheh: M!" },
+                { "letter": "N", "script": "N waxay u taagan tahay 'Naag'. Naagtu waa hooyadaa iyo xaaskaa. Ku dheh: N!" },
+                { "letter": "O", "script": "O waxay u taagan tahay 'Ood'. Ooddu waxay ilaalisa gurigoodda. Ku dheh: O!" },
+                { "letter": "Q", "script": "Q waxay u taagan tahay 'Qori'. Qorigu waa alwaax ama usha. Ku dheh: Q!" }
+              ],
+              "song": "M waa Malab, N waa Naag, O waa Ood, Q waa Qori! M-N-O-Q! Ku noqo mar kale!",
+              "closing": "Alxamdulillah! Waad bartay M, N, O, Q. Mahadsanid! Xiddigyo ⭐⭐ ayaad xaqiisay!"
+            },
+            "quiz": {
+              "instructions": "Dooro jawaabta saxda ah.",
+              "questions": [
+                {
+                  "qId": "U1-L4-Q1",
+                  "type": "multipleChoice",
+                  "question": "M xarfahu waxay u taagan tahay?",
+                  "questionEn": "M stands for?",
+                  "options": ["Naag", "Malab", "Ood", "Qori"],
+                  "correctAnswer": "Malab",
+                  "difficulty": "easy"
+                },
+                {
+                  "qId": "U1-L4-Q2",
+                  "type": "multipleChoice",
+                  "question": "Malabku macneheedu Ingiriisi waa?",
+                  "questionEn": "What is 'Malab' in English?",
+                  "options": ["Water", "Honey", "Stick", "Fence"],
+                  "correctAnswer": "Honey",
+                  "difficulty": "easy"
+                },
+                {
+                  "qId": "U1-L4-Q3",
+                  "type": "fillBlank",
+                  "question": "Q waxay u taagan tahay '___'",
+                  "correctAnswer": "Qori",
+                  "options": ["Qori", "Naag", "Ood", "Malab"],
+                  "difficulty": "medium"
+                },
+                {
+                  "qId": "U1-L4-Q4",
+                  "type": "trueFalse",
+                  "question": "Ooddu waxay bilaabataa xarfaha O.",
+                  "correctAnswer": true,
+                  "explanation": "Haa! Ood waxay ku bilaabataa xarfaha O!",
+                  "difficulty": "easy"
+                }
+              ]
+            },
+            "rewardMessage": {
+              "somali": "Mashallah! Malabka oo kale ayaad macaan tahay! M, N, O, Q – dhammaan baad bartay! ⭐⭐",
+              "english": "Mashallah! You're as sweet as honey! You mastered M, N, O, Q! ⭐⭐",
+              "starsEarned": 2,
+              "badgeUnlocked": null
+            }
+          },
+
+          {
+            "lessonId": "U1-L5",
+            "title": "Xarfaha R ilaa W",
+            "titleEn": "Letters R to W",
+            "objective": "Child learns R, S, T, U, W and can recall the Somali keyword for each letter.",
+            "ageGroup": "4–8",
+            "durationMinutes": 12,
+            "vocabulary": [
+              { "letter": "R", "somali": "Roob",    "english": "Rain",    "emoji": "🌧️", "exampleSentence": "Roobka waa naxariis Alle." },
+              { "letter": "S", "somali": "Suuq",    "english": "Market",  "emoji": "🏪", "exampleSentence": "Hooyaday suuqa ayay aadday." },
+              { "letter": "T", "somali": "Timir",   "english": "Date fruit", "emoji": "🌴", "exampleSentence": "Timirtu waa macaan tahay." },
+              { "letter": "U", "somali": "Ukun",    "english": "Egg",     "emoji": "🥚", "exampleSentence": "Ukunka digaagga ka yimi." },
+              { "letter": "W", "somali": "Waxbarasho", "english": "Education", "emoji": "📚", "exampleSentence": "Waxbarasho waa furaha guusha." }
+            ],
+            "voiceScript": {
+              "intro": "Bismillah! Maanta waxaan baranaynaa R, S, T, U, iyo W. Waa xarfo aad u muhiim ah!",
+              "letterByLetter": [
+                { "letter": "R", "script": "R waxay u taagan tahay 'Roob'. Roobku waa barako Alle. Geedaha roobka ayay koraan. Ku dheh: R!" },
+                { "letter": "S", "script": "S waxay u taagan tahay 'Suuq'. Suuqga waa halka cuntooyinka laga iibsado. Ku dheh: S!" },
+                { "letter": "T", "script": "T waxay u taagan tahay 'Timir'. Timirtu waa miro macaan Nebi Mahamed (scw) ay jeclaayeen. Ku dheh: T!" },
+                { "letter": "U", "script": "U waxay u taagan tahay 'Ukun'. Ukunka ka yimid digaagga. Ku dheh: U!" },
+                { "letter": "W", "script": "W waxay u taagan tahay 'Waxbarasho'. Waxbarashadu waa furaha guusha. Adiga oo baranaya BaroKids, aad baad u fiicantahay! Ku dheh: W!" }
+              ],
+              "song": "R waa Roob, S waa Suuq, T waa Timir, U waa Ukun, W waa Waxbarasho! R-S-T-U-W!",
+              "closing": "Allahu Akbar! Aad baad u fiicantahay! Waad bartay R, S, T, U, W. Xiddigyo ⭐⭐ ayaad xaqiisay!"
+            },
+            "quiz": {
+              "instructions": "Su'aalahan ku jawaab.",
+              "questions": [
+                {
+                  "qId": "U1-L5-Q1",
+                  "type": "multipleChoice",
+                  "question": "Roob macneheedu waa?",
+                  "questionEn": "What does 'Roob' mean?",
+                  "options": ["Sun", "Rain", "Wind", "Cloud"],
+                  "correctAnswer": "Rain",
+                  "difficulty": "easy"
+                },
+                {
+                  "qId": "U1-L5-Q2",
+                  "type": "multipleChoice",
+                  "question": "W xarfahu waxay u taagan tahay?",
+                  "questionEn": "W stands for?",
+                  "options": ["Ukun", "Roob", "Waxbarasho", "Suuq"],
+                  "correctAnswer": "Waxbarasho",
+                  "difficulty": "easy"
+                },
+                {
+                  "qId": "U1-L5-Q3",
+                  "type": "fillBlank",
+                  "question": "T waxay u taagan tahay '___' oo ah miro macaan.",
+                  "correctAnswer": "Timir",
+                  "options": ["Timir", "Ukun", "Suuq", "Roob"],
+                  "difficulty": "medium"
+                },
+                {
+                  "qId": "U1-L5-Q4",
+                  "type": "trueFalse",
+                  "question": "Ukunka ka yimid libaaxga.",
+                  "questionEn": "The egg came from a lion.",
+                  "correctAnswer": false,
+                  "explanation": "Maya! Ukunka ka yimid digaagga (chicken).",
+                  "difficulty": "medium"
+                }
+              ]
+            },
+            "rewardMessage": {
+              "somali": "Mashallah! Waxbarashadu waa furaha guusha – adiga oo baranaya waa guul! R, S, T, U, W – dhammaan baad bartay! ⭐⭐",
+              "english": "Mashallah! Education is the key to success – you're doing it! You mastered R, S, T, U, W! ⭐⭐",
+              "starsEarned": 2,
+              "badgeUnlocked": null
+            }
+          },
+
+          {
+            "lessonId": "U1-L6",
+            "title": "Xarfaha X, Y, Z",
+            "titleEn": "Letters X, Y, Z",
+            "objective": "Child completes the full alphabet by learning the final letters X, Y, Z.",
+            "ageGroup": "4–8",
+            "durationMinutes": 8,
+            "vocabulary": [
+              { "letter": "X", "somali": "Xiddig",  "english": "Star",    "emoji": "⭐", "exampleSentence": "Xiddigaha habeenka ayay ifaan." },
+              { "letter": "Y", "somali": "Yar",     "english": "Small",   "emoji": "🐣", "exampleSentence": "Ubadka yar waa qurux badan yahay." },
+              { "letter": "Z", "somali": "Zool",    "english": "Giraffe", "emoji": "🦒", "exampleSentence": "Zoolku waa dheer yahay." }
+            ],
+            "voiceScript": {
+              "intro": "Bismillah! Maanta waxaan dhammaynaa xarfaha Soomaaliga oo dhan! Waxaan baranaynaa X, Y, iyo Z – xarfaha ugu dambeeya!",
+              "letterByLetter": [
+                { "letter": "X", "script": "X waxay u taagan tahay 'Xiddig'. Xiddigaha habeenka waad arki kartaa. Adiga xiddigahan oo kale ayaad u dhalanteed! Ku dheh: X!" },
+                { "letter": "Y", "script": "Y waxay u taagan tahay 'Yar'. Yar macneheedu waa small. Adiga adigaa yar laakiin garaad badan! Ku dheh: Y!" },
+                { "letter": "Z", "script": "Z waxay u taagan tahay 'Zool'. Zoolku waa xayawaanka malaabka ah ee luqunta dheer. Ku dheh: Z!" }
+              ],
+              "song": "X waa Xiddig, Y waa Yar, Z waa Zool! X-Y-Z! Hadda waxaad baratay xarfaha oo dhan! Alxamdulillah!",
+              "closing": "Subhanallah! Waad dhamaysay xarfaha Soomaaliga oo dhan – A ilaa Z! Aad baad u xariirtay! Xiddigyo ⭐⭐⭐ ayaad xaqiisay!"
+            },
+            "quiz": {
+              "instructions": "Su'aalahan jawaab.",
+              "questions": [
+                {
+                  "qId": "U1-L6-Q1",
+                  "type": "multipleChoice",
+                  "question": "Xiddig macneheedu waa?",
+                  "questionEn": "What does 'Xiddig' mean?",
+                  "options": ["Moon", "Sun", "Star", "Cloud"],
+                  "correctAnswer": "Star",
+                  "difficulty": "easy"
+                },
+                {
+                  "qId": "U1-L6-Q2",
+                  "type": "multipleChoice",
+                  "question": "Z waxay u taagan tahay xayawaanka?",
+                  "questionEn": "Z stands for which animal?",
+                  "options": ["Zool (Giraffe)", "Libaax (Lion)", "Yar (Small)", "Geel (Camel)"],
+                  "correctAnswer": "Zool (Giraffe)",
+                  "difficulty": "easy"
+                },
+                {
+                  "qId": "U1-L6-Q3",
+                  "type": "multipleChoice",
+                  "question": "Xarfaha ugu dambeeya waa?",
+                  "questionEn": "The last letter of the alphabet is?",
+                  "options": ["X", "Y", "Z", "W"],
+                  "correctAnswer": "Z",
+                  "difficulty": "easy"
+                }
+              ]
+            },
+            "rewardMessage": {
+              "somali": "ALXAMDULILLAH! Waad dhamaysay dhammaan xarfaha Soomaaliga – A ilaa Z! Aad baad u xariirtay! Badge cusub ⭐⭐⭐ baad xaqiisay!",
+              "english": "ALHAMDULILLAH! You completed ALL the Somali letters – A to Z! You're incredible! New badge + 3 stars! ⭐⭐⭐",
+              "starsEarned": 3,
+              "badgeUnlocked": {
+                "id": "alphabet_master",
+                "name": "Xarfaha Boqor",
+                "nameEn": "Alphabet Master",
+                "icon": "🔤🏆"
+              }
+            }
+          },
+
+          {
+            "lessonId": "U1-L7",
+            "title": "Ku celcel Xarfaha oo dhan",
+            "titleEn": "Full Alphabet Review",
+            "objective": "Child reviews all 21 Somali letters through a comprehensive mixed quiz.",
+            "ageGroup": "5–8",
+            "durationMinutes": 15,
+            "vocabulary": [
+              { "letter": "A–Z", "somali": "Dhammaan xarfaha", "english": "All letters A–Z", "emoji": "🔤", "exampleSentence": "Akhri: A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, Q, R, S, T, U, W, X, Y, Z!" }
+            ],
+            "voiceScript": {
+              "intro": "Bismillah! Maanta waxaan ku celcelinaynaa dhammaan xarfaha Soomaaliga. Diyaar? Aan bilownno A!",
+              "fullAlphabetChant": "A waa Af, B waa Bahal, C waa Caano, D waa Dab, E waa Eel, F waa Fool, G waa Guri, H waa Hilib, I waa Ilmo, J waa Jilaal, K waa Kaluun, L waa Libaax, M waa Malab, N waa Naag, O waa Ood, Q waa Qori, R waa Roob, S waa Suuq, T waa Timir, U waa Ukun, W waa Waxbarasho, X waa Xiddig, Y waa Yar, Z waa Zool!",
+              "closing": "Mashallah! Waad bartay dhammaan xarfaha Soomaaliga. Adiga waxbarasho baad jeclahay – taas ayaa xiddigaha kaa dhigta!"
+            },
+            "quiz": {
+              "instructions": "Weyddiimaha badan oo kala duwan jawaab.",
+              "questions": [
+                { "qId": "U1-L7-Q1", "type": "multipleChoice", "question": "Libaaxu waa maxay?", "options": ["Cat", "Lion", "Dog", "Tiger"], "correctAnswer": "Lion", "difficulty": "easy" },
+                { "qId": "U1-L7-Q2", "type": "multipleChoice", "question": "Xarfaha ku bilaabma 'Roob'?", "options": ["S", "T", "R", "U"], "correctAnswer": "R", "difficulty": "easy" },
+                { "qId": "U1-L7-Q3", "type": "multipleChoice", "question": "Kaluunka wuxuu ku noolaa?", "options": ["Dhulka", "Samada", "Badda", "Buurta"], "correctAnswer": "Badda", "difficulty": "medium" },
+                { "qId": "U1-L7-Q4", "type": "multipleChoice", "question": "Xiddigaha goor ayay ifaan?", "options": ["Maalinba", "Habeenka", "Roobka", "Jilaalka"], "correctAnswer": "Habeenka", "difficulty": "medium" },
+                { "qId": "U1-L7-Q5", "type": "multipleChoice", "question": "Waxbarasho waa maxay Ingiriisi?", "options": ["Play", "Sleep", "Education", "Food"], "correctAnswer": "Education", "difficulty": "medium" }
+              ]
+            },
+            "rewardMessage": {
+              "somali": "ALLAHU AKBAR! Guul weyn! Waad dhamaysay Cutubka Xarfaha oo dhan! Adiga waxaa kuu horseeday waxbarashadaadu! ⭐⭐⭐⭐⭐",
+              "english": "ALLAHU AKBAR! Incredible achievement! You completed the entire Alphabet Unit! Your love of learning is your superpower! ⭐⭐⭐⭐⭐",
+              "starsEarned": 5,
+              "badgeUnlocked": {
+                "id": "unit1_complete",
+                "name": "Xarfaha Dhamaystiraha",
+                "nameEn": "Alphabet Champion",
+                "icon": "🏅"
+              }
+            }
+          }
+        ]
+      },
+
+      {
+        "unitId": "U2",
+        "unitTitle": "Tirooyin",
+        "unitTitleEn": "Numbers",
+        "unitIcon": "🔢",
+        "unitColor": "#2ECC71",
+        "unitDescription": "Children learn to count in Somali from 1 to 20, identify written numbers, and use numbers in simple sentences.",
+        "targetAges": "2–8",
+        "totalLessons": 4,
+        "lessons": [
+          {
+            "lessonId": "U2-L1",
+            "title": "Tirooyin 1–5",
+            "titleEn": "Numbers 1 to 5",
+            "objective": "Child can count from 1 to 5 in Somali and match each number to a quantity of objects.",
+            "ageGroup": "2–5",
+            "durationMinutes": 8,
+            "vocabulary": [
+              { "number": 1, "somali": "Kow",    "english": "One",   "emoji": "1️⃣", "visual": "🍎",          "sentence": "Hal tufaax ayaan hayaa." },
+              { "number": 2, "somali": "Laba",   "english": "Two",   "emoji": "2️⃣", "visual": "🍎🍎",        "sentence": "Laba tufaax ayaan hayaa." },
+              { "number": 3, "somali": "Saddex", "english": "Three", "emoji": "3️⃣", "visual": "🍎🍎🍎",      "sentence": "Saddex tufaax ayaan hayaa." },
+              { "number": 4, "somali": "Afar",   "english": "Four",  "emoji": "4️⃣", "visual": "🍎🍎🍎🍎",    "sentence": "Afar tufaax ayaan hayaa." },
+              { "number": 5, "somali": "Shan",   "english": "Five",  "emoji": "5️⃣", "visual": "🍎🍎🍎🍎🍎",  "sentence": "Shan tufaax ayaan hayaa." }
+            ],
+            "voiceScript": {
+              "intro": "Assalamu Calaykum! Maanta waxaan baranaynaa timaaddada – tirooyin Soomaaliga! Bilownno 1 ilaa 5. Ku raac:",
+              "countingChant": "Kow! Laba! Saddex! Afar! Shan! Mar kale: Kow, Laba, Saddex, Afar, Shan!",
+              "numberByNumber": [
+                { "number": 1, "script": "Kow – hal wax. Halkaa gacantaada hal farood taas. Waa kow!" },
+                { "number": 2, "script": "Laba – laba wax. Laba farood taas. Waa laba!" },
+                { "number": 3, "script": "Saddex – saddex wax. Saddex farood taas. Waa saddex!" },
+                { "number": 4, "script": "Afar – afar wax. Afar farood taas. Waa afar!" },
+                { "number": 5, "script": "Shan – shan wax. Gacantaada oo dhan taas – shan farood! Waa shan!" }
+              ],
+              "closing": "Alxamdulillah! Waad baratay kow, laba, saddex, afar, shan. Xiddigyo ⭐⭐ ayaad xaqiisay!"
+            },
+            "quiz": {
+              "instructions": "Su'aalahan jawaab.",
+              "questions": [
+                {
+                  "qId": "U2-L1-Q1",
+                  "type": "countingVisual",
+                  "question": "🍎🍎🍎 – Intay tufaaxdu tahay?",
+                  "questionEn": "How many apples? 🍎🍎🍎",
+                  "options": ["Kow", "Laba", "Saddex", "Afar"],
+                  "correctAnswer": "Saddex",
+                  "difficulty": "easy"
+                },
+                {
+                  "qId": "U2-L1-Q2",
+                  "type": "multipleChoice",
+                  "question": "'Five' Soomaali waa?",
+                  "questionEn": "'Five' in Somali is?",
+                  "options": ["Kow", "Laba", "Afar", "Shan"],
+                  "correctAnswer": "Shan",
+                  "difficulty": "easy"
+                },
+                {
+                  "qId": "U2-L1-Q3",
+                  "type": "multipleChoice",
+                  "question": "Tirada 4 Soomaali waa?",
+                  "questionEn": "Number 4 in Somali is?",
+                  "options": ["Saddex", "Afar", "Shan", "Kow"],
+                  "correctAnswer": "Afar",
+                  "difficulty": "easy"
+                },
+                {
+                  "qId": "U2-L1-Q4",
+                  "type": "ordering",
+                  "question": "Tartib sax ah u saar: Shan, Kow, Saddex, Laba, Afar",
+                  "questionEn": "Put in correct order",
+                  "correctAnswer": ["Kow", "Laba", "Saddex", "Afar", "Shan"],
+                  "difficulty": "medium"
+                }
+              ]
+            },
+            "rewardMessage": {
+              "somali": "Mashallah! Waad baratay Kow, Laba, Saddex, Afar, Shan! Gacantaadaa caddaynaysa – shan farood! ⭐⭐",
+              "english": "Mashallah! You learned One through Five! Your five fingers say it all! ⭐⭐",
+              "starsEarned": 2,
+              "badgeUnlocked": null
+            }
+          },
+
+          {
+            "lessonId": "U2-L2",
+            "title": "Tirooyin 6–10",
+            "titleEn": "Numbers 6 to 10",
+            "objective": "Child counts 6–10 in Somali and identifies written number symbols.",
+            "ageGroup": "3–6",
+            "durationMinutes": 10,
+            "vocabulary": [
+              { "number": 6,  "somali": "Lix",     "english": "Six",   "emoji": "6️⃣", "visual": "⭐⭐⭐⭐⭐⭐",        "sentence": "Lix xiddig ayaan arkaa." },
+              { "number": 7,  "somali": "Toddoba",  "english": "Seven", "emoji": "7️⃣", "visual": "🌟🌟🌟🌟🌟🌟🌟",    "sentence": "Toddoba maalin ee usbuuca." },
+              { "number": 8,  "somali": "Siddeed",  "english": "Eight", "emoji": "8️⃣", "visual": "🐾🐾🐾🐾🐾🐾🐾🐾",  "sentence": "Siddeed cagood ayay labaday." },
+              { "number": 9,  "somali": "Sagaal",   "english": "Nine",  "emoji": "9️⃣", "visual": "🍭x9",             "sentence": "Sagaal canjeelo." },
+              { "number": 10, "somali": "Toban",    "english": "Ten",   "emoji": "🔟", "visual": "👐",               "sentence": "Toban farood – laba gacmood." }
+            ],
+            "voiceScript": {
+              "intro": "Bismillah! Waad horeba baratay 1 ilaa 5. Aad baad u fiicantahay! Maanta waxaan baranaynaa 6 ilaa 10!",
+              "countingChant": "Lix! Toddoba! Siddeed! Sagaal! Toban! Ku noqo: Lix, Toddoba, Siddeed, Sagaal, Toban!",
+              "numberByNumber": [
+                { "number": 6,  "script": "Lix – maalintu shan + kow. Lix waa tirada 6! Laba gacmood shan farood iyo hal farood kale. Waa lix!" },
+                { "number": 7,  "script": "Toddoba – usbuuca toddoba maalin ayuu leeyahay: Isniin, Talaado, Arbaco, Khamiis, Jimco, Sabti, Axad. Waa toddoba!" },
+                { "number": 8,  "script": "Siddeed – xayawaanada badankoodu siddeed lugood ma laha. Waa siddeed!" },
+                { "number": 9,  "script": "Sagaal – aad u dhow toban. Sagaal + kow = toban! Waa sagaal!" },
+                { "number": 10, "script": "Toban – laba gacmood oo dhan. Dhammaan fartaha adiga. Waa toban!" }
+              ],
+              "closing": "Alxamdulillah! Waad baratay lix, toddoba, siddeed, sagaal, toban. Hadda waad tirin kartaa 1 ilaa 10! ⭐⭐"
+            },
+            "quiz": {
+              "instructions": "Su'aalahan jawaab.",
+              "questions": [
+                {
+                  "qId": "U2-L2-Q1",
+                  "type": "multipleChoice",
+                  "question": "Usbuuca maalin imisa ayuu leeyahay?",
+                  "questionEn": "How many days in a week?",
+                  "options": ["Lix", "Toddoba", "Siddeed", "Toban"],
+                  "correctAnswer": "Toddoba",
+                  "difficulty": "easy"
+                },
+                {
+                  "qId": "U2-L2-Q2",
+                  "type": "multipleChoice",
+                  "question": "'Ten' Soomaali waa?",
+                  "questionEn": "Ten in Somali is?",
+                  "options": ["Sagaal", "Lix", "Toban", "Siddeed"],
+                  "correctAnswer": "Toban",
+                  "difficulty": "easy"
+                },
+                {
+                  "qId": "U2-L2-Q3",
+                  "type": "countingVisual",
+                  "question": "⭐⭐⭐⭐⭐⭐⭐⭐ – Intay yihiin?",
+                  "options": ["Toddoba", "Siddeed", "Sagaal", "Toban"],
+                  "correctAnswer": "Siddeed",
+                  "difficulty": "medium"
+                },
+                {
+                  "qId": "U2-L2-Q4",
+                  "type": "math",
+                  "question": "Shan + Kow = ?",
+                  "questionEn": "Five + One = ?",
+                  "options": ["Afar", "Shan", "Lix", "Toddoba"],
+                  "correctAnswer": "Lix",
+                  "explanation": "5 + 1 = 6 = Lix!",
+                  "difficulty": "medium"
+                }
+              ]
+            },
+            "rewardMessage": {
+              "somali": "Waw! Waad tirin kartaa 1 ilaa 10! Toban xiddig oo kale ayaad tahay! ⭐⭐",
+              "english": "Wow! You can count 1 to 10! You shine like ten stars! ⭐⭐",
+              "starsEarned": 2,
+              "badgeUnlocked": null
+            }
+          },
+
+          {
+            "lessonId": "U2-L3",
+            "title": "Tirooyin 11–20",
+            "titleEn": "Numbers 11 to 20",
+            "objective": "Child learns compound Somali number names 11–20 and understands the pattern (X iyo toban).",
+            "ageGroup": "5–8",
+            "durationMinutes": 12,
+            "vocabulary": [
+              { "number": 11, "somali": "Kow iyo toban",     "english": "Eleven",    "emoji": "1️⃣1️⃣" },
+              { "number": 12, "somali": "Laba iyo toban",    "english": "Twelve",    "emoji": "1️⃣2️⃣" },
+              { "number": 13, "somali": "Saddex iyo toban",  "english": "Thirteen",  "emoji": "1️⃣3️⃣" },
+              { "number": 14, "somali": "Afar iyo toban",    "english": "Fourteen",  "emoji": "1️⃣4️⃣" },
+              { "number": 15, "somali": "Shan iyo toban",    "english": "Fifteen",   "emoji": "1️⃣5️⃣" },
+              { "number": 16, "somali": "Lix iyo toban",     "english": "Sixteen",   "emoji": "1️⃣6️⃣" },
+              { "number": 17, "somali": "Toddoba iyo toban", "english": "Seventeen", "emoji": "1️⃣7️⃣" },
+              { "number": 18, "somali": "Siddeed iyo toban", "english": "Eighteen",  "emoji": "1️⃣8️⃣" },
+              { "number": 19, "somali": "Sagaal iyo toban",  "english": "Nineteen",  "emoji": "1️⃣9️⃣" },
+              { "number": 20, "somali": "Labaatan",          "english": "Twenty",    "emoji": "2️⃣0️⃣" }
+            ],
+            "patternNote": "Somali numbers 11–19 follow the pattern: [unit] + 'iyo toban' (lit. 'and ten'). 20 is its own word: Labaatan.",
+            "voiceScript": {
+              "intro": "Bismillah! Waad baratay 1 ilaa 10 – aad baad u fiicantahay! Maanta waxaan baranaynaa 11 ilaa 20. Qaab fudud ayey leedahay!",
+              "patternExplanation": "Soomaali, 11 ilaa 19 waxay u sheegaan sidaan: tirada + 'iyo toban'. Tusaale: 11 = Kow (1) iyo toban (+ 10) = Kow iyo toban!",
+              "countingChant": "Kow iyo toban, Laba iyo toban, Saddex iyo toban, Afar iyo toban, Shan iyo toban, Lix iyo toban, Toddoba iyo toban, Siddeed iyo toban, Sagaal iyo toban, LABAATAN!",
+              "closing": "Subhanallah! Waad baratay 1 ilaa 20 oo dhan! Aad baad u xariirtay! ⭐⭐⭐"
+            },
+            "quiz": {
+              "instructions": "Su'aalahan jawaab.",
+              "questions": [
+                {
+                  "qId": "U2-L3-Q1",
+                  "type": "multipleChoice",
+                  "question": "15 Soomaali waa?",
+                  "questionEn": "15 in Somali is?",
+                  "options": ["Afar iyo toban", "Shan iyo toban", "Lix iyo toban", "Toddoba iyo toban"],
+                  "correctAnswer": "Shan iyo toban",
+                  "difficulty": "easy"
+                },
+                {
+                  "qId": "U2-L3-Q2",
+                  "type": "multipleChoice",
+                  "question": "'Labaatan' tirada waa?",
+                  "questionEn": "'Labaatan' is the number?",
+                  "options": ["10", "15", "18", "20"],
+                  "correctAnswer": "20",
+                  "difficulty": "easy"
+                },
+                {
+                  "qId": "U2-L3-Q3",
+                  "type": "fillBlank",
+                  "question": "12 = Laba iyo ___",
+                  "correctAnswer": "toban",
+                  "options": ["toban", "shan", "afar", "labaatan"],
+                  "difficulty": "medium"
+                },
+                {
+                  "qId": "U2-L3-Q4",
+                  "type": "multipleChoice",
+                  "question": "Saddex iyo toban = ?",
+                  "options": ["11", "12", "13", "14"],
+                  "correctAnswer": "13",
+                  "difficulty": "medium"
+                }
+              ]
+            },
+            "rewardMessage": {
+              "somali": "Mashallah! Waad tirin kartaa Kow ilaa Labaatan! Xiddigyo ⭐⭐⭐ ayaad xaqiisay!",
+              "english": "Mashallah! You can count from One to Twenty! You earned 3 stars! ⭐⭐⭐",
+              "starsEarned": 3,
+              "badgeUnlocked": {
+                "id": "numbers_master",
+                "name": "Tirada Boqor",
+                "nameEn": "Number Master",
+                "icon": "🔢🏆"
+              }
+            }
+          },
+
+          {
+            "lessonId": "U2-L4",
+            "title": "Ku celcel Tirooyin + Xisaab Fudud",
+            "titleEn": "Number Review + Simple Arithmetic",
+            "objective": "Child reviews 1–20 and solves simple addition and subtraction word problems in Somali.",
+            "ageGroup": "5–8",
+            "durationMinutes": 15,
+            "vocabulary": [
+              { "somali": "Ku dar",   "english": "Add (+)",      "emoji": "➕" },
+              { "somali": "Ka jar",   "english": "Subtract (−)", "emoji": "➖" },
+              { "somali": "La mid ah","english": "Equals (=)",   "emoji": "=" }
+            ],
+            "voiceScript": {
+              "intro": "Bismillah! Maanta waxaan baranaynaa xisaab fudud. Saddex ku saddex waa lix. Diyaar?",
+              "wordProblemIntro": "Aan isku daynno: Hooyaday suuqa ayay ku iibsatay shan canjeelo. Aabbahay laba kale ayuu keenay. Imisa canjeelo ayaan haystaa? Shan + Laba = Toddoba! Aad baad u fiicantahay!",
+              "closing": "Alxamdulillah! Aad baad u fiicantahay! Xisaabta Soomaaliga ayaad bartay! ⭐⭐⭐"
+            },
+            "quiz": {
+              "instructions": "Xisaabta fudud jawaab.",
+              "questions": [
+                {
+                  "qId": "U2-L4-Q1",
+                  "type": "math",
+                  "question": "Saddex + Afar = ?",
+                  "questionEn": "Three + Four = ?",
+                  "options": ["Lix", "Toddoba", "Siddeed", "Sagaal"],
+                  "correctAnswer": "Toddoba",
+                  "explanation": "3 + 4 = 7 = Toddoba!",
+                  "difficulty": "medium"
+                },
+                {
+                  "qId": "U2-L4-Q2",
+                  "type": "math",
+                  "question": "Toban − Saddex = ?",
+                  "questionEn": "Ten − Three = ?",
+                  "options": ["Lix", "Toddoba", "Siddeed", "Sagaal"],
+                  "correctAnswer": "Toddoba",
+                  "explanation": "10 - 3 = 7 = Toddoba!",
+                  "difficulty": "medium"
+                },
+                {
+                  "qId": "U2-L4-Q3",
+                  "type": "wordProblem",
+                  "question": "Ubadku shan tufaax ayuu hayay. Laba ayuu cunay. Intuu u hadhay?",
+                  "questionEn": "A child had 5 apples and ate 2. How many are left?",
+                  "options": ["Kow", "Laba", "Saddex", "Afar"],
+                  "correctAnswer": "Saddex",
+                  "explanation": "5 - 2 = 3 = Saddex!",
+                  "difficulty": "medium"
+                },
+                {
+                  "qId": "U2-L4-Q4",
+                  "type": "math",
+                  "question": "Lix + Lix = ?",
+                  "options": ["Kow iyo toban", "Laba iyo toban", "Saddex iyo toban", "Afar iyo toban"],
+                  "correctAnswer": "Laba iyo toban",
+                  "explanation": "6 + 6 = 12 = Laba iyo toban!",
+                  "difficulty": "hard"
+                }
+              ]
+            },
+            "rewardMessage": {
+              "somali": "ALLAHU AKBAR! Waad dhamaysay Cutubka Tirooyin oo dhan! Xisaab macaan baad baratay! ⭐⭐⭐⭐⭐",
+              "english": "ALLAHU AKBAR! You completed the entire Numbers Unit! You're a math star! ⭐⭐⭐⭐⭐",
+              "starsEarned": 5,
+              "badgeUnlocked": {
+                "id": "unit2_complete",
+                "name": "Xisaab Dhamaystiraha",
+                "nameEn": "Numbers Champion",
+                "icon": "🏅🔢"
+              }
+            }
+          }
+        ]
+      },
+
+      {
+        "unitId": "U3",
+        "unitTitle": "Midabada",
+        "unitTitleEn": "Colors",
+        "unitIcon": "🎨",
+        "unitColor": "#FFD700",
+        "unitDescription": "Children learn the Somali names for 12 colors, identify them in nature, and use color words in sentences.",
+        "targetAges": "2–7",
+        "totalLessons": 3,
+        "lessons": [
+          {
+            "lessonId": "U3-L1",
+            "title": "Midabada Aasaasiga ah",
+            "titleEn": "Primary and Core Colors",
+            "objective": "Child learns 6 core colors in Somali and identifies them in everyday objects.",
+            "ageGroup": "2–5",
+            "durationMinutes": 10,
+            "vocabulary": [
+              { "somali": "Cas",    "english": "Red",    "hex": "#E74C3C", "emoji": "🔴", "things": "tamarta, dhiigga, ubaxa guduudka" },
+              { "somali": "Cagaar", "english": "Green",  "hex": "#27AE60", "emoji": "🟢", "things": "geedka, cawska, ubaxda" },
+              { "somali": "Buluug", "english": "Blue",   "hex": "#2980B9", "emoji": "🔵", "things": "samada, badda, biyaha" },
+              { "somali": "Huruud", "english": "Yellow", "hex": "#F1C40F", "emoji": "🟡", "things": "qorraxda, moosada, dahabka" },
+              { "somali": "Cad",    "english": "White",  "hex": "#ECEFF1", "emoji": "⬜", "things": "barafka, xaashida, caanaha" },
+              { "somali": "Madow",  "english": "Black",  "hex": "#2C3E50", "emoji": "⬛", "things": "habeenka, dhuxusha, timaha" }
+            ],
+            "voiceScript": {
+              "intro": "Assalamu Calaykum! Maanta waxaan baranaynaa midabada – colors! Dunidu waa midab badan tahay oo qurux leh!",
+              "colorByColor": [
+                { "color": "Cas",    "script": "Cas waa Red. Tamarta cas tahay! Ku dheh: Cas!" },
+                { "color": "Cagaar", "script": "Cagaar waa Green. Geedka cagaar yahay! Ku dheh: Cagaar!" },
+                { "color": "Buluug", "script": "Buluug waa Blue. Samadu buluug tahay! Ku dheh: Buluug!" },
+                { "color": "Huruud", "script": "Huruud waa Yellow. Qorraxdu huruud tahay! Ku dheh: Huruud!" },
+                { "color": "Cad",    "script": "Cad waa White. Barafka cad yahay! Ku dheh: Cad!" },
+                { "color": "Madow",  "script": "Madow waa Black. Habeenka madow yahay! Ku dheh: Madow!" }
+              ],
+              "song": "Cas, Cagaar, Buluug, Huruud, Cad, Madow – midabada dunida oo dhan ku jira! Ku noqo: Cas, Cagaar, Buluug, Huruud, Cad, Madow!",
+              "closing": "Alxamdulillah! Waad baratay midabada muhiimka ah! ⭐⭐"
+            },
+            "quiz": {
+              "questions": [
+                { "qId": "U3-L1-Q1", "type": "colorMatch", "question": "Qorraxdu waa midab?", "options": ["Cas", "Huruud", "Buluug", "Cagaar"], "correctAnswer": "Huruud", "difficulty": "easy" },
+                { "qId": "U3-L1-Q2", "type": "colorMatch", "question": "Samadu waa midab?", "options": ["Madow", "Cad", "Buluug", "Cas"], "correctAnswer": "Buluug", "difficulty": "easy" },
+                { "qId": "U3-L1-Q3", "type": "colorMatch", "question": "Geedku waa midab?", "options": ["Huruud", "Cagaar", "Cas", "Madow"], "correctAnswer": "Cagaar", "difficulty": "easy" },
+                { "qId": "U3-L1-Q4", "type": "multipleChoice", "question": "Red Soomaali waa?", "options": ["Cad", "Madow", "Cas", "Buluug"], "correctAnswer": "Cas", "difficulty": "easy" }
+              ]
+            },
+            "rewardMessage": {
+              "somali": "Mashallah! Midabada dunida baad bartay! Cas, Cagaar, Buluug, Huruud, Cad, Madow! ⭐⭐",
+              "english": "Mashallah! You learned the colors of the world! ⭐⭐",
+              "starsEarned": 2,
+              "badgeUnlocked": null
+            }
+          },
+
+          {
+            "lessonId": "U3-L2",
+            "title": "Midabada Kale",
+            "titleEn": "More Colors",
+            "objective": "Child learns 6 additional Somali color words and uses them in descriptive sentences.",
+            "ageGroup": "4–8",
+            "durationMinutes": 10,
+            "vocabulary": [
+              { "somali": "Oranjo",    "english": "Orange",     "hex": "#E67E22", "emoji": "🟠", "things": "liin macaan, karooto, qorraxda dusheeda" },
+              { "somali": "Guduud",    "english": "Purple",     "hex": "#8E44AD", "emoji": "🟣", "things": "qaaliga, ubax guduud" },
+              { "somali": "Bunni",     "english": "Brown",      "hex": "#795548", "emoji": "🟤", "things": "dhulka, qaaranka, koofi" },
+              { "somali": "Warqad",    "english": "Pink",       "hex": "#FF69B4", "emoji": "🩷", "things": "ubax wardada, falaadho" },
+              { "somali": "Cagaaran",  "english": "Teal/Cyan",  "hex": "#1ABC9C", "emoji": "🩵", "things": "badweynta, qoryaha" },
+              { "somali": "Dhadeer",   "english": "Grey",       "hex": "#607D8B", "emoji": "🩶", "things": "daruuraha, dhagaxyada, deerada" }
+            ],
+            "voiceScript": {
+              "intro": "Bismillah! Maanta waxaan baranaynaa midab kale oo cusub! Nabad iyo caano!",
+              "colorByColor": [
+                { "color": "Oranjo",   "script": "Oranjo – liin macaan waa oranjo. Midab kulul oo farxad leh! Ku dheh: Oranjo!" },
+                { "color": "Guduud",   "script": "Guduud – midab fiican oo qaaligga ah. Ku dheh: Guduud!" },
+                { "color": "Bunni",    "script": "Bunni – dhulka midabkiisu waa bunni. Qaarankana wuu bunni yahay. Ku dheh: Bunni!" },
+                { "color": "Warqad",   "script": "Warqad – ubaxa wardadu waa warqad. Aad u qurux badan! Ku dheh: Warqad!" },
+                { "color": "Cagaaran", "script": "Cagaaran – biyaha badweynta midabkiisu waa cagaaran. Ku dheh: Cagaaran!" },
+                { "color": "Dhadeer",  "script": "Dhadeer – daruuraha marka ay badan yihiin waa dhadeer. Ku dheh: Dhadeer!" }
+              ],
+              "closing": "Subhanallah! Waad baratay midabada kale. Aad baad u fiicantahay! ⭐⭐"
+            },
+            "quiz": {
+              "questions": [
+                { "qId": "U3-L2-Q1", "type": "colorMatch", "question": "Liin macaanku waa midab?", "options": ["Cas", "Oranjo", "Guduud", "Bunni"], "correctAnswer": "Oranjo", "difficulty": "easy" },
+                { "qId": "U3-L2-Q2", "type": "multipleChoice", "question": "Brown Soomaali waa?", "options": ["Warqad", "Dhadeer", "Bunni", "Cagaaran"], "correctAnswer": "Bunni", "difficulty": "easy" },
+                { "qId": "U3-L2-Q3", "type": "multipleChoice", "question": "Daruuraha badanaa midabkiisu waa?", "options": ["Oranjo", "Warqad", "Dhadeer", "Guduud"], "correctAnswer": "Dhadeer", "difficulty": "medium" },
+                { "qId": "U3-L2-Q4", "type": "colorMatch", "question": "Ubaxda wardadu waa midab?", "options": ["Buluug", "Cad", "Warqad", "Madow"], "correctAnswer": "Warqad", "difficulty": "easy" }
+              ]
+            },
+            "rewardMessage": {
+              "somali": "Waw! Aad baad u fiicantahay! Midabada kala duwan oo dhan baad bartay! ⭐⭐",
+              "english": "Wow! Amazing! You've learned all the different colors! ⭐⭐",
+              "starsEarned": 2,
+              "badgeUnlocked": null
+            }
+          },
+
+          {
+            "lessonId": "U3-L3",
+            "title": "Ku celcel Midabada + Jumlad",
+            "titleEn": "Color Review + Sentences",
+            "objective": "Child reviews all colors and forms descriptive sentences using Somali color words.",
+            "ageGroup": "4–8",
+            "durationMinutes": 12,
+            "vocabulary": [
+              { "sentence": "Libaaxu waa huruud.", "english": "The lion is yellow." },
+              { "sentence": "Samadu waa buluug.", "english": "The sky is blue." },
+              { "sentence": "Geedku waa cagaar.", "english": "The tree is green." },
+              { "sentence": "Caanahu waa cad.", "english": "The milk is white." },
+              { "sentence": "Habeenku waa madow.", "english": "The night is black." }
+            ],
+            "voiceScript": {
+              "intro": "Bismillah! Maanta waxaan isticmaalaynaa midabada jumlooyin gudahood. Waxaan dhihi doonaa: Samadu waa buluug. Adna ku raac!",
+              "closing": "Alxamdulillah! Waad dhamaysay Cutubka Midabada! Aad baad u fiicantahay! ⭐⭐⭐"
+            },
+            "quiz": {
+              "questions": [
+                { "qId": "U3-L3-Q1", "type": "multipleChoice", "question": "Samadu waa midab?", "options": ["Cas", "Huruud", "Buluug", "Cagaar"], "correctAnswer": "Buluug", "difficulty": "easy" },
+                { "qId": "U3-L3-Q2", "type": "multipleChoice", "question": "Geedku waa midab?", "options": ["Bunni", "Cagaar", "Warqad", "Oranjo"], "correctAnswer": "Cagaar", "difficulty": "easy" },
+                { "qId": "U3-L3-Q3", "type": "multipleChoice", "question": "Caanahu waa midab?", "options": ["Cad", "Madow", "Buluug", "Cas"], "correctAnswer": "Cad", "difficulty": "easy" },
+                { "qId": "U3-L3-Q4", "type": "fillBlank", "question": "Habeenku waa ___.", "options": ["Madow", "Cad", "Huruud", "Cagaar"], "correctAnswer": "Madow", "difficulty": "easy" },
+                { "qId": "U3-L3-Q5", "type": "multipleChoice", "question": "Midabka qorraxda?", "options": ["Buluug", "Cas", "Huruud", "Madow"], "correctAnswer": "Huruud", "difficulty": "easy" }
+              ]
+            },
+            "rewardMessage": {
+              "somali": "ALLAHU AKBAR! Waad dhamaysay Cutubka Midabada oo dhan! Aad baad u midab badantahay sida xiddigaha! ⭐⭐⭐⭐⭐",
+              "english": "ALLAHU AKBAR! You completed the entire Colors Unit! You're as colorful as the stars! ⭐⭐⭐⭐⭐",
+              "starsEarned": 5,
+              "badgeUnlocked": {
+                "id": "unit3_complete",
+                "name": "Midabada Boqor",
+                "nameEn": "Colors Champion",
+                "icon": "🎨🏆"
+              }
+            }
+          }
+        ]
+      },
+
+      {
+        "unitId": "U4",
+        "unitTitle": "Xayawaanka",
+        "unitTitleEn": "Animals",
+        "unitIcon": "🦁",
+        "unitColor": "#FF6B6B",
+        "unitDescription": "Children learn 20 Somali animal names, their sounds, habitats, and a fun fact about each. Includes African savanna animals, sea animals, farm animals, and Somali native species.",
+        "targetAges": "2–8",
+        "totalLessons": 4,
+        "lessons": [
+          {
+            "lessonId": "U4-L1",
+            "title": "Xayawaanka Berriga",
+            "titleEn": "Land Animals",
+            "objective": "Child learns 6 land animals and their Somali names, sounds, and a fun fact.",
+            "ageGroup": "2–6",
+            "durationMinutes": 12,
+            "vocabulary": [
+              { "somali": "Libaax",   "english": "Lion",     "emoji": "🦁", "sound": "Roar!",        "habitat": "Dhul furan", "fact": "Libaaxu waa boqorka xayawaanka." },
+              { "somali": "Maroodi",  "english": "Elephant", "emoji": "🐘", "sound": "Trumpet!",     "habitat": "Dhul iyo webiga", "fact": "Maroodigu waa ka weyn dhammaan xayawaanka dhulka." },
+              { "somali": "Geel",     "english": "Camel",    "emoji": "🐪", "sound": "Grunt!",       "habitat": "Cidlada", "fact": "Geelu wuxuu aadi karaa muddo dheer biya la'aanteed." },
+              { "somali": "Libaax doog", "english": "Cheetah", "emoji": "🐆", "sound": "Chirp!",    "habitat": "Dhul furan", "fact": "Libaax dooggu waa kan ugu degdegta xayawaanka." },
+              { "somali": "Maroodi yar", "english": "Zebra", "emoji": "🦓", "sound": "Bark!",       "habitat": "Dhul furan", "fact": "Maroodi yarka leeyahay xariiqo cas iyo cad." },
+              { "somali": "Daayeer",  "english": "Monkey",   "emoji": "🐒", "sound": "Chatter!",     "habitat": "Kaynta", "fact": "Daayeertu waxay jeclahay miro cunidda." }
+            ],
+            "voiceScript": {
+              "intro": "Bismillah! Maanta waxaan baranaynaa xayawaanka berriga. Diyaar? Aan bilownno libaaxga!",
+              "animalByAnimal": [
+                { "animal": "Libaax",    "script": "Libaax! Roar! Libaaxu waa boqorka xayawaanka. Aad u xoogan! Ku dheh: Libaax!" },
+                { "animal": "Maroodi",   "script": "Maroodi! Trumpet! Maroodigu waa aad u weyn. Lugihiisu waa waaweyn. Ku dheh: Maroodi!" },
+                { "animal": "Geel",      "script": "Geel! Grunting! Geelu wuxuu noolaan karaa cidlada oo kulul. Xayawaanka Soomaalida! Ku dheh: Geel!" },
+                { "animal": "Libaax doog","script": "Libaax doog! Ama Haramcad! Waa kan ugu degdegta! Ku dheh: Libaax doog!" },
+                { "animal": "Maroodi yar","script": "Zebra! Waxay leedahay xariiqo madow iyo cad. Aad u qurux badan! Ku dheh: Maroodi yar!" },
+                { "animal": "Daayeer",   "script": "Daayeer! Chatter! Daayeertu waxay naagtaa geedaha. Ku dheh: Daayeer!" }
+              ],
+              "closing": "Subhanallah! Alle ayaa abuuray xayawaankaan oo dhan! Waad baratay lix xayawaan oo berriga ah! ⭐⭐"
+            },
+            "quiz": {
+              "questions": [
+                { "qId": "U4-L1-Q1", "type": "multipleChoice", "question": "Boqorka xayawaanka waa?", "options": ["Maroodi", "Geel", "Libaax", "Daayeer"], "correctAnswer": "Libaax", "difficulty": "easy" },
+                { "qId": "U4-L1-Q2", "type": "multipleChoice", "question": "Geelu wuxuu ku noolaa?", "options": ["Badda", "Cidlada", "Kaynta", "Webiga"], "correctAnswer": "Cidlada", "difficulty": "easy" },
+                { "qId": "U4-L1-Q3", "type": "multipleChoice", "question": "Kan ugu degdegta xayawaanka waa?", "options": ["Geel", "Maroodi", "Daayeer", "Libaax doog"], "correctAnswer": "Libaax doog", "difficulty": "medium" },
+                { "qId": "U4-L1-Q4", "type": "multipleChoice", "question": "Xayawaankan xariiqo leeyahay?", "options": ["Libaax", "Maroodi yar (Zebra)", "Geel", "Daayeer"], "correctAnswer": "Maroodi yar (Zebra)", "difficulty": "easy" }
+              ]
+            },
+            "rewardMessage": {
+              "somali": "Mashallah! Xayawaanka berriga oo dhan baad bartay! Libaax baad u dheer tahay! ⭐⭐",
+              "english": "Mashallah! You learned all the land animals! You're as brave as a lion! ⭐⭐",
+              "starsEarned": 2,
+              "badgeUnlocked": null
+            }
+          },
+
+          {
+            "lessonId": "U4-L2",
+            "title": "Xayawaanka Badda",
+            "titleEn": "Sea Animals",
+            "objective": "Child learns 5 sea animals in Somali and facts about ocean life.",
+            "ageGroup": "3–7",
+            "durationMinutes": 10,
+            "vocabulary": [
+              { "somali": "Kaluun",  "english": "Fish",     "emoji": "🐟", "fact": "Kaluunka baddu wuu dabbaalan karaa xawli sareeya." },
+              { "somali": "Doofin",  "english": "Dolphin",  "emoji": "🐬", "fact": "Doofinku waa aad u caqli badan, wuxuuna xiriiri karaa aadanaha." },
+              { "somali": "Danaas",  "english": "Shark",    "emoji": "🦈", "fact": "Danaaska waa xayawaanka badda ugu xoog badan." },
+              { "somali": "Xubullo", "english": "Crab",     "emoji": "🦀", "fact": "Xubbullada leeyihiin xanniibo adag iyo gacmo labaatan." },
+              { "somali": "Abeeso",  "english": "Whale",    "emoji": "🐋", "fact": "Abeesadu waa ka weyn dhammaan xayawaanka badda." }
+            ],
+            "voiceScript": {
+              "intro": "Bismillah! Maanta waxaan baranaynaa xayawaanka badda. Soomaaliya badda dhinaceedu aad u qurux badan yahay! Diyaar?",
+              "closing": "Alxamdulillah! Badda iyo xayawaankeeda baad baratay. Subhanallah – Alle ayaa iyaga abuuray! ⭐⭐"
+            },
+            "quiz": {
+              "questions": [
+                { "qId": "U4-L2-Q1", "type": "multipleChoice", "question": "Xayawaanka badda ugu weyn?", "options": ["Kaluun", "Doofin", "Danaas", "Abeeso"], "correctAnswer": "Abeeso", "difficulty": "easy" },
+                { "qId": "U4-L2-Q2", "type": "multipleChoice", "question": "Doofin Ingiriisi waa?", "options": ["Fish", "Shark", "Dolphin", "Whale"], "correctAnswer": "Dolphin", "difficulty": "easy" },
+                { "qId": "U4-L2-Q3", "type": "multipleChoice", "question": "Xayawaanka badda ugu xoog badan?", "options": ["Xubullo", "Kaluun", "Danaas", "Doofin"], "correctAnswer": "Danaas", "difficulty": "medium" }
+              ]
+            },
+            "rewardMessage": {
+              "somali": "Subhanallah! Xayawaanka badda baad baratay. Badda Soomaaliya oo qurux badan sida adiga! ⭐⭐",
+              "english": "Subhanallah! You learned the sea animals. As beautiful as the Somali ocean! ⭐⭐",
+              "starsEarned": 2,
+              "badgeUnlocked": null
+            }
+          },
+
+          {
+            "lessonId": "U4-L3",
+            "title": "Xayawaanka Reerka",
+            "titleEn": "Farm & Home Animals",
+            "objective": "Child learns farm and domestic animals commonly found in Somali homes and farms.",
+            "ageGroup": "2–6",
+            "durationMinutes": 10,
+            "vocabulary": [
+              { "somali": "Lo'",    "english": "Cow",     "emoji": "🐄", "sound": "Moo!",  "product": "Caano (milk)" },
+              { "somali": "Ri",     "english": "Goat",    "emoji": "🐐", "sound": "Meh!",  "product": "Caano & hilibka" },
+              { "somali": "Digaag", "english": "Chicken", "emoji": "🐓", "sound": "Cock-a-doodle!", "product": "Ukun (eggs)" },
+              { "somali": "Faras",  "english": "Horse",   "emoji": "🐎", "sound": "Neigh!", "product": "Gaadiid (transport)" },
+              { "somali": "Ido",    "english": "Sheep",   "emoji": "🐑", "sound": "Baa!",  "product": "Hilib & dhogor (wool)" }
+            ],
+            "voiceScript": {
+              "intro": "Bismillah! Maanta waxaan baranaynaa xayawaanka reerka – xayawaanka guriga ku nool ama beerta. Diyaar?",
+              "animalByAnimal": [
+                { "animal": "Lo'",    "script": "Lo'! Moo! Lo'du waxay bixisaa caano macaan. Alle ha barako! Ku dheh: Lo'!" },
+                { "animal": "Ri",     "script": "Ri! Meh! Rigu wuxuu cunaa caws. Xayawaanka reerka! Ku dheh: Ri!" },
+                { "animal": "Digaag", "script": "Digaag! Cock-a-doodle! Digaagu wuxuu bixiyaa ukun. Subxii ayuu u dhawaaqa. Ku dheh: Digaag!" },
+                { "animal": "Faras",  "script": "Faras! Neigh! Farasku waa xoogan yahay oo dhakhso ah. Ku dheh: Faras!" },
+                { "animal": "Ido",    "script": "Ido – ama adhi. Baa! Iduhu waxay bixisaa hilib iyo dhogor. Ku dheh: Ido!" }
+              ],
+              "closing": "Alxamdulillah! Xayawaanka reerka oo dhan baad baratay! ⭐⭐"
+            },
+            "quiz": {
+              "questions": [
+                { "qId": "U4-L3-Q1", "type": "multipleChoice", "question": "Xayawaanka caano bixiya?", "options": ["Digaag", "Lo'", "Faras", "Ido"], "correctAnswer": "Lo'", "difficulty": "easy" },
+                { "qId": "U4-L3-Q2", "type": "multipleChoice", "question": "Ukun bixiya xayawaankee?", "options": ["Ri", "Lo'", "Digaag", "Faras"], "correctAnswer": "Digaag", "difficulty": "easy" },
+                { "qId": "U4-L3-Q3", "type": "multipleChoice", "question": "Goat Soomaali waa?", "options": ["Lo'", "Ido", "Ri", "Faras"], "correctAnswer": "Ri", "difficulty": "easy" }
+              ]
+            },
+            "rewardMessage": {
+              "somali": "Mashallah! Xayawaanka reerka oo dhan baad bartay. Adiga oo beeralay cusub! ⭐⭐",
+              "english": "Mashallah! You learned all farm animals. You're a little farmer! ⭐⭐",
+              "starsEarned": 2,
+              "badgeUnlocked": null
+            }
+          },
+
+          {
+            "lessonId": "U4-L4",
+            "title": "Ku celcel Xayawaanka oo dhan",
+            "titleEn": "Animals Full Review",
+            "objective": "Child reviews all animal groups, names, and habitats in a comprehensive mixed quiz.",
+            "ageGroup": "4–8",
+            "durationMinutes": 15,
+            "voiceScript": {
+              "intro": "Bismillah! Maanta waxaan dhammaynaa Cutubka Xayawaanka. Weyddiimaha kala duwan ayaan qabanayaa. Diyaar?",
+              "closing": "ALLAHU AKBAR! Waad dhamaysay Cutubka Xayawaanka oo dhan! Alle ayaa abuuray xayawaankaan oo kala duwan – Subhanallah! ⭐⭐⭐⭐⭐"
+            },
+            "quiz": {
+              "questions": [
+                { "qId": "U4-L4-Q1", "type": "multipleChoice", "question": "Xayawaanka badda ku nool?", "options": ["Libaax", "Geel", "Kaluun", "Digaag"], "correctAnswer": "Kaluun", "difficulty": "easy" },
+                { "qId": "U4-L4-Q2", "type": "multipleChoice", "question": "Cidlada ku nool xayawaanka?", "options": ["Doofin", "Geel", "Daayeer", "Lo'"], "correctAnswer": "Geel", "difficulty": "easy" },
+                { "qId": "U4-L4-Q3", "type": "multipleChoice", "question": "Abeeso waa maxay Ingiriisi?", "options": ["Shark", "Dolphin", "Whale", "Crab"], "correctAnswer": "Whale", "difficulty": "medium" },
+                { "qId": "U4-L4-Q4", "type": "multipleChoice", "question": "Xayawaanka ugu caqli badan badda?", "options": ["Danaas", "Doofin", "Abeeso", "Kaluun"], "correctAnswer": "Doofin", "difficulty": "medium" },
+                { "qId": "U4-L4-Q5", "type": "multipleChoice", "question": "Farasku muxuu qabtaa?", "options": ["Caano bixiya", "Ukun bixiya", "Gaadiid (transport)", "Hilib bixiya"], "correctAnswer": "Gaadiid (transport)", "difficulty": "medium" }
+              ]
+            },
+            "rewardMessage": {
+              "somali": "ALLAHU AKBAR! Waad dhamaysay Cutubka Xayawaanka oo dhan! Badge cusub! ⭐⭐⭐⭐⭐",
+              "english": "ALLAHU AKBAR! You completed the entire Animals Unit! New badge unlocked! ⭐⭐⭐⭐⭐",
+              "starsEarned": 5,
+              "badgeUnlocked": {
+                "id": "unit4_complete",
+                "name": "Xayawaanka Boqor",
+                "nameEn": "Animals Champion",
+                "icon": "🦁🏆"
+              }
+            }
+          }
+        ]
+      },
+
+      {
+        "unitId": "U5",
+        "unitTitle": "Waxbarashada Islaamka",
+        "unitTitleEn": "Islamic Learning",
+        "unitIcon": "🌙",
+        "unitColor": "#6C63FF",
+        "unitDescription": "Children learn the foundations of Islam in a gentle, joyful, age-appropriate way. Covers the Five Pillars, Pillars of Faith, daily duas, the 99 Names of Allah (introductory), and Somali Islamic phrases.",
+        "targetAges": "2–8",
+        "ageNote": "Lessons are adapted for different age groups. Ages 2–4 focus on duas and phrases. Ages 5–8 cover pillars and deeper concepts.",
+        "totalLessons": 6,
+        "lessons": [
+          {
+            "lessonId": "U5-L1",
+            "title": "Bismillah – Marxaladda Koowaad",
+            "titleEn": "Bismillah – First Foundations",
+            "objective": "Child learns the meaning of key Islamic phrases used daily and understands Alla's love for them.",
+            "ageGroup": "2–5",
+            "durationMinutes": 8,
+            "vocabulary": [
+              { "arabic": "بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيمِ", "transliteration": "Bismillahi Rahmani Rahim", "somali": "Magaca Alle ayaan ku bilaabayaa, Naxariistadiisana waa dhammaystiran tahay", "english": "In the name of Allah, the Most Gracious, the Most Merciful", "when": "Wax kasta oo aad bilaabayso" },
+              { "arabic": "الحمد لله", "transliteration": "Alxamdulillah", "somali": "Mahad waxaa leh Alle", "english": "All praise is for Allah", "when": "Marka aad mahad naqayso" },
+              { "arabic": "سبحان الله", "transliteration": "Subhanallah", "somali": "Alle waa quduus/waa nadiif ah ammaantiisa", "english": "Glory be to Allah", "when": "Marka aad wax la yaab leh aragto" },
+              { "arabic": "الله أكبر", "transliteration": "Allahu Akbar", "somali": "Alle wuu ka weyn yahay", "english": "Allah is the Greatest", "when": "Salaadda iyo marka ammaanayso" },
+              { "arabic": "إن شاء الله", "transliteration": "Inshallah", "somali": "Hadduu Alle doono", "english": "If Allah wills", "when": "Marka aad wax qorshaynayso" },
+              { "arabic": "ما شاء الله", "transliteration": "Mashallah", "somali": "Alle wuxuu doonay ayuu ahaado", "english": "As Allah has willed (expression of praise)", "when": "Marka aad wax fiican aragto" }
+            ],
+            "voiceScript": {
+              "intro": "Assalamu Calaykum warahmatullahi wabarakaatuh! Ku soo dhawow BaroKids Islamic! Maanta waxaan baranaynaa erayo Islaamiga muhiimka ah ee maalin kasta logu isticmaalo.",
+              "phraseByPhrase": [
+                { "phrase": "Bismillah", "script": "Marka aad wax kasta bilaabayso – cuntada, waxbarashada, orodka – dheh: BISMILLAH! Waxay macnaheedu tahay – Magaca Alle ayaan ku bilaabayaa. Ku dheh: Bismillah!" },
+                { "phrase": "Alxamdulillah", "script": "Marka wax kuu yimid oo fiican – cunto, caafi maad, farxad – dheh: ALXAMDULILLAH! Mahad Alle. Ku dheh: Alxamdulillah!" },
+                { "phrase": "Subhanallah", "script": "Marka xiddigaha aragto, ubaxyada quruxda leh aragto – dheh: SUBHANALLAH! Alle maaweelo! Ku dheh: Subhanallah!" },
+                { "phrase": "Allahu Akbar", "script": "Alle wuu ka weyn yahay wax walba. ALLAHU AKBAR! Ku dheh: Allahu Akbar!" },
+                { "phrase": "Inshallah",   "script": "Haddaad dhahayso 'berri ayaan ciyaari doonaa', dheh: INSHALLAH. Hadduu Alle doono. Ku dheh: Inshallah!" },
+                { "phrase": "Mashallah",   "script": "Marka ilmo qurux badani tago – MASHALLAH! Marka baad martay – MASHALLAH! Ku dheh: Mashallah!" }
+              ],
+              "closing": "Barakallahu feekum! Erayo Islaamiga baad baratay. Maalin kasta isticmaal! ⭐⭐"
+            },
+            "quiz": {
+              "questions": [
+                { "qId": "U5-L1-Q1", "type": "multipleChoice", "question": "Marka aad cunto bilaabayso maxaad tiraahda?", "options": ["Alxamdulillah", "Bismillah", "Inshallah", "Mashallah"], "correctAnswer": "Bismillah", "difficulty": "easy" },
+                { "qId": "U5-L1-Q2", "type": "multipleChoice", "question": "Alxamdulillah macneheedu waa?", "options": ["Allah is Greatest", "All praise to Allah", "If Allah wills", "Glory to Allah"], "correctAnswer": "All praise to Allah", "difficulty": "easy" },
+                { "qId": "U5-L1-Q3", "type": "multipleChoice", "question": "Marka aad wax la yaab leh aragto maxaad tiraahda?", "options": ["Bismillah", "Inshallah", "Subhanallah", "Allahu Akbar"], "correctAnswer": "Subhanallah", "difficulty": "easy" },
+                { "qId": "U5-L1-Q4", "type": "multipleChoice", "question": "'Hadduu Alle doono' Carabi waa?", "options": ["Mashallah", "Bismillah", "Inshallah", "Alxamdulillah"], "correctAnswer": "Inshallah", "difficulty": "medium" }
+              ]
+            },
+            "rewardMessage": {
+              "somali": "Barakallahu feekum! Erayo Islaamiga baad bartay! Maalin kasta Bismillah dheh marka aad wax bilabayso! ⭐⭐",
+              "english": "Barakallahu feekum! You learned Islamic phrases! Say Bismillah every time you start something! ⭐⭐",
+              "starsEarned": 2,
+              "badgeUnlocked": null
+            }
+          },
+
+          {
+            "lessonId": "U5-L2",
+            "title": "Allaha waa Midho – Tawhiidka Carruurta",
+            "titleEn": "Allah is One – Tawheed for Children",
+            "objective": "Child understands in an age-appropriate way that Allah is One, the Creator, and loves His creation.",
+            "ageGroup": "3–7",
+            "durationMinutes": 10,
+            "vocabulary": [
+              { "arabic": "لا إله إلا الله", "transliteration": "La ilaaha illallah", "somali": "Ma jiro ilaah xaq ah marka laga reebo Alle", "english": "There is no god worthy of worship except Allah" },
+              { "somali": "Alle waa mid",      "english": "Allah is One",          "concept": "Tawhiid" },
+              { "somali": "Alle buu abuurtay", "english": "Allah created everything", "concept": "Khaaliq" },
+              { "somali": "Alle wuu noo jeclahay", "english": "Allah loves us", "concept": "Wadaad" },
+              { "somali": "Alle wuu na maqli karaa", "english": "Allah hears us",  "concept": "Samii'" }
+            ],
+            "voiceScript": {
+              "intro": "Bismillah! Maanta waxaan baranaynaa wax aad muhiim u ah – Alle ayaanu baranaynaa. Alle waa cidda abuurtay samada, dhulka, xiddigaha, xayawaanka, adiga iyo aniga.",
+              "conceptByConept": [
+                { "concept": "Alle waa mid", "script": "Alle waa mid keliya. Ma jiro ilaah kale. Kaliya Alle ayaannu caabudnaa. Ku dheh: Alle waa mid!" },
+                { "concept": "Alle wuu abuurtay", "script": "Alle buu abuurtay samada iyo dhulka. Alle buu abuurtay xiddigaha habeenka. Alle buu abuurtay adiga oo qurux badan! Ku dheh: Alle wuu abuurtay!" },
+                { "concept": "Alle wuu na jeclahay", "script": "Alle wuu noo jeclahay naxariis weyn oo aan dhammaatayn. Marwalba na ilaalinayaa. Ku dheh: Alle wuu na jeclahay!" },
+                { "concept": "Alle wuu maqli karaa", "script": "Marka aad Ducayn lahayd – in kasta oo naqdi ah – Alle wuu kaa maqlayaa. Ku xira Alle! Ku dheh: Alle wuu na maqli karaa!" }
+              ],
+              "song": "Alle waa mid, Alle wuu na jeclahay, Alle buu abuurtay wax walba! La ilaaha illallah!",
+              "closing": "Alxamdulillah! Barashada Tawhiidka baad bilaawday. Alle wuu ku jeclahay adiga! ⭐⭐"
+            },
+            "quiz": {
+              "questions": [
+                { "qId": "U5-L2-Q1", "type": "multipleChoice", "question": "Alle imisa buu yahay?", "options": ["Laba", "Saddex", "Mid", "Afar"], "correctAnswer": "Mid", "difficulty": "easy" },
+                { "qId": "U5-L2-Q2", "type": "trueFalse", "question": "Alle wuu noo jeclahay.", "correctAnswer": true, "explanation": "Haa! Alle wuu noo jeclahay naxariis weyn!", "difficulty": "easy" },
+                { "qId": "U5-L2-Q3", "type": "multipleChoice", "question": "Cidda abuurtay samada iyo dhulka?", "options": ["Aadanaha", "Alle", "Libaaxga", "Malaa'igta"], "correctAnswer": "Alle", "difficulty": "easy" },
+                { "qId": "U5-L2-Q4", "type": "fillBlank", "question": "La ilaaha ___ – ma jiro ilaah kale marka laga reebo Alle.", "options": ["illallah", "Bismillah", "Alxamdulillah", "Inshallah"], "correctAnswer": "illallah", "difficulty": "medium" }
+              ]
+            },
+            "rewardMessage": {
+              "somali": "Mashallah! Tawhiidka baad baratay – Alle waa Mid! Alle wuu kuu farxaa in aad baratay! ⭐⭐",
+              "english": "Mashallah! You learned Tawheed – Allah is One! Allah is pleased with your learning! ⭐⭐",
+              "starsEarned": 2,
+              "badgeUnlocked": null
+            }
+          },
+
+          {
+            "lessonId": "U5-L3",
+            "title": "Tiimurka Islaamka – Salaadda",
+            "titleEn": "Pillars of Islam – Salah (Prayer)",
+            "objective": "Child learns the 5 daily prayers, their times, and the importance of prayer in Islam.",
+            "ageGroup": "4–8",
+            "durationMinutes": 12,
+            "vocabulary": [
+              { "arabic": "الصلاة", "transliteration": "As-Salah", "somali": "Salaadda", "english": "Prayer" },
+              { "prayer": "Subax",   "arabic": "الفجر",  "raka'ahs": 2, "time": "Aroornimada subax ka hor", "somali": "Salaadda Subaxda" },
+              { "prayer": "Duhr",    "arabic": "الظهر",  "raka'ahs": 4, "time": "Dhexe maalintu", "somali": "Salaadda Duurtiga" },
+              { "prayer": "Casr",    "arabic": "العصر",  "raka'ahs": 4, "time": "Galabtii", "somali": "Salaadda Casriga" },
+              { "prayer": "Maqrib",  "arabic": "المغرب", "raka'ahs": 3, "time": "Qorraxda marka ay dhacdo", "somali": "Salaadda Maqribka" },
+              { "prayer": "Cisho",   "arabic": "العشاء", "raka'ahs": 4, "time": "Habeennimada", "somali": "Salaadda Cishadda" }
+            ],
+            "pillarsNote": "Salaaddu waa tiimurka labaad ee Islaamka. Waxay ku dhacdaa shan jeer maalin kasta.",
+            "voiceScript": {
+              "intro": "Bismillah! Maanta waxaan baranaynaa salaadda – Tiimurka Labaad ee Islaamka. Salaaddu waa xiriirka u dhexeeya Alle iyo adiga. Shan jeer maalin kasta!",
+              "prayerByPrayer": [
+                { "prayer": "Subax",  "script": "Subax – marka qorraxdu soo baxayso oo aadan arkaynin. Laba rakaah. Alle baad ku salaamayso waaberi fiican! Ku dheh: Salaadda Subaxda!" },
+                { "prayer": "Duhr",   "script": "Duhr – dhexe maalintu. Afar rakaah. Marka aad shaqada u joogtid, Alle baad xasuusataa. Ku dheh: Salaadda Duurtiga!" },
+                { "prayer": "Casr",   "script": "Casr – galabtii. Afar rakaah. Galabnimada quruxda leh – Alle baad salaamayso! Ku dheh: Salaadda Casriga!" },
+                { "prayer": "Maqrib", "script": "Maqrib – marka qorraxdu dhacdo. Saddex rakaah. Habeenka marka ay bilaabato, Alle baad bogaadinayso. Ku dheh: Salaadda Maqribka!" },
+                { "prayer": "Cisho",  "script": "Cisho – habeennimada. Afar rakaah. Hore u seexo – Alle wuu kaa ilaalinayaa. Ku dheh: Salaadda Cishadda!" }
+              ],
+              "song": "Subax, Duhr, Casr, Maqrib, Cisho – shan salaadood maalin kasta! Shan, shan, shan – Alle baan salaamaynaa!",
+              "closing": "Alxamdulillah! Salaadaha shan baad baratay. Maanta salaadda Subaxda ku dheh! ⭐⭐⭐"
+            },
+            "quiz": {
+              "questions": [
+                { "qId": "U5-L3-Q1", "type": "multipleChoice", "question": "Salaadda maalin kasta imisa jeer?", "options": ["Saddex", "Afar", "Shan", "Lix"], "correctAnswer": "Shan", "difficulty": "easy" },
+                { "qId": "U5-L3-Q2", "type": "multipleChoice", "question": "Salaadda koowaad subaxda waa?", "options": ["Duhr", "Maqrib", "Subax", "Cisho"], "correctAnswer": "Subax", "difficulty": "easy" },
+                { "qId": "U5-L3-Q3", "type": "multipleChoice", "question": "Maqrib goor ayey tahay?", "options": ["Subaxda", "Dhexe maalinta", "Qorraxda marka ay dhacdo", "Habeennimada"], "correctAnswer": "Qorraxda marka ay dhacdo", "difficulty": "medium" },
+                { "qId": "U5-L3-Q4", "type": "ordering", "question": "Safafka saxda ah u saar salaadaha", "items": ["Maqrib", "Subax", "Cisho", "Duhr", "Casr"], "correctAnswer": ["Subax", "Duhr", "Casr", "Maqrib", "Cisho"], "difficulty": "hard" },
+                { "qId": "U5-L3-Q5", "type": "multipleChoice", "question": "Salaadda Subaxda rakaahta imisa?", "options": ["Kow", "Laba", "Saddex", "Afar"], "correctAnswer": "Laba", "difficulty": "medium" }
+              ]
+            },
+            "rewardMessage": {
+              "somali": "Mashallah! Salaadaha shan baad bartay. Salaaddu waa nuurka qalbiga! ⭐⭐⭐",
+              "english": "Mashallah! You learned the five daily prayers. Prayer is the light of the heart! ⭐⭐⭐",
+              "starsEarned": 3,
+              "badgeUnlocked": null
+            }
+          },
+
+          {
+            "lessonId": "U5-L4",
+            "title": "Tiimurka Islaamka – Shan Tiimuurood",
+            "titleEn": "Five Pillars of Islam",
+            "objective": "Child learns and can name all Five Pillars of Islam with their Somali names and simple explanations.",
+            "ageGroup": "5–8",
+            "durationMinutes": 12,
+            "vocabulary": [
+              { "pillar": 1, "arabic": "الشهادة",  "name": "Shahaadada",  "somali": "La miraahato inaanu jirin ilaah marka laga reebo Alle, iyo in Muxammad uu yahay rasuulkiisa", "english": "Declaration of Faith" },
+              { "pillar": 2, "arabic": "الصلاة",  "name": "Salaadda",    "somali": "Shan salaadood oo maalin kasta", "english": "Five Daily Prayers" },
+              { "pillar": 3, "arabic": "الزكاة",  "name": "Zakadda",     "somali": "Bixinta lacagta miskiinada", "english": "Obligatory Charity" },
+              { "pillar": 4, "arabic": "الصوم",   "name": "Sooma",       "somali": "Soomka Ramadaan", "english": "Fasting in Ramadan" },
+              { "pillar": 5, "arabic": "الحج",    "name": "Xajka",       "somali": "Taga Makkah haddaad awood u leedahay", "english": "Pilgrimage to Makkah" }
+            ],
+            "voiceScript": {
+              "intro": "Bismillah! Maanta waxaan baranaynaa Tiimurka Islaamka – shan tiimuurood oo xoog badan! Islaamku wuxuu ku dhisan yahay shan tiimuurood sida gurigu dhismaha ku dhisan yahay.",
+              "pillarByPillar": [
+                { "pillar": "Shahaadada", "script": "Tiimurka koowaad – Shahaadada. La dheh: La ilaaha illallah Muhammadur Rasulullah. Waxay macnaheedu tahay – Alle keliya ayaan caabudaa, Muxamad na waa rasuulkiis. Tiimurka koowaad!" },
+                { "pillar": "Salaadda",   "script": "Tiimurka labaad – Salaadda. Shan jeer maalin kasta. Horeba baad bartay salaadaha! Tiimurka labaad!" },
+                { "pillar": "Zakadda",    "script": "Tiimurka sadexaad – Zakadda. Marka aad lacag aad u badan leedahay, qayb ka bixiso miskiinada. Waa saydh. Tiimurka sadexaad!" },
+                { "pillar": "Sooma",      "script": "Tiimurka afraad – Sooma. Ramadaan bilaha qaarkood waxaanu ka koobnaynaa cuntada iyo cabbida maalinta. Alle baan ku xamilaynaa. Tiimurka afraad!" },
+                { "pillar": "Xajka",      "script": "Tiimurka shanaad – Xajka. Haddaad xoog u leedahay, mar ugu dhaqaaq Makkada Mucaddasada. Xajka waa martiqaad Alle. Tiimurka shanaad!" }
+              ],
+              "song": "Kow Shahaadada, Laba Salaadda, Saddex Zakadda, Afar Sooma, Shan Xajka – shan tiimuurood Islaamka!",
+              "closing": "Allahu Akbar! Shan Tiimuuroodka Islaamka baad bartay! Aad baad u xariirtay! ⭐⭐⭐"
+            },
+            "quiz": {
+              "questions": [
+                { "qId": "U5-L4-Q1", "type": "multipleChoice", "question": "Tiimurka Islaamka imisa?", "options": ["Saddex", "Afar", "Shan", "Lix"], "correctAnswer": "Shan", "difficulty": "easy" },
+                { "qId": "U5-L4-Q2", "type": "multipleChoice", "question": "Tiimurka koowaad?", "options": ["Salaadda", "Sooma", "Shahaadada", "Xajka"], "correctAnswer": "Shahaadada", "difficulty": "easy" },
+                { "qId": "U5-L4-Q3", "type": "multipleChoice", "question": "Bixinta lacagta miskiinada waa?", "options": ["Sooma", "Zakadda", "Xajka", "Salaadda"], "correctAnswer": "Zakadda", "difficulty": "medium" },
+                { "qId": "U5-L4-Q4", "type": "multipleChoice", "question": "Makkada lagu tagaa tiimurka?", "options": ["Salaadda", "Sooma", "Zakadda", "Xajka"], "correctAnswer": "Xajka", "difficulty": "medium" },
+                { "qId": "U5-L4-Q5", "type": "ordering", "question": "Tiimurka Islaamka si sax ah u saar", "items": ["Xajka", "Salaadda", "Shahaadada", "Sooma", "Zakadda"], "correctAnswer": ["Shahaadada", "Salaadda", "Zakadda", "Sooma", "Xajka"], "difficulty": "hard" }
+              ]
+            },
+            "rewardMessage": {
+              "somali": "Mashallah! Shan Tiimuuroodka Islaamka baad bartay! Muslimka fiican baad tahay! ⭐⭐⭐",
+              "english": "Mashallah! You learned the Five Pillars of Islam! You are a wonderful Muslim! ⭐⭐⭐",
+              "starsEarned": 3,
+              "badgeUnlocked": null
+            }
+          },
+
+          {
+            "lessonId": "U5-L5",
+            "title": "Ducada Maalinlaha",
+            "titleEn": "Daily Duas (Supplications)",
+            "objective": "Child learns 6 everyday duas with their meaning and when to say them.",
+            "ageGroup": "3–8",
+            "durationMinutes": 12,
+            "vocabulary": [
+              {
+                "dua": "Duca'da Cunida",
+                "arabic": "بِسْمِ اللَّهِ",
+                "transliteration": "Bismillah",
+                "somali": "Magaca Alle ayaan ku bilaabayaa",
+                "english": "In the name of Allah",
+                "when": "Marka aad cuntada bilaabayso",
+                "after": "Alxamdulillah marka aad dhamaysato"
+              },
+              {
+                "dua": "Duca'da Seexashada",
+                "arabic": "بِاسْمِكَ اللَّهُمَّ أَمُوتُ وَأَحْيَا",
+                "transliteration": "Bismika Allahumma amuutu wa axya",
+                "somali": "Magacaaga Allahayow ayaan ku dhintaa oo ku noolaaday",
+                "english": "In Your name O Allah I die and I live",
+                "when": "Marka aad seexanayso"
+              },
+              {
+                "dua": "Duca'da Toosashada",
+                "arabic": "الحمد لله الذي أحيانا بعد ما أماتنا",
+                "transliteration": "Alxamdulillaahil-ladhii axyana ba'da ma amatana",
+                "somali": "Mahad waxaa leh Alle, ka dib markuu na dhiney noo nooliyey",
+                "english": "Praise be to Allah who gave us life after causing us to die",
+                "when": "Marka aad toostid"
+              },
+              {
+                "dua": "Duca'da Gal-Musqusha",
+                "arabic": "اللَّهُمَّ إِنِّي أَعُوذُ بِكَ مِنَ الْخُبُثِ وَالْخَبَائِثِ",
+                "transliteration": "Allahumma inni a'udhu bika minal-khubuthi wal-khaba'ith",
+                "somali": "Allahayow, waax iyo xayawaanka xun ayaan ku magangalayaa",
+                "english": "O Allah, I seek refuge in You from evil spirits",
+                "when": "Marka aad musqusha gal-galeyso"
+              },
+              {
+                "dua": "Duca'da Baadashada",
+                "arabic": "رَبِّ زِدْنِي عِلْمًا",
+                "transliteration": "Rabbi zidni 'ilma",
+                "somali": "Robbiyow, aqoon iidheer",
+                "english": "My Lord, increase me in knowledge",
+                "when": "Marka aad waxbaranayso"
+              },
+              {
+                "dua": "Duca'da Safarka",
+                "arabic": "سُبْحَانَ الَّذِي سَخَّرَ لَنَا هَٰذَا",
+                "transliteration": "Subxanallathii sakhkhara lana haadha",
+                "somali": "Ammaano Alle, kana gacansaartay gaadhiga",
+                "english": "Glory to He who has subjected this to us",
+                "when": "Marka aad gaadhiga kordhayso"
+              }
+            ],
+            "voiceScript": {
+              "intro": "Bismillah! Maanta waxaan baranaynaa ducooyin maalin kasta logu isticmaalo. Ducada waa xiriirka u dhexeeya adiga iyo Alle – mar walba wuxuu kaa maqayaa!",
+              "duaByDua": [
+                { "dua": "Cunida", "script": "Marka aad cuntada bilaabayso – dheh BISMILLAH. Cuntada dhamaysatay – dheh ALXAMDULILLAH. Sida fudud!" },
+                { "dua": "Seexashada", "script": "Habeenkii marka aad seexanayso, ku duwid xagal midig, dheh: Bismika Allahumma amuutu wa axya. Alle buu kaa ilaalinayaa habeenka!" },
+                { "dua": "Toosashada", "script": "Marka aad subax toostid – Alxamdulillah! Alle buu noo nooliyey caawa. Subxana wanaagsan!" },
+                { "dua": "Waxbarashada", "script": "Marka aad BaroKids baranayso ama kitaabta fureyso, dheh: Rabbi zidni 'ilma. Robbiyow, aqoon iidheer! Aad u fiican!" },
+                { "dua": "Safarka",    "script": "Marka aad gaadhiga, baaska ama gaari kale kordhayso – dheh subxanallathii sakhkhara lana haadha. Alla wuu ku ammaan sugayaa!" }
+              ],
+              "closing": "Alxamdulillah! Ducooyin muhiim ah baad baratay. Maalin kasta isticmaal! ⭐⭐⭐"
+            },
+            "quiz": {
+              "questions": [
+                { "qId": "U5-L5-Q1", "type": "multipleChoice", "question": "Marka aad waxbaranayso maxaad tiraahda?", "options": ["Bismika Allahumma", "Rabbi zidni 'ilma", "Alxamdulillah", "Subhanallah"], "correctAnswer": "Rabbi zidni 'ilma", "difficulty": "medium" },
+                { "qId": "U5-L5-Q2", "type": "multipleChoice", "question": "Habeenka seexashada ka hor ducada?", "options": ["Bismillah", "Bismika Allahumma amuutu wa axya", "Rabbi zidni 'ilma", "Alxamdulillah"], "correctAnswer": "Bismika Allahumma amuutu wa axya", "difficulty": "medium" },
+                { "qId": "U5-L5-Q3", "type": "multipleChoice", "question": "Cuntada marka bilaabayso maxaad tiraahda?", "options": ["Allahu Akbar", "Bismillah", "Inshallah", "Mashallah"], "correctAnswer": "Bismillah", "difficulty": "easy" },
+                { "qId": "U5-L5-Q4", "type": "trueFalse", "question": "Ducada waxaad ku hadlaysaa Alle si toos ah.", "correctAnswer": true, "explanation": "Haa! Ducada waxay kula hadlaysaa Alle si toos ah.", "difficulty": "easy" }
+              ]
+            },
+            "rewardMessage": {
+              "somali": "Mashallah! Ducooyin macaan baad baratay. Alle wuu maqayaa marka aad ducaynayso! ⭐⭐⭐",
+              "english": "Mashallah! You learned beautiful duas. Allah hears you every time you make dua! ⭐⭐⭐",
+              "starsEarned": 3,
+              "badgeUnlocked": null
+            }
+          },
+
+          {
+            "lessonId": "U5-L6",
+            "title": "Nebi Muxamed (SCW) iyo Asmaauhu Husna",
+            "titleEn": "Prophet Muhammad (PBUH) and Beautiful Names of Allah",
+            "objective": "Child learns about the Prophet's gentle character and 10 of Allah's beautiful names (Asma ul-Husna) with meanings.",
+            "ageGroup": "5–8",
+            "durationMinutes": 15,
+            "prophetSection": {
+              "title": "Nebi Muxamed (SCW)",
+              "titleEn": "Prophet Muhammad (peace be upon him)",
+              "facts": [
+                { "somali": "Magaciisu waa Muxamed (SCW)", "english": "His name is Muhammad (PBUH)" },
+                { "somali": "Wuxuu ku dhashay Makkada Mucaddasada", "english": "He was born in Makkah" },
+                { "somali": "Wuxuu jeclaayee timirta iyo carruurta", "english": "He loved dates and children" },
+                { "somali": "Wuxuu ahaa ninka ugu daacadnaa ee taariikhda", "english": "He was the most truthful man in history" },
+                { "somali": "Naxariis buu u lahayn xayawaanka iyo dadka", "english": "He showed mercy to animals and people" }
+              ],
+              "voiceScript": "Nebi Muxamed (Sallallahu Calayhi Wasallam) wuxuu ahaa ninka Alle u diray rasuul. Wuxuu jeclaayee timirta, wuxuu ahaa naxariis badan, wuxuuna u jeclaaday carruurta. Marka aad magiciisa tiraahdo, dheh: Sallallahu Calayhi Wasallam."
+            },
+            "asmaaHusna": [
+              { "number": 1,  "arabic": "الله",    "transliteration": "Allah",    "somali": "Alle – Magaca Boqorka",        "english": "Allah – The Name of God" },
+              { "number": 2,  "arabic": "الرحمن",  "transliteration": "Ar-Rahman","somali": "Naxariista weyn ee dadka oo dhan","english": "The Most Gracious" },
+              { "number": 3,  "arabic": "الرحيم",  "transliteration": "Ar-Raheem","somali": "Naxariista gaarka ah ee muuminiinta","english": "The Most Merciful" },
+              { "number": 4,  "arabic": "الملك",   "transliteration": "Al-Malik", "somali": "Boqorka",                      "english": "The King" },
+              { "number": 5,  "arabic": "السلام",  "transliteration": "As-Salam", "somali": "Nabad-geliyaha",               "english": "The Source of Peace" },
+              { "number": 6,  "arabic": "الخالق",  "transliteration": "Al-Khaliq","somali": "Abuuraha",                     "english": "The Creator" },
+              { "number": 7,  "arabic": "العليم",  "transliteration": "Al-Alim",  "somali": "Wax walba og",                 "english": "The All-Knowing" },
+              { "number": 8,  "arabic": "القدير",  "transliteration": "Al-Qadir", "somali": "Awood walba leh",              "english": "The All-Powerful" },
+              { "number": 9,  "arabic": "السميع",  "transliteration": "As-Samee", "somali": "Dhageysta wax walba",          "english": "The All-Hearing" },
+              { "number": 10, "arabic": "الودود",  "transliteration": "Al-Wadud", "somali": "Jeclaaday – jacaylka keliya",  "english": "The Most Loving" }
+            ],
+            "voiceScript": {
+              "intro": "Bismillah! Maanta waxaan baranaynaa magacyada quruxda badan ee Alle – Asmaauhu Husna. Alle wuxuu leeyahay 99 magac oo qurux badan.",
+              "nameChant": "Ar-Rahman, Ar-Raheem – naxariis. Al-Malik – boqor. As-Salam – nabad. Al-Khaliq – abuure. Al-Alim – oge. Al-Qadir – xoogan. As-Samee – maqle. Al-Wadud – jeclaaday!",
+              "closing": "Alxamdulillah! Waad dhamaysay Cutubka Waxbarashada Islaamka oo dhan! Aad baad u fiicantahay! ⭐⭐⭐⭐⭐"
+            },
+            "quiz": {
+              "questions": [
+                { "qId": "U5-L6-Q1", "type": "multipleChoice", "question": "Al-Khaliq macneheedu waa?", "options": ["Boqorka", "Abuuraha", "Naxariista", "Maqle"], "correctAnswer": "Abuuraha", "difficulty": "medium" },
+                { "qId": "U5-L6-Q2", "type": "multipleChoice", "question": "Ar-Rahman macneheedu waa?", "options": ["Al-Powerful", "The Creator", "The Most Gracious", "The King"], "correctAnswer": "The Most Gracious", "difficulty": "medium" },
+                { "qId": "U5-L6-Q3", "type": "multipleChoice", "question": "Nebi Muxamed wuxuu jeclaayee?", "options": ["Berriga", "Timirta iyo carruurta", "Abeeso", "Geel kaliya"], "correctAnswer": "Timirta iyo carruurta", "difficulty": "easy" },
+                { "qId": "U5-L6-Q4", "type": "multipleChoice", "question": "Al-Wadud macneheedu waa?", "options": ["The Hearing", "The Powerful", "The Most Loving", "The Creator"], "correctAnswer": "The Most Loving", "difficulty": "medium" },
+                { "qId": "U5-L6-Q5", "type": "multipleChoice", "question": "Alle imisa magac buu leeyahay?", "options": ["10", "50", "99", "100"], "correctAnswer": "99", "difficulty": "medium" }
+              ]
+            },
+            "rewardMessage": {
+              "somali": "ALLAHU AKBAR! Waad dhamaysay Cutubka Waxbarashada Islaamka oo dhan! Alle wuu ku jeclahay! Badge Islaam baad xaqiisay! ⭐⭐⭐⭐⭐",
+              "english": "ALLAHU AKBAR! You completed the entire Islamic Learning Unit! Allah loves you! Islamic badge earned! ⭐⭐⭐⭐⭐",
+              "starsEarned": 5,
+              "badgeUnlocked": {
+                "id": "unit5_complete",
+                "name": "Islaam Dhamaystiraha",
+                "nameEn": "Islamic Learning Champion",
+                "icon": "🌙⭐"
+              }
+            }
+          }
+        ]
+      }
+    ],
+
+    "globalRewards": {
+      "badges": [
+        { "id": "first_lesson",     "name": "Bilawga",             "nameEn": "First Steps",          "icon": "👶", "condition": "Complete any 1 lesson" },
+        { "id": "alphabet_master",  "name": "Xarfaha Boqor",       "nameEn": "Alphabet Master",      "icon": "🔤", "condition": "Complete all alphabet lessons" },
+        { "id": "numbers_master",   "name": "Tirada Boqor",        "nameEn": "Number Master",        "icon": "🔢", "condition": "Complete all number lessons" },
+        { "id": "colors_champion",  "name": "Midabada Boqor",      "nameEn": "Colors Champion",      "icon": "🎨", "condition": "Complete all color lessons" },
+        { "id": "animals_champion", "name": "Xayawaanka Boqor",    "nameEn": "Animals Champion",     "icon": "🦁", "condition": "Complete all animal lessons" },
+        { "id": "islamic_scholar",  "name": "Islaam Dhamaystiraha","nameEn": "Islamic Scholar",      "icon": "🌙", "condition": "Complete all Islamic lessons" },
+        { "id": "10_stars",         "name": "Toban Xiddig",        "nameEn": "Ten Stars",            "icon": "✨", "condition": "Earn 10 stars" },
+        { "id": "50_stars",         "name": "Xiddigaha Boqor",     "nameEn": "Star Champion",        "icon": "🌟", "condition": "Earn 50 stars" },
+        { "id": "curriculum_hero",  "name": "BaroKids Geesiniga",  "nameEn": "BaroKids Hero",        "icon": "🏆", "condition": "Complete ALL 5 units" }
+      ],
+      "levelSystem": [
+        { "level": 1, "name": "Bilow",        "nameEn": "Beginner",     "starsRequired": 0   },
+        { "level": 2, "name": "Ardayga",      "nameEn": "Student",      "starsRequired": 10  },
+        { "level": 3, "name": "Xariifka",     "nameEn": "Smart One",    "starsRequired": 25  },
+        { "level": 4, "name": "Garaadka",     "nameEn": "Wise One",     "starsRequired": 50  },
+        { "level": 5, "name": "Culimada",     "nameEn": "Scholar",      "starsRequired": 80  },
+        { "level": 6, "name": "BaroKids Boqor","nameEn":"BaroKids King", "starsRequired": 120 }
+      ],
+      "motivationalMessages": [
+        { "somali": "Waxbarashadu waa furaha guusha!",        "english": "Education is the key to success!" },
+        { "somali": "Alle wuu ku jeclahay!",                  "english": "Allah loves you!" },
+        { "somali": "Aad baad u xariirtay!",                  "english": "You are so smart!" },
+        { "somali": "Libaax baad u geesineed!",               "english": "You are as brave as a lion!" },
+        { "somali": "Xiddig baad tahay!",                     "english": "You are a star!" },
+        { "somali": "Hooyadaa waxay ku faantaa!",             "english": "Your mother is proud of you!" },
+        { "somali": "Ku sii soco – gaari doonaysaa!",         "english": "Keep going – you'll make it!" },
+        { "somali": "Maalin kasta barasho cusub – waa guul!", "english": "Each day you learn something new – that's success!" }
+      ]
+    },
+
+    "metadata": {
+      "totalUnits": 5,
+      "totalLessons": 23,
+      "totalVocabularyItems": 180,
+      "totalQuizQuestions": 87,
+      "languagesIncluded": ["Somali", "English", "Arabic (Islamic unit)"],
+      "skillsAddressed": ["Listening", "Speaking", "Reading readiness", "Number sense", "Cultural identity", "Islamic values"],
+      "pedagogyApproach": "Play-based, repetition-reinforced, song-supported, bilingual Somali-English",
+      "voiceScriptLanguage": "Somali (suitable for human voice actor or Somali TTS)",
+      "recommendedUse": "Can be integrated into BaroKids app, used by parents at home, or adapted by Somali community schools"
+    }
+  }
+}

@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="so" dir="ltr">
+<head>
+<meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Manhajka – BaroKids</title>
+<meta name="description" content="Manhajka waxbarasho ee buuxa ee BaroKids: Xarfaha, Tirooyin, Midabada, Xayawaanka iyo Islaamka."/>
+<link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+<nav class="navbar">
+  <a href="index.html" class="nav-logo"><div class="logo-icon">🌟</div>Baro<span>Kids</span></a>
+  <div class="nav-links">
+    <a href="index.html">Guriga</a><a href="curriculum.html" class="active">Manhajka</a>
+    <a href="lessons.html">Casharrada</a><a href="quiz.html">Imtixaan</a>
+    <a href="rewards.html">Abaalmarinta</a><a href="parents.html">Waalidka</a>
+    <a href="about.html">Naga</a><a href="contact.html">Xiriir</a>
+  </div>
+  <div class="nav-actions">
+    <div class="nav-stars-badge" data-auth="logged-in" style="display:none;" onclick="location.href='rewards.html'">⭐ <span data-stars>0</span></div>
+    <button class="btn-nav-login" onclick="Modal.open('modal-auth')" data-auth="logged-out">Gal</button>
+    <span data-auth="logged-in" style="display:none;font-size:0.85rem;font-weight:700;color:var(--blue);">👋 <span data-user-name></span></span>
+    <button class="btn-nav-login" onclick="Auth.logout()" data-auth="logged-in" style="display:none;">Ka Bax</button>
+  </div>
+  <button class="nav-hamburger" id="nav-hamburger"><span></span><span></span><span></span></button>
+</nav>
+<div class="nav-mobile" id="nav-mobile">
+  <a href="index.html">🏠 Guriga</a><a href="curriculum.html">📚 Manhajka</a>
+  <a href="lessons.html">🎓 Casharrada</a><a href="quiz.html">📝 Imtixaan</a>
+</div>
+
+<div class="page-hero">
+  <div class="page-hero-icon">📚</div>
+  <h1>Manhajka Buuxa</h1>
+  <p>5 cutub, 23+ casharo, 200+ su'aalood – oo dhan bilaash ah!</p>
+</div>
+
+<!-- Overview stats -->
+<section class="section-sm" style="background:var(--surface);border-bottom:1px solid var(--border);">
+  <div class="container">
+    <div style="display:flex;justify-content:center;gap:48px;flex-wrap:wrap;text-align:center;">
+      <div><div style="font-family:var(--font-display);font-size:2.4rem;color:var(--blue);">5</div><div style="font-weight:700;color:var(--text-muted);">Cutubba</div></div>
+      <div><div style="font-family:var(--font-display);font-size:2.4rem;color:var(--orange);">23+</div><div style="font-weight:700;color:var(--text-muted);">Casharo</div></div>
+      <div><div style="font-family:var(--font-display);font-size:2.4rem;color:var(--green);">200+</div><div style="font-weight:700;color:var(--text-muted);">Erayo</div></div>
+      <div><div style="font-family:var(--font-display);font-size:2.4rem;color:var(--purple);">87+</div><div style="font-weight:700;color:var(--text-muted);">Su'aalood</div></div>
+      <div><div style="font-family:var(--font-display);font-size:2.4rem;color:var(--yellow);">8</div><div style="font-weight:700;color:var(--text-muted);">Badge</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- Curriculum Units -->
+<section class="section">
+  <div class="container">
+    <div style="display:flex;flex-direction:column;gap:40px;">
+
+      <!-- Unit 1: Alphabet -->
+      <div class="reveal" style="background:var(--surface);border-radius:var(--r-2xl);border:2px solid var(--blue-mid);overflow:hidden;">
+        <div style="background:var(--grad-blue);padding:28px 32px;color:#fff;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:14px;">
+          <div>
+            <div style="font-size:0.78rem;font-weight:800;opacity:0.75;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:6px;">Cutub 1</div>
+            <h2 style="font-family:var(--font-display);font-size:1.6rem;">🔤 Xarfaha Soomaaliga</h2>
+            <p style="opacity:0.88;font-weight:600;margin-top:6px;">Da' 3–8 • 7 casharo • 28 su'aalood</p>
+          </div>
+          <a href="lessons.html?lesson=alphabet" class="btn btn-primary">Bilaw Cutubkan →</a>
+        </div>
+        <div style="padding:28px 32px;">
+          <p style="color:var(--text-muted);font-weight:600;margin-bottom:20px;">Baro dhammaan 21 xarfaha Soomaaliga, mid kastana waxaa la socda eray, sawir iyo cod Soomaaliga. Xarfaha waxaa lagu baray kooxo kooxo si fudud.</p>
+          <div style="display:flex;flex-wrap:wrap;gap:8px;">
+            {['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','Q','R','S','T','U','W','X','Y','Z'].map(l=>`<span style="background:var(--blue-light);color:var(--blue);border-radius:8px;padding:6px 12px;font-weight:800;font-family:var(--font-display);">${l}</span>`).join('')}
+          </div>
+          <div style="margin-top:20px;display:flex;gap:12px;flex-wrap:wrap;">
+            <span class="points-chip">+2 XP casharo kasta</span>
+            <span style="background:var(--blue-light);color:var(--blue);padding:3px 10px;border-radius:50px;font-size:0.78rem;font-weight:800;">🏅 Alphabet Hero Badge</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Unit 2: Numbers -->
+      <div class="reveal" style="background:var(--surface);border-radius:var(--r-2xl);border:2px solid #BBF7D0;overflow:hidden;">
+        <div style="background:var(--grad-green);padding:28px 32px;color:#fff;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:14px;">
+          <div>
+            <div style="font-size:0.78rem;font-weight:800;opacity:0.75;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:6px;">Cutub 2</div>
+            <h2 style="font-family:var(--font-display);font-size:1.6rem;">🔢 Tirooyin 1–20</h2>
+            <p style="opacity:0.88;font-weight:600;margin-top:6px;">Da' 2–8 • 4 casharo • 16 su'aalood</p>
+          </div>
+          <a href="lessons.html?lesson=numbers" class="btn btn-primary">Bilaw Cutubkan →</a>
+        </div>
+        <div style="padding:28px 32px;">
+          <p style="color:var(--text-muted);font-weight:600;margin-bottom:20px;">Baro timaaddada Soomaalida 1 ilaa 20, xisaabta fudud ee darista iyo jarida, iyo isticmaalka tirada jumlooyin gudahood.</p>
+          <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(80px,1fr));gap:8px;">
+            ${[{n:1,s:'Kow'},{n:2,s:'Laba'},{n:3,s:'Saddex'},{n:5,s:'Shan'},{n:7,s:'Toddoba'},{n:10,s:'Toban'},{n:15,s:'Shan iyo toban'},{n:20,s:'Labaatan'}].map(i=>`
+              <div style="background:var(--green-light);border-radius:12px;padding:10px;text-align:center;">
+                <div style="font-family:var(--font-display);font-size:1.4rem;color:var(--green);">${i.n}</div>
+                <div style="font-size:0.72rem;font-weight:700;">${i.s}</div>
+              </div>
+            `).join('')}
+          </div>
+          <div style="margin-top:20px;display:flex;gap:12px;flex-wrap:wrap;">
+            <span class="points-chip">+2 XP casharo kasta</span>
+            <span style="background:var(--green-light);color:var(--green);padding:3px 10px;border-radius:50px;font-size:0.78rem;font-weight:800;">🏅 Number Master Badge</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Unit 3: Colors -->
+      <div class="reveal" style="background:var(--surface);border-radius:var(--r-2xl);border:2px solid #FED7AA;overflow:hidden;">
+        <div style="background:var(--grad-orange);padding:28px 32px;color:#fff;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:14px;">
+          <div>
+            <div style="font-size:0.78rem;font-weight:800;opacity:0.75;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:6px;">Cutub 3</div>
+            <h2 style="font-family:var(--font-display);font-size:1.6rem;">🎨 Midabada</h2>
+            <p style="opacity:0.88;font-weight:600;margin-top:6px;">Da' 2–7 • 3 casharo • 13 su'aalood</p>
+          </div>
+          <a href="lessons.html?lesson=colors" class="btn btn-primary">Bilaw Cutubkan →</a>
+        </div>
+        <div style="padding:28px 32px;">
+          <p style="color:var(--text-muted);font-weight:600;margin-bottom:20px;">Baro 12 midab kala duwan iyo magacyooda Soomaaliga – ka bilaabo midabada aasaasiga ah ilaa kuwa kale.</p>
+          <div style="display:flex;gap:8px;flex-wrap:wrap;">
+            ${[{s:'Cas',h:'#E74C3C'},{s:'Cagaar',h:'#27AE60'},{s:'Buluug',h:'#2980B9'},{s:'Huruud',h:'#F1C40F'},{s:'Oranjo',h:'#E67E22'},{s:'Guduud',h:'#8E44AD'},{s:'Cad',h:'#BDC3C7'},{s:'Madow',h:'#2C3E50'},{s:'Bunni',h:'#795548'},{s:'Warqad',h:'#FF69B4'}].map(c=>`
+              <div style="display:flex;align-items:center;gap:6px;background:var(--bg);border-radius:50px;padding:6px 12px;">
+                <div style="width:14px;height:14px;border-radius:50%;background:${c.h};"></div>
+                <span style="font-size:0.82rem;font-weight:800;">${c.s}</span>
+              </div>
+            `).join('')}
+          </div>
+          <div style="margin-top:20px;display:flex;gap:12px;flex-wrap:wrap;">
+            <span class="points-chip">+2 XP casharo kasta</span>
+            <span style="background:var(--orange-light);color:var(--orange);padding:3px 10px;border-radius:50px;font-size:0.78rem;font-weight:800;">🏅 Color Expert Badge</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Unit 4: Animals -->
+      <div class="reveal" style="background:var(--surface);border-radius:var(--r-2xl);border:2px solid #FBCFE8;overflow:hidden;">
+        <div style="background:var(--grad-pink);padding:28px 32px;color:#fff;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:14px;">
+          <div>
+            <div style="font-size:0.78rem;font-weight:800;opacity:0.75;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:6px;">Cutub 4</div>
+            <h2 style="font-family:var(--font-display);font-size:1.6rem;">🦁 Xayawaanka</h2>
+            <p style="opacity:0.88;font-weight:600;margin-top:6px;">Da' 2–8 • 4 casharo • 15 su'aalood</p>
+          </div>
+          <a href="lessons.html?lesson=animals" class="btn btn-primary">Bilaw Cutubkan →</a>
+        </div>
+        <div style="padding:28px 32px;">
+          <p style="color:var(--text-muted);font-weight:600;margin-bottom:20px;">Baro xayawaanka berriga, badda, iyo reerka – 20+ xayawaan oo magacyooda Soomaaliga, codkooda, iyo xaqiiqo xiiso leh.</p>
+          <div style="display:flex;gap:10px;flex-wrap:wrap;font-size:2rem;">
+            <span title="Libaax">🦁</span><span title="Maroodi">🐘</span><span title="Geel">🐪</span>
+            <span title="Kaluun">🐟</span><span title="Doofin">🐬</span><span title="Abeeso">🐋</span>
+            <span title="Lo'">🐄</span><span title="Digaag">🐓</span><span title="Ri">🐐</span>
+            <span title="Daayeer">🐒</span><span title="Danaas">🦈</span><span title="Maroodi yar">🦓</span>
+          </div>
+          <div style="margin-top:20px;display:flex;gap:12px;flex-wrap:wrap;">
+            <span class="points-chip">+2 XP casharo kasta</span>
+            <span style="background:#FDF2F8;color:var(--pink);padding:3px 10px;border-radius:50px;font-size:0.78rem;font-weight:800;">🏅 Animal Explorer Badge</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Unit 5: Islamic -->
+      <div class="reveal" style="background:var(--surface);border-radius:var(--r-2xl);border:2px solid #DDD6FE;overflow:hidden;">
+        <div style="background:linear-gradient(135deg,#4C1D95,#7C3AED);padding:28px 32px;color:#fff;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:14px;">
+          <div>
+            <div style="font-size:0.78rem;font-weight:800;opacity:0.75;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:6px;">Cutub 5</div>
+            <h2 style="font-family:var(--font-display);font-size:1.6rem;">🌙 Waxbarashada Islaamka</h2>
+            <p style="opacity:0.88;font-weight:600;margin-top:6px;">Da' 3–8 • 6 casharo • 27 su'aalood</p>
+          </div>
+          <a href="lessons.html?lesson=islamic" class="btn btn-primary">Bilaw Cutubkan →</a>
+        </div>
+        <div style="padding:28px 32px;">
+          <p style="color:var(--text-muted);font-weight:600;margin-bottom:20px;">Baro ereyada Islaamiga, Tiimurka Islaamka shan, ducada maalinlaha, iyo 10 ka mid ah 99 magacyada Alle.</p>
+          <div style="display:flex;flex-direction:column;gap:8px;">
+            ${[{n:'☝️ Shahaadada',d:'La miraahato inaanu jirin ilaah marka laga reebo Alle'},{n:'🕌 Salaadda',d:'Shan jeer maalin kasta'},{n:'💚 Zakadda',d:'Bixinta miskiinada'},{n:'🌙 Sooma',d:'Soomka Ramadaan'},{n:'🕋 Xajka',d:'Taga Makkah'}].map(p=>`
+              <div style="display:flex;align-items:center;gap:12px;padding:10px;background:var(--purple-light);border-radius:12px;">
+                <span style="font-size:0.88rem;font-weight:800;min-width:120px;">${p.n}</span>
+                <span style="font-size:0.82rem;color:var(--text-muted);font-weight:600;">${p.d}</span>
+              </div>
+            `).join('')}
+          </div>
+          <div style="margin-top:20px;display:flex;gap:12px;flex-wrap:wrap;">
+            <span class="points-chip">+2 XP casharo kasta</span>
+            <span style="background:var(--purple-light);color:var(--purple);padding:3px 10px;border-radius:50px;font-size:0.78rem;font-weight:800;">🏅 Young Muslim Badge</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- Lesson cards preview -->
+<section class="section" style="background:var(--blue-light);">
+  <div class="container">
+    <div class="text-center mb-8 reveal">
+      <h2 class="section-title">Bilaw Casharka Maanta</h2>
+      <p class="section-sub">Dooro casharka aad rabto inaad bilaabto</p>
+    </div>
+    <div id="curriculum-lessons" class="grid-auto"></div>
+  </div>
+</section>
+
+<div class="modal-overlay" id="modal-auth">
+  <div class="modal">
+    <button class="modal-close" onclick="Modal.close('modal-auth')">✕</button>
+    <h2>👋 Ku soo dhawow!</h2>
+    <div class="auth-tabs">
+      <button class="auth-tab active" onclick="switchTab('login')">Gal</button>
+      <button class="auth-tab" onclick="switchTab('register')">Abuur</button>
+    </div>
+    <form id="login-form">
+      <div class="form-group"><label class="form-label">Email</label><input type="email" id="login-email" class="form-control" required/></div>
+      <div class="form-group"><label class="form-label">Furaha Sirta</label><input type="password" id="login-password" class="form-control" required/></div>
+      <button type="submit" class="btn btn-blue btn-full">Gal →</button>
+    </form>
+    <form id="register-form" style="display:none;">
+      <div class="form-group"><input type="text" id="reg-name" class="form-control" placeholder="Magacaaga" required/></div>
+      <div class="form-group"><input type="email" id="reg-email" class="form-control" placeholder="Email" required/></div>
+      <div class="form-group"><input type="password" id="reg-password" class="form-control" placeholder="Furaha sirta" required/></div>
+      <div class="form-group"><input type="password" id="reg-confirm" class="form-control" placeholder="Ku celi" required/></div>
+      <button type="submit" class="btn btn-blue btn-full">Abuur Xisaab</button>
+    </form>
+  </div>
+</div>
+
+<footer class="footer" style="padding:32px 24px;">
+  <div style="max-width:1200px;margin:0 auto;text-align:center;color:#64748B;font-size:0.85rem;">© 2025 BaroKids – Manhajka</div>
+</footer>
+<script src="script.js"></script>
+<script>
+function switchTab(t){
+  document.querySelectorAll('.auth-tab').forEach((b,i)=>b.classList.toggle('active',i===(t==='login'?0:1)));
+  document.getElementById('login-form').style.display=t==='login'?'':'none';
+  document.getElementById('register-form').style.display=t==='register'?'':'none';
+}
+// Inline template strings in curriculum were literal – re-render properly via JS
+document.querySelectorAll('[style*="display:flex;flex-wrap:wrap;gap:8px"]').forEach(el=>{
+  if(el.innerHTML.includes('{[')) el.innerHTML='';
+});
+</script>
+</body>
+</html>

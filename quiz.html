@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="so" dir="ltr">
+<head>
+<meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Imtixaan – BaroKids</title>
+<meta name="description" content="Ciyaar imtixaanada waxbarasho oo xiiso leh ee BaroKids."/>
+<link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+<nav class="navbar">
+  <a href="index.html" class="nav-logo"><div class="logo-icon">🌟</div>Baro<span>Kids</span></a>
+  <div class="nav-links">
+    <a href="index.html">Guriga</a><a href="curriculum.html">Manhajka</a>
+    <a href="lessons.html">Casharrada</a><a href="quiz.html" class="active">Imtixaan</a>
+    <a href="rewards.html">Abaalmarinta</a><a href="parents.html">Waalidka</a>
+    <a href="about.html">Naga</a><a href="contact.html">Xiriir</a>
+  </div>
+  <div class="nav-actions">
+    <div class="nav-stars-badge" data-auth="logged-in" style="display:none;" onclick="location.href='rewards.html'">⭐ <span data-stars>0</span></div>
+    <button class="btn-nav-login" onclick="Modal.open('modal-auth')" data-auth="logged-out">Gal</button>
+    <span data-auth="logged-in" style="display:none;font-size:0.85rem;font-weight:700;color:var(--blue);">👋 <span data-user-name></span></span>
+    <button class="btn-nav-login" onclick="Auth.logout()" data-auth="logged-in" style="display:none;">Ka Bax</button>
+  </div>
+  <button class="nav-hamburger" id="nav-hamburger"><span></span><span></span><span></span></button>
+</nav>
+<div class="nav-mobile" id="nav-mobile">
+  <a href="index.html">🏠 Guriga</a><a href="lessons.html">🎓 Casharrada</a>
+  <a href="quiz.html">📝 Imtixaan</a><a href="rewards.html">🏆 Abaalmarinta</a>
+</div>
+
+<div class="page-hero">
+  <div class="page-hero-icon">📝</div>
+  <h1>Imtixaan</h1>
+  <p>Tijaabi waxaad baratay – hel xiddigyo iyo biliyaasho!</p>
+</div>
+
+<section class="section">
+  <div class="container-sm">
+
+    <!-- Quiz picker tabs -->
+    <div id="quiz-topic-nav" style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:32px;justify-content:center;">
+      <button class="btn btn-outline btn-sm" onclick="Quiz.start('q_alphabet')">🔤 Xarfaha</button>
+      <button class="btn btn-outline btn-sm" onclick="Quiz.start('q_numbers')">🔢 Tirooyin</button>
+      <button class="btn btn-outline btn-sm" onclick="Quiz.start('q_colors')">🎨 Midabada</button>
+      <button class="btn btn-outline btn-sm" onclick="Quiz.start('q_animals')">🦁 Xayawaanka</button>
+      <button class="btn btn-outline btn-sm" onclick="Quiz.start('q_islamic')">🌙 Islaamka</button>
+    </div>
+
+    <!-- Quiz renders here -->
+    <div id="quiz-container"></div>
+
+  </div>
+</section>
+
+<!-- Quick tips -->
+<section class="section-sm" style="background:var(--blue-light);">
+  <div class="container-sm">
+    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:16px;">
+      <div style="background:#fff;border-radius:16px;padding:18px;text-align:center;">
+        <div style="font-size:1.8rem;margin-bottom:8px;">✅</div>
+        <div style="font-weight:800;font-size:0.9rem;">Jawaab saxda ah</div>
+        <div style="color:var(--text-muted);font-size:0.8rem;margin-top:4px;">+10 dhibco</div>
+      </div>
+      <div style="background:#fff;border-radius:16px;padding:18px;text-align:center;">
+        <div style="font-size:1.8rem;margin-bottom:8px;">⭐</div>
+        <div style="font-weight:800;font-size:0.9rem;">Dhammaystir imtixaan</div>
+        <div style="color:var(--text-muted);font-size:0.8rem;margin-top:4px;">+5 xiddig</div>
+      </div>
+      <div style="background:#fff;border-radius:16px;padding:18px;text-align:center;">
+        <div style="font-size:1.8rem;margin-bottom:8px;">🏆</div>
+        <div style="font-weight:800;font-size:0.9rem;">Dhibco buuxa</div>
+        <div style="color:var(--text-muted);font-size:0.8rem;margin-top:4px;">+20 xiddig + Badge!</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="modal-overlay" id="modal-auth">
+  <div class="modal">
+    <button class="modal-close" onclick="Modal.close('modal-auth')">✕</button>
+    <h2>👋 Ku soo dhawow!</h2><p class="modal-sub">Gal xisaabkaaga.</p>
+    <form id="login-form">
+      <div class="form-group"><label class="form-label">Email</label><input type="email" id="login-email" class="form-control" required/></div>
+      <div class="form-group"><label class="form-label">Furaha Sirta</label><input type="password" id="login-password" class="form-control" required/></div>
+      <button type="submit" class="btn btn-blue btn-full">Gal →</button>
+    </form>
+    <form id="register-form" style="display:none;">
+      <div class="form-group"><input type="text" id="reg-name" class="form-control" placeholder="Magacaaga" required/></div>
+      <div class="form-group"><input type="email" id="reg-email" class="form-control" placeholder="Email" required/></div>
+      <div class="form-group"><input type="password" id="reg-password" class="form-control" placeholder="Furaha sirta" required/></div>
+      <div class="form-group"><input type="password" id="reg-confirm" class="form-control" placeholder="Ku celi" required/></div>
+      <button type="submit" class="btn btn-blue btn-full">Abuur Xisaab</button>
+    </form>
+  </div>
+</div>
+
+<footer class="footer" style="padding:32px 24px;">
+  <div style="max-width:1200px;margin:0 auto;text-align:center;color:#64748B;font-size:0.85rem;">© 2025 BaroKids</div>
+</footer>
+
+<script src="script.js"></script>
+<script>
+function switchTab(t){
+  document.querySelectorAll('.auth-tab').forEach((b,i)=>b.classList.toggle('active',i===(t==='login'?0:1)));
+  document.getElementById('login-form').style.display=t==='login'?'':'none';
+  document.getElementById('register-form').style.display=t==='register'?'':'none';
+}
+</script>
+</body>
+</html>

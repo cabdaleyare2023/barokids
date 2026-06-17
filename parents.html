@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="so" dir="ltr">
+<head>
+<meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Dashboard Waalidka – BaroKids</title>
+<meta name="description" content="Daba geli horumar ilmahaaga, imtixaanadooda iyo biliyaashooda."/>
+<link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+<nav class="navbar">
+  <a href="index.html" class="nav-logo"><div class="logo-icon">🌟</div>Baro<span>Kids</span></a>
+  <div class="nav-links">
+    <a href="index.html">Guriga</a><a href="curriculum.html">Manhajka</a>
+    <a href="lessons.html">Casharrada</a><a href="quiz.html">Imtixaan</a>
+    <a href="rewards.html">Abaalmarinta</a><a href="parents.html" class="active">Waalidka</a>
+    <a href="about.html">Naga</a><a href="contact.html">Xiriir</a>
+  </div>
+  <div class="nav-actions">
+    <div class="nav-stars-badge" data-auth="logged-in" style="display:none;" onclick="location.href='rewards.html'">⭐ <span data-stars>0</span></div>
+    <button class="btn-nav-login" onclick="Modal.open('modal-auth')" data-auth="logged-out">Gal</button>
+    <span data-auth="logged-in" style="display:none;font-size:0.85rem;font-weight:700;color:var(--blue);">👋 <span data-user-name></span></span>
+    <button class="btn-nav-login" onclick="Auth.logout()" data-auth="logged-in" style="display:none;">Ka Bax</button>
+  </div>
+  <button class="nav-hamburger" id="nav-hamburger"><span></span><span></span><span></span></button>
+</nav>
+<div class="nav-mobile" id="nav-mobile">
+  <a href="index.html">🏠 Guriga</a><a href="lessons.html">🎓 Casharrada</a>
+  <a href="rewards.html">🏆 Abaalmarinta</a><a href="parents.html">👨‍👩‍👧 Waalidka</a>
+</div>
+
+<div class="page-hero">
+  <div class="page-hero-icon">👨‍👩‍👧</div>
+  <h1>Dashboard Waalidka</h1>
+  <p>Daba geli horumar ilmahaaga iyo waxbarashada</p>
+</div>
+
+<section class="section">
+  <div class="container">
+
+    <!-- Logged OUT state -->
+    <div data-auth="logged-out" style="text-align:center;padding:60px 20px;max-width:480px;margin:0 auto;">
+      <div style="font-size:4rem;margin-bottom:20px;">🔒</div>
+      <h2 style="font-family:var(--font-display);font-size:1.6rem;margin-bottom:14px;">Gal si aad Dashboard-ka aragto</h2>
+      <p style="color:var(--text-muted);font-weight:600;margin-bottom:28px;">Abuur xisaab bilaash ah si aad u dabo geli karto horumar ilmahaaga, imtixaanadooda iyo biliyaashooda.</p>
+      <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap;">
+        <button class="btn btn-blue btn-lg" onclick="Modal.open('modal-auth')">🚀 Abuur Xisaab Bilaash</button>
+        <button class="btn btn-outline" onclick="Modal.open('modal-auth')">Gal Xisaabka →</button>
+      </div>
+    </div>
+
+    <!-- Logged IN state -->
+    <div data-auth="logged-in" style="display:none;">
+      <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:14px;margin-bottom:28px;">
+        <div>
+          <h2 style="font-family:var(--font-display);font-size:1.4rem;">Ku soo dhawow, <span data-user-name></span>! 👋</h2>
+          <p style="color:var(--text-muted);font-weight:600;margin-top:4px;">Daba geli ilmahaaga ee hoose</p>
+        </div>
+        <button class="btn btn-blue" onclick="Modal.open('modal-add-child')">+ Ku dar Ilmo Cusub</button>
+      </div>
+
+      <div class="dashboard-grid">
+        <!-- Sidebar: Child list -->
+        <div>
+          <div class="panel">
+            <div class="panel-header"><h3>👶 Carruurta</h3></div>
+            <div class="panel-body" id="parent-child-list" style="padding:12px;"></div>
+          </div>
+          <!-- Settings panel -->
+          <div class="panel" style="margin-top:16px;">
+            <div class="panel-header"><h3>⚙️ Goobaha</h3></div>
+            <div class="panel-body">
+              <div style="display:flex;flex-direction:column;gap:12px;">
+                <a href="lessons.html" class="btn btn-blue btn-sm">📚 Kasharada Bilow</a>
+                <a href="quiz.html" class="btn btn-orange btn-sm">📝 Imtixaan Bilow</a>
+                <a href="rewards.html" class="btn btn-outline btn-sm">🏆 Abaalmarinta Eeg</a>
+                <button class="btn btn-outline btn-sm" style="border-color:var(--red);color:var(--red);" onclick="if(confirm('Ma hubtaa?')){Auth.logout();location.href='index.html';}">
+                  Ka Bax
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Main stats panel -->
+        <div class="panel">
+          <div class="panel-header"><h3>📊 Horumar Faahfaahsan</h3></div>
+          <div class="panel-body" id="child-stats-panel">
+            <div style="text-align:center;padding:40px;color:var(--text-muted);">
+              <div style="font-size:3rem;margin-bottom:12px;">👈</div>
+              <p style="font-weight:600;">Dooro ilmaha bidixda si aad horumarkiisa aragto</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tips for parents -->
+      <div style="margin-top:40px;">
+        <h2 style="font-family:var(--font-display);font-size:1.4rem;margin-bottom:20px;">💡 Talooyin Waalidka</h2>
+        <div class="grid-3">
+          <div class="feature-card">
+            <div class="feature-icon bg-blue-light">📅</div>
+            <h3>Waxbarasho Maalin kasta</h3>
+            <p>Ilmaha geli BaroKids 15–20 daqiiqo maalin kasta si uu si dhakhso ah ugu bartay. Caadada ayaa muhiim ah.</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon bg-green-light">🗣️</div>
+            <h3>Ku hadal Soomaaliga Guriga</h3>
+            <p>Guriga si joogto ah ugu hadal xarfaha, tirooyin, iyo ereyada cusub ee ilmahaagu bartay BaroKids.</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon bg-orange-light">🌟</div>
+            <h3>Amaan Horumarkiisa</h3>
+            <p>Marka ilmaha xiddig ama badge cusub xaqiiyo, amaan. Dhiirrigelinta ayaa casharrada ka wanaagsan.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ADD CHILD MODAL -->
+<div class="modal-overlay" id="modal-add-child">
+  <div class="modal">
+    <button class="modal-close" onclick="Modal.close('modal-add-child')">✕</button>
+    <h2>👶 Ku dar Ilmaha</h2>
+    <p class="modal-sub">Ku dar macluumaadka ilmahaaga.</p>
+    <form id="add-child-form">
+      <div class="form-group"><label class="form-label">Magaca Ilmaha</label><input type="text" id="child-name" class="form-control" placeholder="Magaca ilmaha" required/></div>
+      <div class="form-group"><label class="form-label">Da'da (sano)</label>
+        <select id="child-age" class="form-control" required>
+          <option value="">Dooro da'da</option>
+          <option value="2">2 sano</option><option value="3">3 sano</option><option value="4">4 sano</option>
+          <option value="5">5 sano</option><option value="6">6 sano</option><option value="7">7 sano</option><option value="8">8 sano</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label class="form-label">Sumadda Ilmaha</label>
+        <input type="hidden" id="selected-avatar" value="👦"/>
+        <div id="avatar-picker" style="display:flex;flex-wrap:wrap;gap:8px;"></div>
+      </div>
+      <button type="submit" class="btn btn-blue btn-full">Ku dar Ilmaha ✨</button>
+    </form>
+  </div>
+</div>
+
+<div class="modal-overlay" id="modal-auth">
+  <div class="modal">
+    <button class="modal-close" onclick="Modal.close('modal-auth')">✕</button>
+    <h2>👋 Ku soo dhawow!</h2>
+    <div class="auth-tabs">
+      <button class="auth-tab active" onclick="switchTab('login')">Gal</button>
+      <button class="auth-tab" onclick="switchTab('register')">Abuur</button>
+    </div>
+    <form id="login-form">
+      <div class="form-group"><label class="form-label">Email</label><input type="email" id="login-email" class="form-control" required/></div>
+      <div class="form-group"><label class="form-label">Furaha Sirta</label><input type="password" id="login-password" class="form-control" required/></div>
+      <button type="submit" class="btn btn-blue btn-full">Gal →</button>
+    </form>
+    <form id="register-form" style="display:none;">
+      <div class="form-group"><input type="text" id="reg-name" class="form-control" placeholder="Magacaaga" required/></div>
+      <div class="form-group"><input type="email" id="reg-email" class="form-control" placeholder="Email" required/></div>
+      <div class="form-group"><input type="password" id="reg-password" class="form-control" placeholder="Furaha sirta" required/></div>
+      <div class="form-group"><input type="password" id="reg-confirm" class="form-control" placeholder="Ku celi" required/></div>
+      <button type="submit" class="btn btn-blue btn-full">Abuur Xisaab 🎉</button>
+    </form>
+  </div>
+</div>
+
+<footer class="footer" style="padding:32px 24px;">
+  <div style="max-width:1200px;margin:0 auto;text-align:center;color:#64748B;font-size:0.85rem;">© 2025 BaroKids – Dashboard Waalidka</div>
+</footer>
+<script src="script.js"></script>
+<script>
+function switchTab(t){
+  document.querySelectorAll('.auth-tab').forEach((b,i)=>b.classList.toggle('active',i===(t==='login'?0:1)));
+  document.getElementById('login-form').style.display=t==='login'?'':'none';
+  document.getElementById('register-form').style.display=t==='register'?'':'none';
+}
+</script>
+</body>
+</html>

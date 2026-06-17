@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="so" dir="ltr">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>BaroKids – Waxbarashada Carruurta Soomaalida</title>
+<meta name="description" content="BaroKids waa platform waxbarasho oo loogu talagalay carruurta Soomaalida da'doodu u dhaxayso 2–8 sano. Baro xarfaha, tirooyin, midabada, xayawaanka iyo Islaamka."/>
+<meta property="og:title" content="BaroKids – Somali Learning for Kids"/>
+<meta property="og:description" content="Fun, interactive Somali learning for children ages 2–8"/>
+<meta property="og:type" content="website"/>
+<meta name="theme-color" content="#2563EB"/>
+<link rel="stylesheet" href="style.css"/>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebSite","name":"BaroKids","description":"Somali Children Learning Platform","url":"https://barokids.com","audience":{"@type":"EducationalAudience","educationalRole":"student"}}
+</script>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="navbar">
+  <a href="index.html" class="nav-logo">
+    <div class="logo-icon">🌟</div>
+    Baro<span>Kids</span>
+  </a>
+  <div class="nav-links">
+    <a href="index.html" class="active">Guriga</a>
+    <a href="curriculum.html">Manhajka</a>
+    <a href="lessons.html">Casharrada</a>
+    <a href="quiz.html">Imtixaan</a>
+    <a href="rewards.html">Abaalmarinta</a>
+    <a href="parents.html">Waalidka</a>
+    <a href="about.html">Naga</a>
+    <a href="contact.html">Xiriir</a>
+  </div>
+  <div class="nav-actions">
+    <div class="nav-stars-badge" onclick="location.href='rewards.html'" data-auth="logged-in" style="display:none;">
+      ⭐ <span data-stars>0</span>
+    </div>
+    <button class="btn-nav-login" onclick="Modal.open('modal-auth')" data-auth="logged-out">Gal</button>
+    <span data-auth="logged-in" style="display:none;font-size:0.85rem;font-weight:700;color:var(--blue);">👋 <span data-user-name></span></span>
+    <button class="btn-nav-cta" onclick="Modal.open('modal-auth')" data-auth="logged-out">Bilow Bilaash ✨</button>
+    <button class="btn-nav-login" onclick="Auth.logout()" data-auth="logged-in" style="display:none;">Ka Bax</button>
+  </div>
+  <button class="nav-hamburger" id="nav-hamburger" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+<div class="nav-mobile" id="nav-mobile">
+  <a href="index.html">🏠 Guriga</a>
+  <a href="curriculum.html">📚 Manhajka</a>
+  <a href="lessons.html">🎓 Casharrada</a>
+  <a href="quiz.html">📝 Imtixaan</a>
+  <a href="rewards.html">🏆 Abaalmarinta</a>
+  <a href="parents.html">👨‍👩‍👧 Waalidka</a>
+  <a href="about.html">ℹ️ Naga</a>
+  <a href="contact.html">📧 Xiriir</a>
+  <div style="margin-top:16px;display:flex;gap:10px;">
+    <button class="btn btn-outline btn-sm" onclick="Modal.open('modal-auth')">Gal</button>
+    <button class="btn btn-blue btn-sm" onclick="Modal.open('modal-auth')">Bilow</button>
+  </div>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-badge">🌟 Waxbarasho Somali oo Reerkiina u Gaar ah</div>
+  <h1>Carruurta Waxbarashada<br><span class="highlight">Soomaaliga</span> Baro!</h1>
+  <p class="hero-sub">BaroKids waa goob waxbarasho oo xiiso leh, loogu talagalay carruurta da'doodu u dhaxayso 2–8 sano. Xarfo, tirooyin, midabado, xayawaano iyo waxbarashada Islaamka!</p>
+  <div class="hero-actions">
+    <a href="lessons.html" class="btn btn-primary btn-lg">▶ Bilaw Waxbarasho</a>
+    <button class="btn btn-secondary btn-lg" onclick="Modal.open('modal-auth')">👨‍👩‍👧 Abuur Xisaab</button>
+  </div>
+  <div class="hero-chars">
+    <div class="hero-char" style="background:rgba(255,215,0,0.2);">👦</div>
+    <div class="hero-char" style="background:rgba(255,105,180,0.2);">👧</div>
+    <div class="hero-char" style="background:rgba(144,238,144,0.2);">🧒</div>
+    <div class="hero-char" style="background:rgba(135,206,235,0.2);">👶</div>
+  </div>
+  <div class="hero-stats">
+    <div class="hero-stat"><div class="num">5+</div><div class="lbl">Cutubba</div></div>
+    <div class="hero-stat"><div class="num">50+</div><div class="lbl">Casharo</div></div>
+    <div class="hero-stat"><div class="num">200+</div><div class="lbl">Su'aalood</div></div>
+    <div class="hero-stat"><div class="num">2–8</div><div class="lbl">Da' Sano</div></div>
+  </div>
+  <div class="hero-wave"></div>
+</section>
+
+<!-- FEATURES -->
+<section class="section">
+  <div class="container">
+    <div class="text-center mb-8 reveal">
+      <div class="section-label">Maxaa BaroKids ka gaar ah?</div>
+      <h2 class="section-title">Waxbarasho Macaan oo Xiiso leh</h2>
+      <p class="section-sub">Platform-kayagu wuxuu isku daraa barnaamijka waxbarasho, ciyaar, iyo abaalmarinta si carruurtu ugu farxadayso barashada.</p>
+    </div>
+    <div class="features-grid">
+      <div class="feature-card reveal">
+        <div class="feature-icon bg-blue-light">🔤</div>
+        <h3>Xarfaha Soomaaliga</h3>
+        <p>Dhammaan 21 xarfaha Soomaaliga, mid kastana waxaa la socda sawir, eray iyo codka Soomaaliga.</p>
+      </div>
+      <div class="feature-card reveal">
+        <div class="feature-icon bg-green-light">🔢</div>
+        <h3>Tirooyin 1–20</h3>
+        <p>Baro timaaddada iyo xisaabta fudud ee Soomaaliga – laga bilaabo kow ilaa labaatan.</p>
+      </div>
+      <div class="feature-card reveal">
+        <div class="feature-icon bg-orange-light">🎨</div>
+        <h3>Midabada</h3>
+        <p>Baro 12 midab kala duwan iyo magacyooda Soomaaliga, Ingiriisiga iyo isticmaalkooda.</p>
+      </div>
+      <div class="feature-card reveal">
+        <div class="feature-icon bg-purple-light">🦁</div>
+        <h3>Xayawaanka</h3>
+        <p>Baro magacyada xayawaanka berriga, badda, iyo reerka – 20+ xayawaan oo kala duwan.</p>
+      </div>
+      <div class="feature-card reveal">
+        <div class="feature-icon bg-blue-light">🌙</div>
+        <h3>Waxbarashada Islaamka</h3>
+        <p>Ducooyin maalinlaha, Tiimurka Islaamka, iyo Asmaauhu Husna si fudud loogu baray.</p>
+      </div>
+      <div class="feature-card reveal">
+        <div class="feature-icon bg-green-light">🏆</div>
+        <h3>Abaalmarinta</h3>
+        <p>Xiddigyo, biliyaasho, iyo heerarr si carruurtu ugu dhiirrigelaan waxbarashada.</p>
+      </div>
+      <div class="feature-card reveal">
+        <div class="feature-icon bg-orange-light">👨‍👩‍👧</div>
+        <h3>Dashboard Waalidka</h3>
+        <p>Waalidku waxay daba geli karaan horumar ilmahooda, imtixaanadooda iyo biliyaashooda.</p>
+      </div>
+      <div class="feature-card reveal">
+        <div class="feature-icon bg-purple-light">📱</div>
+        <h3>Mobile Friendly</h3>
+        <p>Ku ciyaar telefoonka, tablet-ka ama kombiyuutarka – si fiican ayuu u shaqaynayaa meel kasta.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LESSONS PREVIEW -->
+<section class="section" style="background:var(--blue-light);">
+  <div class="container">
+    <div class="flex-between mb-8">
+      <div class="reveal">
+        <div class="section-label">Casharrada</div>
+        <h2 class="section-title">Bilaw Casharka Maanta</h2>
+      </div>
+      <a href="lessons.html" class="btn btn-blue reveal">Casharrada oo dhan →</a>
+    </div>
+    <div id="home-lessons" class="grid-auto"></div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="section">
+  <div class="container">
+    <div class="text-center mb-8 reveal">
+      <div class="section-label">Sida ay u shaqaysaa</div>
+      <h2 class="section-title">Saddex Tallaabo oo Fudud</h2>
+    </div>
+    <div class="grid-3">
+      <div style="text-align:center;" class="reveal">
+        <div style="width:80px;height:80px;background:var(--grad-blue);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:2rem;margin:0 auto 20px;">1</div>
+        <h3 style="font-family:var(--font-display);font-size:1.2rem;margin-bottom:10px;">Abuur Xisaab</h3>
+        <p style="color:var(--text-muted);font-weight:600;">Waalid ahaan abuur xisaab bilaash ah oo ku dar ilmahaaga macluumaadkiisa.</p>
+      </div>
+      <div style="text-align:center;" class="reveal">
+        <div style="width:80px;height:80px;background:var(--grad-orange);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:2rem;margin:0 auto 20px;">2</div>
+        <h3 style="font-family:var(--font-display);font-size:1.2rem;margin-bottom:10px;">Baro & Ciyaar</h3>
+        <p style="color:var(--text-muted);font-weight:600;">Ilmahaagu wuxuu baranayaa xarfo, tirooyin, midabado iyo Islaamka si xiiso leh.</p>
+      </div>
+      <div style="text-align:center;" class="reveal">
+        <div style="width:80px;height:80px;background:var(--grad-green);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:2rem;margin:0 auto 20px;">3</div>
+        <h3 style="font-family:var(--font-display);font-size:1.2rem;margin-bottom:10px;">Hel Abaalmarinta</h3>
+        <p style="color:var(--text-muted);font-weight:600;">Waxbarashada kadib xiddigyo, biliyaasho iyo abaalmarino kale ayaa la xaqiisaa.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="section" style="background:var(--bg);">
+  <div class="container">
+    <div class="text-center mb-8 reveal">
+      <div class="section-label">Waalidka ayaa yiri</div>
+      <h2 class="section-title">Eegtay Waxay Dhaheen</h2>
+    </div>
+    <div class="grid-3">
+      <div class="testimonial-card reveal">
+        <div class="testimonial-stars">★★★★★</div>
+        <p class="testimonial-text">"Ilmahaygu 4 sano, wuxuu BaroKids ku bartay xarfaha oo dhan 2 usbuuc gudahood. Aad buu u jeclaaday si uu ugu ciyaaro!"</p>
+        <div class="testimonial-author">
+          <div class="author-avatar">👩</div>
+          <div><div class="author-name">Faadumo Xasan</div><div class="author-role">Hooyo, Nairobi</div></div>
+        </div>
+      </div>
+      <div class="testimonial-card reveal">
+        <div class="testimonial-stars">★★★★★</div>
+        <p class="testimonial-text">"Ciyaarta iyo waxbarashada si fiican ayaa isu dhafan. Ilmahaygu 6 sano hadda wuu tirin karaa 1-20 Soomaali!"</p>
+        <div class="testimonial-author">
+          <div class="author-avatar">👨</div>
+          <div><div class="author-name">Maxamed Cabdi</div><div class="author-role">Aabo, London</div></div>
+        </div>
+      </div>
+      <div class="testimonial-card reveal">
+        <div class="testimonial-stars">★★★★★</div>
+        <p class="testimonial-text">"Waxbarashada Islaamka ee BaroKids waa aad u fiican. Ilmahaygu 5 sano hadda wuu yaqaan Bismillah iyo ducada cunida."</p>
+        <div class="testimonial-author">
+          <div class="author-avatar">👩</div>
+          <div><div class="author-name">Xaliimo Warsame</div><div class="author-role">Hooyo, Minneapolis</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA BANNER -->
+<section class="section" style="background:var(--grad-hero);">
+  <div class="container" style="text-align:center;">
+    <div class="reveal">
+      <h2 style="font-family:var(--font-display);font-size:clamp(1.8rem,4vw,2.8rem);color:#fff;margin-bottom:16px;">Bilaw Maanta – Bilaash!</h2>
+      <p style="color:rgba(255,255,255,0.85);font-size:1.05rem;font-weight:600;margin-bottom:32px;max-width:480px;margin-left:auto;margin-right:auto;">Ku biir kumanaan qoys oo Soomaali ah oo carruurtooda u bixinaya waxbarasho tayo leh.</p>
+      <div style="display:flex;justify-content:center;gap:14px;flex-wrap:wrap;">
+        <button class="btn btn-primary btn-lg" onclick="Modal.open('modal-auth')">🚀 Bilow Bilaash</button>
+        <a href="curriculum.html" class="btn btn-secondary btn-lg">📚 Manhajka Eeg</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <div class="logo">🌟 BaroKids</div>
+      <p>Platform waxbarasho oo loogu talagalay carruurta Soomaalida da'doodu u dhaxayso 2–8 sano. Waxbarashada Soomaaliga, Ingiriisiga iyo Islaamka.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Casharrada</h4>
+      <a href="lessons.html?lesson=alphabet">🔤 Xarfaha</a>
+      <a href="lessons.html?lesson=numbers">🔢 Tirooyin</a>
+      <a href="lessons.html?lesson=colors">🎨 Midabada</a>
+      <a href="lessons.html?lesson=animals">🦁 Xayawaanka</a>
+      <a href="lessons.html?lesson=islamic">🌙 Islaamka</a>
+    </div>
+    <div class="footer-col">
+      <h4>Platform</h4>
+      <a href="curriculum.html">Manhajka</a>
+      <a href="quiz.html">Imtixaan</a>
+      <a href="rewards.html">Abaalmarinta</a>
+      <a href="parents.html">Waalidka</a>
+    </div>
+    <div class="footer-col">
+      <h4>Shirkadda</h4>
+      <a href="about.html">Naga</a>
+      <a href="contact.html">Xiriir</a>
+      <a href="#">Privacy</a>
+      <a href="#">Terms</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2025 BaroKids. Dhammaan xuquuqdu way xidna yihiin.</span>
+    <span>Made with ❤️ for Somali children worldwide</span>
+  </div>
+</footer>
+
+<!-- AUTH MODAL -->
+<div class="modal-overlay" id="modal-auth">
+  <div class="modal">
+    <button class="modal-close" onclick="Modal.close('modal-auth')">✕</button>
+    <h2>👋 Ku soo dhawow!</h2>
+    <p class="modal-sub">Gal xisaabkaaga ama abuur mid cusub bilaash ah.</p>
+    <div class="auth-tabs">
+      <button class="auth-tab active" onclick="switchTab('login')">Gal</button>
+      <button class="auth-tab" onclick="switchTab('register')">Abuur Xisaab</button>
+    </div>
+    <!-- Login Form -->
+    <form id="login-form">
+      <div class="form-group">
+        <label class="form-label">Email</label>
+        <div class="input-with-icon">
+          <span class="input-icon">📧</span>
+          <input type="email" id="login-email" class="form-control" placeholder="email@tusaale.com" required/>
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="form-label">Furaha Sirta</label>
+        <div class="input-with-icon">
+          <span class="input-icon">🔒</span>
+          <input type="password" id="login-password" class="form-control" placeholder="••••••••" required/>
+        </div>
+      </div>
+      <button type="submit" class="btn btn-blue btn-full">Gal Xisaabka →</button>
+      <div class="divider">ama</div>
+      <button type="button" class="btn btn-outline btn-full" onclick="Auth.login('demo@barokids.com','demo123'),UI.updateAuthState(),Modal.closeAll(),Toast.show('Demo account! 👋','success')">
+        🎯 Demo Account ku Ciyaar
+      </button>
+    </form>
+    <!-- Register Form -->
+    <form id="register-form" style="display:none;">
+      <div class="form-group">
+        <label class="form-label">Magacaaga</label>
+        <input type="text" id="reg-name" class="form-control" placeholder="Magacaaga oo buuxa" required/>
+      </div>
+      <div class="form-group">
+        <label class="form-label">Email</label>
+        <input type="email" id="reg-email" class="form-control" placeholder="email@tusaale.com" required/>
+      </div>
+      <div class="form-group">
+        <label class="form-label">Furaha Sirta</label>
+        <input type="password" id="reg-password" class="form-control" placeholder="Min. 6 xaraf" required/>
+      </div>
+      <div class="form-group">
+        <label class="form-label">Xaqiiji Furaha</label>
+        <input type="password" id="reg-confirm" class="form-control" placeholder="Ku celi furaha" required/>
+      </div>
+      <button type="submit" class="btn btn-blue btn-full">Abuur Xisaab 🎉</button>
+    </form>
+  </div>
+</div>
+
+<!-- ADD CHILD MODAL -->
+<div class="modal-overlay" id="modal-add-child">
+  <div class="modal">
+    <button class="modal-close" onclick="Modal.close('modal-add-child')">✕</button>
+    <h2>👶 Ku dar Ilmaha</h2>
+    <p class="modal-sub">Ku dar macluumaadka ilmahaaga si loo raaco horumarkiisa.</p>
+    <form id="add-child-form">
+      <div class="form-group">
+        <label class="form-label">Magaca Ilmaha</label>
+        <input type="text" id="child-name" class="form-control" placeholder="Magaca ilmaha" required/>
+      </div>
+      <div class="form-group">
+        <label class="form-label">Da'da (sano)</label>
+        <select id="child-age" class="form-control" required>
+          <option value="">Dooro da'da</option>
+          <option value="2">2 sano</option><option value="3">3 sano</option>
+          <option value="4">4 sano</option><option value="5">5 sano</option>
+          <option value="6">6 sano</option><option value="7">7 sano</option>
+          <option value="8">8 sano</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label class="form-label">Sumadda Ilmaha</label>
+        <input type="hidden" id="selected-avatar" value="👦"/>
+        <div id="avatar-picker" style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:8px;"></div>
+      </div>
+      <button type="submit" class="btn btn-blue btn-full">Ku dar Ilmaha ✨</button>
+    </form>
+  </div>
+</div>
+
+<script src="script.js"></script>
+<script>
+  function switchTab(tab) {
+    document.querySelectorAll('.auth-tab').forEach((t,i)=>t.classList.toggle('active',i===(tab==='login'?0:1)));
+    document.getElementById('login-form').style.display = tab==='login'?'':'none';
+    document.getElementById('register-form').style.display = tab==='register'?'':'none';
+  }
+  // Create demo account on first load
+  (function(){
+    const db = JSON.parse(localStorage.getItem('barokids_v2')||'{}');
+    if(!db.accounts?.find(a=>a.email==='demo@barokids.com')){
+      const id='u_demo';
+      const cid='c_demo';
+      if(!db.accounts) db.accounts=[];
+      if(!db.children) db.children=[];
+      if(!db.progress) db.progress={};
+      db.accounts.push({id,name:'Demo Waalid',email:'demo@barokids.com',password:btoa('demo123'),role:'parent',createdAt:new Date().toISOString()});
+      db.children.push({id:cid,parentId:id,name:'Demo Ilmo',age:5,avatar:'🦊',createdAt:new Date().toISOString()});
+      db.progress[cid]={lessons:{},quizzes:{},stars:12,xp:45,level:1,streak:3,lastActive:null,badges:['first_lesson','star_10']};
+      localStorage.setItem('barokids_v2',JSON.stringify(db));
+    }
+  })();
+</script>
+</body>
+</html>
